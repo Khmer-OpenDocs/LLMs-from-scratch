@@ -1,0 +1,66 @@
+.. meta::
+   :description: ជំពូក ២ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ — tokenizer, dataloader, BPE និងសម្ភារៈបន្ថែម។ Chapter 2 Working with Text Data — tokenizer, dataloader, BPE and bonus materials.
+   :keywords: ជំពូក ២, Working with Text Data, tokenizer, BPE, dataloader, embedding, tiktoken
+
+ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)
+=====================================================================
+
+.. note::
+
+   ប្រភព៖ ថត `ch02 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02>`_
+   និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
+
+ជំពូកនេះគ្របដណ្តប់ការរៀបចំទិន្នន័យអត្ថបទសម្រាប់ LLM — ដំណើរការពីអត្ថបទឆៅទៅជា
+token រហូតដល់ការបង្កើត dataloader សម្រាប់ការបណ្តុះបណ្តាល។ បណ្ណាល័យពាក់ព័ន្ធសំខាន់
+ដែល ``requirements.txt`` កំណត់សម្រាប់ជំពូកនេះគឺ ``tiktoken`` (>= 0.5.1)។
+
+កូដមេ
+-------
+
+កូដមេស្ថិតក្នុងថត
+`ch02/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/01_main-chapter-code>`_៖
+
+.. list-table::
+   :header-rows: 1
+   :widths: 45 55
+
+   * - ឯកសារ
+     - តួនាទី
+   * - `ch02.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb>`_
+     - notebook មេរបស់ជំពូក
+   * - `dataloader.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/dataloader.ipynb>`_
+     - សង្ខេប (summary) នៃ dataloader
+   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - ចម្លើយលំហាត់របស់ជំពូក
+
+រចនាសម្ព័ន្ធថត
+----------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - ថត
+     - ខ្លឹមសារ
+   * - ``01_main-chapter-code``
+     - កូដមេរបស់ជំពូក
+   * - ``02_bonus_bytepair-encoder``
+     - ប្រៀបធៀបការអនុវត្ត Byte Pair Encoding (BPE) ផ្សេងៗ
+   * - ``03_bonus_embedding-vs-matmul``
+     - ស្វែងយល់ភាពខុសគ្នារវាង Embedding Layers និង Linear Layers
+   * - ``04_bonus_dataloader-intuition``
+     - ការយល់ដឹងអំពី Dataloader ដោយប្រើលេខសាមញ្ញ
+   * - ``05_bpe-from-scratch``
+     - សាងសង់ BPE Tokenizer ពីមូលដ្ឋាន (រួមមាន ``bpe-from-scratch-simple.ipynb``)
+   * - ``06_bonus_simple-tokenizer-v3``
+     - កំណែ SimpleTokenizerV3
+
+លំហាត់
+--------
+
+ជំពូកនេះមានលំហាត់ ហើយចម្លើយមានក្នុង ``exercise-solutions.ipynb`` ខាងលើ
+ព្រមទាំងត្រូវបានសង្ខេបក្នុងភាគបន្ថែម C (មើលទំព័រ :doc:`../យោង/ភាគបន្ថែម`)។
+
+.. tip::
+
+   បន្ទាប់៖ សិក្សាយន្តការ Attention ក្នុង :doc:`ជំពូក៣-សរសេរកូដ-attention`។
