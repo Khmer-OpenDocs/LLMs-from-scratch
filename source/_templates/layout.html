@@ -1,0 +1,51 @@
+{% extends "!layout.html" %}
+
+{%- set _og_image = km_baseurl + "_static/logo-og.png" %}
+{%- set _page_url = km_baseurl + (pagename|urlencode) + ".html" %}
+
+{% block extrahead %}
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="{{ pathto('_static/logo-og.png', 1) }}">
+<meta property="og:title" content="{{ title|striptags|e }}">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="km_KH">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="{{ _og_image }}">
+<meta property="og:url" content="{{ _page_url }}">
+<meta property="og:site_name" content="{{ html_title|e }}">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ title|striptags|e }}">
+<meta name="twitter:image" content="{{ _og_image }}">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"{{ html_title|striptags|e }}","url":"{{ km_baseurl }}","inLanguage":["km","en"],"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"{{ km_baseurl }}search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script>try{var t=localStorage.getItem("km-docs-theme");if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
+{% endblock %}
+
+{% block sidebartitle %}
+<a href="{{ pathto(root_doc) }}" class="icon icon-home"> {{ project }}
+  {%- if logo %}
+  <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="Logo"/>
+  {%- endif %}
+</a>
+<div class="km-version-badge" title="Upstream version tracked by this site">upstream: main @ cdbd33e (2026-10-02)</div>
+<button id="km-theme-toggle" type="button" class="km-theme-toggle">ងងឹត / ភ្លឺ</button><script>
+(function(){
+  var b = document.getElementById("km-theme-toggle");
+  function label(){
+    var cur = document.documentElement.getAttribute("data-theme");
+    b.textContent = (cur === "light") ? "ស្បែក៖ ភ្លឺ" : "ស្បែក៖ ងងឹត";
+  }
+  label();
+  b.addEventListener("click", function(){
+    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", cur);
+    try{ localStorage.setItem("km-docs-theme", cur); }catch(e){}
+    label();
+  });
+})();
+</script>
+{% include "searchbox.html" %}
+{% endblock %}
