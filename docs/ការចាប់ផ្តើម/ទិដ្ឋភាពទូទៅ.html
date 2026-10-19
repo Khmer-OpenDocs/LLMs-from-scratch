@@ -1,0 +1,319 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="km" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ទិដ្ឋភាពទូទៅនៃគម្រោង LLMs-from-scratch — តម្រូវការ ផ្នែករឹង និងផែនទីជំពូក។ Overview of the LLMs-from-scratch project — prerequisites, hardware and chapter map." name="description" />
+<meta content="ទិដ្ឋភាពទូទៅ, overview, LLM, GPT, PyTorch, prerequisites, តម្រូវការ" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ទិដ្ឋភាពទូទៅ &mdash; LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d76498cc" />
+
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
+    <link rel="canonical" href="https://seyhalite.github.io/LLMs-from-scratch/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=906b1b25"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ការដំឡើងបរិស្ថាន" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html" />
+    <link rel="prev" title="LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ" href="../index.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="../_static/logo-og.png">
+<meta property="og:title" content="ទិដ្ឋភាពទូទៅ">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="km_KH">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<meta property="og:url" content="https://seyhalite.github.io/LLMs-from-scratch/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html">
+<meta property="og:site_name" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ទិដ្ឋភាពទូទៅ">
+<meta name="twitter:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"","url":"https://seyhalite.github.io/LLMs-from-scratch/","inLanguage":["km","en"],"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://seyhalite.github.io/LLMs-from-scratch/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script>try{var t=localStorage.getItem("km-docs-theme");if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1f2430" >
+<a href="../index.html" class="icon icon-home"> LLMs-from-scratch
+</a>
+<div class="km-version-badge" title="Upstream version tracked by this site">upstream: main @ cdbd33e (2026-10-02)</div>
+<button id="km-theme-toggle" type="button" class="km-theme-toggle">ងងឹត / ភ្លឺ</button><script>
+(function(){
+  var b = document.getElementById("km-theme-toggle");
+  function label(){
+    var cur = document.documentElement.getAttribute("data-theme");
+    b.textContent = (cur === "light") ? "ស្បែក៖ ភ្លឺ" : "ស្បែក៖ ងងឹត";
+  }
+  label();
+  b.addEventListener("click", function(){
+    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", cur);
+    try{ localStorage.setItem("km-docs-theme", cur); }catch(e){}
+    label();
+  });
+})();
+</script>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ការចាប់ផ្តើម</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ទិដ្ឋភាពទូទៅ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id2">តើគម្រោងនេះជាអ្វី?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">តំណភ្ជាប់ផ្លូវការ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">តម្រូវការជាមុន</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">តម្រូវការផ្នែករឹង</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">ផែនទីជំពូក និងកូដសំខាន់ៗ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id7">លំហាត់ និងការធ្វើតេស្តចំណេះដឹង</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#companion-book">សៀវភៅបន្ត (Companion Book)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html">ការដំឡើងបរិស្ថាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html">ការទាញយកកូដ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ជំពូកស្នូល</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html">ជំពូក ៦៖ Finetuning សម្រាប់ចំណាត់ថ្នាក់អត្ថបទ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html">ជំពូក ៧៖ Finetuning ដើម្បីធ្វើតាមការណែនាំ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ឯកសារយោង</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">ភាគបន្ថែម (Appendices A–E)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">សម្ភារៈបន្ថែម (Bonus Material)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html">វចនានុក្រម (ខ្មែរ–អង់គ្លេស)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html">ឯកសារយោង</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1f2430" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LLMs-from-scratch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ទិដ្ឋភាពទូទៅ</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/source/ការចាប់ផ្តើម/ទិដ្ឋភាពទូទៅ.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>ទិដ្ឋភាពទូទៅ<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ប្រភព៖ <a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md">README.md</a>
+និង <a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/setup/README.md">setup/README.md</a>
+នៃឃ្លាំង upstream។</p>
+</div>
+<section id="id2">
+<h2>តើគម្រោងនេះជាអ្វី?<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch">LLMs-from-scratch</a> គឺជាឃ្លាំងកូដផ្លូវការ
+សម្រាប់សៀវភៅ <em>Build a Large Language Model (From Scratch)</em> ដែលណែនាំអ្នកអានឱ្យស្វែងយល់
+ពីរបៀបដែល LLM ដំណើរការពីខាងក្នុង តាមរយៈការសរសេរកូដពីមូលដ្ឋានម្តងមួយៗជំហានៗ។</p>
+<p>ចំណុចសំខាន់ៗ៖</p>
+<ul class="simple">
+<li><p>វិធីសាស្ត្រក្នុងសៀវភៅបង្កើតម៉ូដែលតូចប៉ុន្តែដំណើរការបាន សម្រាប់គោលបំណងអប់រំ ដែលឆ្លុះបញ្ចាំង
+ពីវិធីសាស្ត្របង្កើតម៉ូដែលមូលដ្ឋានខ្នាតធំ (ដូចជាម៉ូដែលនៅពីក្រោយ ChatGPT)។</p></li>
+<li><p>សៀវភៅរួមបញ្ចូលកូដសម្រាប់ផ្ទុក weights នៃម៉ូដែល pretrained ធំៗ ដើម្បី finetune។</p></li>
+<li><p>ការអនុវត្តទាំងអស់ប្រើ PyTorch ដោយមិនប្រើបណ្ណាល័យ LLM ខាងក្រៅទេ។</p></li>
+<li><p>មានវីដេអូមេរៀនអមសៀវភៅរយៈពេល 17 ម៉ោង 15 នាទី (<a class="reference external" href="https://www.manning.com/livevideo/master-and-build-large-language-models">Master and Build Large Language Models</a>) ដែលរៀបចំជាជំពូក
+និងផ្នែកស្របតាមរចនាសម្ព័ន្ធសៀវភៅ។</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>តំណភ្ជាប់ផ្លូវការ<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 40.0%" />
+<col style="width: 60.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ធនធាន</p></th>
+<th class="head"><p>តំណភ្ជាប់</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ឃ្លាំងកូដផ្លូវការ</p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch">https://github.com/rasbt/LLMs-from-scratch</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>សៀវភៅនៅ Manning</p></td>
+<td><p><a class="reference external" href="http://mng.bz/orYv">http://mng.bz/orYv</a></p></td>
+</tr>
+<tr class="row-even"><td><p>សៀវភៅនៅ Amazon.com</p></td>
+<td><p><a class="reference external" href="https://www.amazon.com/gp/product/1633437167">https://www.amazon.com/gp/product/1633437167</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ISBN</p></td>
+<td><p>9781633437166</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id4">
+<h2>តម្រូវការជាមុន<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>តម្រូវការសំខាន់បំផុតគឺ <strong>មូលដ្ឋានគ្រឹះរឹងមាំក្នុងការសរសេរកម្មវិធី Python</strong>។</p>
+<ul class="simple">
+<li><p>បើអ្នកមានបទពិសោធជាមួយ deep neural networks ខ្លះ នោះគំនិតមួយចំនួននឹងកាន់តែងាយយល់
+ព្រោះ LLM សាងសង់លើស្ថាപត្យកម្មទាំងនោះ។</p></li>
+<li><p>ជំនាញ PyTorch មិនមែនជាតម្រូវការជាមុនទេ ប៉ុន្តែការស្គាល់មូលដ្ឋាន PyTorch មានប្រយោជន៍។
+ភាគបន្ថែម A (Appendix A) ផ្តល់ការណែនាំសង្ខេបអំពី PyTorch។</p></li>
+<li><p>ជម្រើសបន្ថែម៖ សៀវភៅ <a class="reference external" href="https://sebastianraschka.com/teaching/pytorch-1h/">PyTorch in One Hour</a> របស់អ្នកនិពន្ធដូចគ្នា។</p></li>
+</ul>
+</section>
+<section id="id5">
+<h2>តម្រូវការផ្នែករឹង<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>កូដក្នុងជំពូកមេរបស់សៀវភៅត្រូវបានរចនាឡើងដើម្បីដំណើរការលើកុំព្យូទ័រយួរដៃធម្មតា
+ក្នុងរយៈពេលសមហេតុផល ដោយមិនត្រូវការផ្នែករឹងពិសេសទេ។ កូដនឹងប្រើ GPU ដោយស្វ័យប្រវត្តិ
+បើមាន។ អ្នកនិពន្ធបានសាកល្បងជំពូកមេទាំងអស់លើកុំព្យូទ័រ M3 MacBook Air។</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>វេទិកាពពក (cloud) ដែលមាន NVIDIA GPU អាចជួយបង្កើនល្បឿនដំណើរការបានយ៉ាងច្រើន
+ជាពិសេសសម្រាប់ជំពូក ៥ ដល់ ៧។ មើលទំព័រ <a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html"><span class="doc">ការដំឡើងបរិស្ថាន</span></a> សម្រាប់ព័ត៌មានលម្អិត។</p>
+</div>
+</section>
+<section id="id6">
+<h2>ផែនទីជំពូក និងកូដសំខាន់ៗ<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 42.0%" />
+<col style="width: 24.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ជំពូក</p></th>
+<th class="head"><p>កូដមេ (ចូលដំណើរការរហ័ស)</p></th>
+<th class="head"><p>ថតកូដទាំងអស់</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>ជំពូក ១៖ Understanding Large Language Models</p></td>
+<td><p>គ្មានកូដ</p></td>
+<td><p>—</p></td>
+</tr>
+<tr class="row-odd"><td><p>ជំពូក ២៖ Working with Text Data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch02.ipynb</span></code> · <code class="docutils literal notranslate"><span class="pre">dataloader.ipynb</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02">./ch02</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ជំពូក ៣៖ Coding Attention Mechanisms</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch03.ipynb</span></code> · <code class="docutils literal notranslate"><span class="pre">multihead-attention.ipynb</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch03">./ch03</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ជំពូក ៤៖ Implementing a GPT Model from Scratch</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch04.ipynb</span></code> · <code class="docutils literal notranslate"><span class="pre">gpt.py</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04">./ch04</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ជំពូក ៥៖ Pretraining on Unlabeled Data</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch05.ipynb</span></code> · <code class="docutils literal notranslate"><span class="pre">gpt_train.py</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">gpt_generate.py</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05">./ch05</a></p></td>
+</tr>
+<tr class="row-odd"><td><p>ជំពូក ៦៖ Finetuning for Text Classification</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch06.ipynb</span></code> · <code class="docutils literal notranslate"><span class="pre">gpt_class_finetune.py</span></code> · <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06">./ch06</a></p></td>
+</tr>
+<tr class="row-even"><td><p>ជំពូក ៧៖ Finetuning to Follow Instructions</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">ch07.ipynb</span></code> · <code class="docutils literal notranslate"><span class="pre">gpt_instruction_finetuning.py</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">ollama_evaluate.py</span></code> (summary) · <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code></p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07">./ch07</a></p></td>
+</tr>
+</tbody>
+</table>
+<p>កូដមេទាំងអស់ស្ថិតនៅក្នុងថតย่อย <code class="docutils literal notranslate"><span class="pre">01_main-chapter-code</span></code> នៃជំពូកនីមួយៗ។</p>
+</section>
+<section id="id7">
+<h2>លំហាត់ និងការធ្វើតេស្តចំណេះដឹង<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>ជំពូកនីមួយៗមានលំហាត់ជាច្រើន។ ចម្លើយត្រូវបានសង្ខេបក្នុងភាគបន្ថែម C (Appendix C)
+ហើយ notebook ចម្លើយមានក្នុងថតជំពូកនីមួយៗ ឧទាហរណ៍
+<a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb">./ch02/01_main-chapter-code/exercise-solutions.ipynb</a>។</p></li>
+<li><p>មាន PDF ឥតគិតថ្លៃ 170 ទំព័រ <a class="reference external" href="https://www.manning.com/books/test-yourself-on-build-a-large-language-model-from-scratch">Test Yourself On Build a Large Language Model (From Scratch)</a>
+ពីគេហទំព័រ Manning ដែលមានសំណួរ quiz ប្រហែល 30 សំណួរ និងចម្លើយក្នុងមួយជំពូក។</p></li>
+</ul>
+</section>
+<section id="companion-book">
+<h2>សៀវភៅបន្ត (Companion Book)<a class="headerlink" href="#companion-book" title="Link to this heading"></a></h2>
+<p><a class="reference external" href="https://mng.bz/lZ5B">Build A Reasoning Model (From Scratch)</a> គឺជាសៀវភៅឯករាជ្យមួយ
+ដែលអាចចាត់ទុកជាភាគបន្តនៃសៀវភៅនេះ។ វាចាប់ផ្តើមពីម៉ូដែល pretrained ហើយអនុវត្តវិធីសាស្ត្រ
+reasoning ផ្សេងៗ រួមមាន inference-time scaling, reinforcement learning និង distillation។</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://amzn.to/4aAKiFY">Amazon link</a> · <a class="reference external" href="https://mng.bz/lZ5B">Manning link</a> ·
+<a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch">GitHub repository</a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>បន្ទាប់៖ រៀបចំបរិស្ថាន Python និងឧបករណ៍របស់អ្នកក្នុងទំព័រ
+<a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html"><span class="doc">ការដំឡើងបរិស្ថាន</span></a>។</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../index.html" class="btn btn-neutral float-left" title="LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html" class="btn btn-neutral float-right" title="ការដំឡើងបរិស្ថាន" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 SeyhaLite (community translation); upstream code (c) Sebastian Raschka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

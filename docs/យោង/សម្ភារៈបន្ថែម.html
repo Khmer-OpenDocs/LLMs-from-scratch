@@ -1,0 +1,305 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="km" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="សម្ភារៈបន្ថែម (bonus) ទាំងអស់នៃឃ្លាំង LLMs-from-scratch រៀបតាមជំពូក និងពីឃ្លាំង Reasoning From Scratch។ All bonus materials of the LLMs-from-scratch repository, per chapter and from the Reasoning From Scratch repository." name="description" />
+<meta content="bonus, សម្ភារៈបន្ថែម, BPE, KV cache, GQA, MLA, SWA, MoE, DSA, DeltaNet, Llama, Qwen3, Gemma, Olmo, Aya, DPO, GRPO, MATH-500, MMLU" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>សម្ភារៈបន្ថែម (Bonus Material) &mdash; LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d76498cc" />
+
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
+    <link rel="canonical" href="https://seyhalite.github.io/LLMs-from-scratch/%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=906b1b25"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="វចនានុក្រម (ខ្មែរ–អង់គ្លេស)" href="%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html" />
+    <link rel="prev" title="ភាគបន្ថែម (Appendices A–E)" href="%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="../_static/logo-og.png">
+<meta property="og:title" content="សម្ភារៈបន្ថែម (Bonus Material)">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="km_KH">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<meta property="og:url" content="https://seyhalite.github.io/LLMs-from-scratch/%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">
+<meta property="og:site_name" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="សម្ភារៈបន្ថែម (Bonus Material)">
+<meta name="twitter:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"","url":"https://seyhalite.github.io/LLMs-from-scratch/","inLanguage":["km","en"],"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://seyhalite.github.io/LLMs-from-scratch/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script>try{var t=localStorage.getItem("km-docs-theme");if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1f2430" >
+<a href="../index.html" class="icon icon-home"> LLMs-from-scratch
+</a>
+<div class="km-version-badge" title="Upstream version tracked by this site">upstream: main @ cdbd33e (2026-10-02)</div>
+<button id="km-theme-toggle" type="button" class="km-theme-toggle">ងងឹត / ភ្លឺ</button><script>
+(function(){
+  var b = document.getElementById("km-theme-toggle");
+  function label(){
+    var cur = document.documentElement.getAttribute("data-theme");
+    b.textContent = (cur === "light") ? "ស្បែក៖ ភ្លឺ" : "ស្បែក៖ ងងឹត";
+  }
+  label();
+  b.addEventListener("click", function(){
+    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", cur);
+    try{ localStorage.setItem("km-docs-theme", cur); }catch(e){}
+    label();
+  });
+})();
+</script>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ការចាប់ផ្តើម</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html">ទិដ្ឋភាពទូទៅ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html">ការដំឡើងបរិស្ថាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html">ការទាញយកកូដ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ជំពូកស្នូល</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html">ជំពូក ៦៖ Finetuning សម្រាប់ចំណាត់ថ្នាក់អត្ថបទ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html">ជំពូក ៧៖ Finetuning ដើម្បីធ្វើតាមការណែនាំ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ឯកសារយោង</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">ភាគបន្ថែម (Appendices A–E)</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">សម្ភារៈបន្ថែម (Bonus Material)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#working-with-text-data">ជំពូក ២ — Working With Text Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#coding-attention-mechanisms">ជំពូក ៣ — Coding Attention Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#implementing-a-gpt-model-from-scratch">ជំពូក ៤ — Implementing a GPT Model From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#pretraining-on-unlabeled-data">ជំពូក ៥ — Pretraining on Unlabeled Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finetuning-for-classification">ជំពូក ៦ — Finetuning for classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finetuning-to-follow-instructions">ជំពូក ៧ — Finetuning to follow instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#reasoning-from-scratch">ពីឃ្លាំង Reasoning From Scratch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html">វចនានុក្រម (ខ្មែរ–អង់គ្លេស)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html">ឯកសារយោង</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1f2430" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LLMs-from-scratch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">សម្ភារៈបន្ថែម (Bonus Material)</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/source/យោង/សម្ភារៈបន្ថែម.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="bonus-material">
+<h1>សម្ភារៈបន្ថែម (Bonus Material)<a class="headerlink" href="#bonus-material" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ប្រភព៖ ផ្នែក <em>Bonus Material</em> នៃ
+<a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md">README.md</a> របស់ upstream។
+ថតទាំងនេះជាសម្ភារៈស្រេចចិត្ត (optional) សម្រាប់អ្នកអានដែលចាប់អារម្មណ៍។</p>
+</div>
+<section id="setup">
+<h2>Setup<a class="headerlink" href="#setup" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/01_optional-python-setup-preferences">Python Setup Tips</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/02_installing-python-libraries">Installing Python Packages and Libraries Used in This Book</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/03_optional-docker-environment">Docker Environment Setup Guide</a></p></li>
+</ul>
+</section>
+<section id="working-with-text-data">
+<h2>ជំពូក ២ — Working With Text Data<a class="headerlink" href="#working-with-text-data" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/05_bpe-from-scratch/bpe-from-scratch-simple.ipynb">Byte Pair Encoding (BPE) Tokenizer From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/02_bonus_bytepair-encoder">Comparing Various Byte Pair Encoding (BPE) Implementations</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/03_bonus_embedding-vs-matmul">Understanding the Difference Between Embedding Layers and Linear Layers</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/04_bonus_dataloader-intuition">Dataloader Intuition With Simple Numbers</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/05_bpe-from-scratch">BPE From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/06_bonus_simple-tokenizer-v3">SimpleTokenizerV3 variant</a></p></li>
+</ul>
+</section>
+<section id="coding-attention-mechanisms">
+<h2>ជំពូក ៣ — Coding Attention Mechanisms<a class="headerlink" href="#coding-attention-mechanisms" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/02_bonus_efficient-multihead-attention/mha-implementations.ipynb">Comparing Efficient Multi-Head Attention Implementations</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/03_understanding-buffers/understanding-buffers.ipynb">Understanding PyTorch Buffers</a></p></li>
+</ul>
+</section>
+<section id="implementing-a-gpt-model-from-scratch">
+<h2>ជំពូក ៤ — Implementing a GPT Model From Scratch<a class="headerlink" href="#implementing-a-gpt-model-from-scratch" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/02_performance-analysis/flops-analysis.ipynb">FLOPs Analysis</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/03_kv-cache">KV Cache</a></p></li>
+<li><p>Attention Alternatives:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/04_gqa">Grouped-Query Attention</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/05_mla">Multi-Head Latent Attention</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/06_swa">Sliding Window Attention</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/08_deltanet">Gated DeltaNet</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/09_dsa">DeepSeek Sparse Attention (DSA)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/10_kv-sharing">Cross-Layer KV Sharing</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/07_moe">Mixture-of-Experts (MoE)</a></p></li>
+</ul>
+</section>
+<section id="pretraining-on-unlabeled-data">
+<h2>ជំពូក ៥ — Pretraining on Unlabeled Data<a class="headerlink" href="#pretraining-on-unlabeled-data" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/02_alternative_weight_loading">Alternative Weight Loading Methods</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/03_bonus_pretraining_on_gutenberg">Pretraining GPT on the Project Gutenberg Dataset</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/04_learning_rate_schedulers">Adding Bells and Whistles to the Training Loop</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/19_cpu_mps_differences">Discrepancies between CPU and MPS Devices</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/05_bonus_hparam_tuning">Optimizing Hyperparameters for Pretraining</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/06_user_interface">Building a User Interface to Interact With the Pretrained LLM</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/07_gpt_to_llama">Converting GPT to Llama</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/08_memory_efficient_weight_loading/memory-efficient-state-dict.ipynb">Memory-efficient Model Weight Loading</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/09_extending-tokenizers/extend-tiktoken.ipynb">Extending the Tiktoken BPE Tokenizer with New Tokens</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/10_llm-training-speed">PyTorch Performance Tips for Faster LLM Training</a></p></li>
+<li><p>LLM Architectures:</p>
+<ul>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/07_gpt_to_llama/standalone-llama32.ipynb">Llama 3.2 From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/11_qwen3">Qwen3 Dense and Mixture-of-Experts (MoE) From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/12_gemma3">Gemma 3 From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/13_olmo3">Olmo 3 From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/15_tiny-aya">Tiny Aya From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/16_qwen3.5">Qwen3.5 From Scratch</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/17_gemma4">Gemma 4 E2B and E4B From Scratch</a></p></li>
+</ul>
+</li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/14_ch05_with_other_llms">Chapter 5 with other LLMs as Drop-In Replacement (e.g., Llama 3, Qwen 3)</a></p></li>
+</ul>
+</section>
+<section id="finetuning-for-classification">
+<h2>ជំពូក ៦ — Finetuning for classification<a class="headerlink" href="#finetuning-for-classification" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06/02_bonus_additional-experiments">Additional Experiments Finetuning Different Layers and Using Larger Models</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06/03_bonus_imdb-classification">Finetuning Different Models on the 50k IMDb Movie Review Dataset</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06/04_user_interface">Building a User Interface to Interact With the GPT-based Spam Classifier</a></p></li>
+</ul>
+</section>
+<section id="finetuning-to-follow-instructions">
+<h2>ជំពូក ៧ — Finetuning to follow instructions<a class="headerlink" href="#finetuning-to-follow-instructions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07/02_dataset-utilities">Dataset Utilities for Finding Near Duplicates and Creating Passive Voice Entries</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07/03_model-evaluation">Evaluating Instruction Responses Using the OpenAI API and Ollama</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/05_dataset-generation/llama3-ollama.ipynb">Generating a Dataset for Instruction Finetuning</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/05_dataset-generation/reflection-gpt4.ipynb">Improving a Dataset for Instruction Finetuning</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/04_preference-tuning-with-dpo/create-preference-data-ollama.ipynb">Generating a Preference Dataset With Llama 3.1 70B and Ollama</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/04_preference-tuning-with-dpo/dpo-from-scratch.ipynb">Direct Preference Optimization (DPO) for LLM Alignment</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07/06_user_interface">Building a User Interface to Interact With the Instruction-Finetuned GPT Model</a></p></li>
+</ul>
+</section>
+<section id="reasoning-from-scratch">
+<h2>ពីឃ្លាំង Reasoning From Scratch<a class="headerlink" href="#reasoning-from-scratch" title="Link to this heading"></a></h2>
+<p>សម្ភារៈបន្ថែមពីឃ្លាំងភ្លោះ
+<a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch">rasbt/reasoning-from-scratch</a>៖</p>
+<p><strong>Qwen3 (From Scratch) Basics</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/chC/01_main-chapter-code/chC_main.ipynb">Qwen3 Source Code Walkthrough</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/tree/main/ch02/03_optimized-LLM">Optimized Qwen3</a></p></li>
+</ul>
+<p><strong>Evaluation</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/tree/main/ch03">Verifier-Based Evaluation (MATH-500)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/chF/02_mmlu">Multiple-Choice Evaluation (MMLU)</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/chF/03_leaderboards">LLM Leaderboard Evaluation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/chF/04_llm-judge">LLM-as-a-Judge Evaluation</a></p></li>
+</ul>
+<p><strong>Inference Scaling</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/ch04/01_main-chapter-code/ch04_main.ipynb">Self-Consistency</a></p></li>
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/ch05/01_main-chapter-code/ch05_main.ipynb">Self-Refinement</a></p></li>
+</ul>
+<p><strong>Reinforcement Learning (RL)</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/rasbt/reasoning-from-scratch/blob/main/ch06/01_main-chapter-code/ch06_main.ipynb">RLVR with GRPO From Scratch</a></p></li>
+</ul>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>សម្រាប់និយមន័យពាក្យបច្ចេកទេសទាំងអស់ជាភាសាខ្មែរ សូមមើល
+<a class="reference internal" href="%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html"><span class="doc">វចនានុក្រម (ខ្មែរ–អង់គ្លេស)</span></a>។</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html" class="btn btn-neutral float-left" title="ភាគបន្ថែម (Appendices A–E)" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html" class="btn btn-neutral float-right" title="វចនានុក្រម (ខ្មែរ–អង់គ្លេស)" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 SeyhaLite (community translation); upstream code (c) Sebastian Raschka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

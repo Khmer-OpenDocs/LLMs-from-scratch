@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 860 220" font-family="'Noto Sans Khmer','Khmer OS',sans-serif">
+  <rect width="860" height="220" rx="12" fill="#12151d"/>
+  <!-- flow boxes -->
+  <g font-size="14" text-anchor="middle">
+    <rect x="20"  y="60" width="150" height="70" rx="10" fill="#1d2c3d" stroke="#3d7ec2"/>
+    <text x="95" y="90" fill="#d8dee9">ជំពូក ២</text>
+    <text x="95" y="112" fill="#9aa4b2" font-size="12">Text Data</text>
+
+    <rect x="190" y="60" width="150" height="70" rx="10" fill="#1d2c3d" stroke="#3d7ec2"/>
+    <text x="265" y="90" fill="#d8dee9">ជំពូក ៣</text>
+    <text x="265" y="112" fill="#9aa4b2" font-size="12">Attention</text>
+
+    <rect x="360" y="60" width="150" height="70" rx="10" fill="#1d3a2e" stroke="#3dc283"/>
+    <text x="435" y="90" fill="#d8dee9">ជំពូក ៤</text>
+    <text x="435" y="112" fill="#9aa4b2" font-size="12">GPT Model</text>
+
+    <rect x="530" y="60" width="150" height="70" rx="10" fill="#3a2e1d" stroke="#c2913d"/>
+    <text x="605" y="90" fill="#d8dee9">ជំពូក ៥</text>
+    <text x="605" y="112" fill="#9aa4b2" font-size="12">Pretraining</text>
+
+    <rect x="700" y="30" width="140" height="60" rx="10" fill="#2a1d3a" stroke="#9c6ade"/>
+    <text x="770" y="55" fill="#d8dee9">ជំពូក ៦</text>
+    <text x="770" y="75" fill="#9aa4b2" font-size="12">Classification</text>
+
+    <rect x="700" y="100" width="140" height="60" rx="10" fill="#2a1d3a" stroke="#9c6ade"/>
+    <text x="770" y="125" fill="#d8dee9">ជំពូក ៧</text>
+    <text x="770" y="145" fill="#9aa4b2" font-size="12">Instructions</text>
+  </g>
+  <!-- arrows -->
+  <g stroke="#4cc38a" stroke-width="3" fill="#4cc38a">
+    <line x1="170" y1="95" x2="188" y2="95"/>
+    <polygon points="188,90 198,95 188,100"/>
+    <line x1="340" y1="95" x2="358" y2="95"/>
+    <polygon points="358,90 368,95 358,100"/>
+    <line x1="510" y1="95" x2="528" y2="95"/>
+    <polygon points="528,90 538,95 528,100"/>
+    <path d="M 680 85 Q 692 70 698 62" fill="none"/>
+    <polygon points="694,58 704,60 698,68"/>
+    <path d="M 680 105 Q 692 120 698 128" fill="none"/>
+    <polygon points="698,122 704,130 694,132"/>
+  </g>
+  <!-- foundation: ch01 -->
+  <rect x="20" y="165" width="820" height="38" rx="10" fill="#1f2430" stroke="#2c3444"/>
+  <text x="430" y="189" text-anchor="middle" font-size="13" fill="#9aa4b2">ជំពូក ១ — មូលដ្ឋានគ្រឹះ៖ ស្វែងយល់ពី Large Language Models (គ្មានកូដ)</text>
+</svg>

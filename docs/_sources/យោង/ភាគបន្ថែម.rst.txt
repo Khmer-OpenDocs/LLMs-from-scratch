@@ -1,0 +1,66 @@
+.. meta::
+   :description: ភាគបន្ថែម A–E — PyTorch, ឯកសារយោង, ចម្លើយលំហាត់, training loop និង LoRA។ Appendices A–E — PyTorch, references, exercise solutions, training loop and LoRA.
+   :keywords: appendix, ភាគបន្ថែម, PyTorch, DDP, LoRA, exercise solutions, training loop
+
+ភាគបន្ថែម (Appendices A–E)
+=============================
+
+.. note::
+
+   ប្រភព៖ តារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_
+   និងរចនាសម្ព័ន្ធថតពិតរបស់ upstream។
+
+ភាគបន្ថែម A — Introduction to PyTorch
+----------------------------------------
+
+ការណែនាំសង្ខេបអំពី PyTorch សម្រាប់អ្នកដែលថ្មីជាមួយ framework នេះ។
+ថត `appendix-A <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-A>`_
+មាន ``01_main-chapter-code`` និង ``02_setup-recommendations``។
+
+.. list-table::
+   :header-rows: 1
+   :widths: 45 55
+
+   * - ឯកសារ
+     - តួនាទី
+   * - `code-part1.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part1.ipynb>`_
+     - ផ្នែកទី ១ នៃកូដណែនាំ PyTorch
+   * - `code-part2.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part2.ipynb>`_
+     - ផ្នែកទី ២ នៃកូដណែនាំ PyTorch
+   * - `DDP-script.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/DDP-script.py>`_
+     - ស្គ្រីប Distributed Data Parallel (DDP)
+   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - ចម្លើយលំហាត់
+
+ភាគបន្ថែម B — References and Further Reading
+----------------------------------------------
+
+បញ្ជីឯកសារយោង និងអានបន្ថែមសម្រាប់សៀវភៅទាំងមូល។ តារាងមាតិការបស់ upstream
+បញ្ជាក់ថា **"No code"** សម្រាប់ភាគបន្ថែមនេះ។ ថត៖
+`appendix-B <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-B>`_។
+
+ភាគបន្ថែម C — Exercise Solutions
+----------------------------------
+
+បញ្ជីចម្លើយលំហាត់របស់គ្រប់ជំពូក —
+`appendix-C <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-C>`_
+(list of exercise solutions)។
+
+ភាគបន្ថែម D — Adding Bells and Whistles to the Training Loop
+--------------------------------------------------------------
+
+ការបន្ថែមមុខងារបន្ថែមទៅក្នុង training loop។ កូដមេ៖
+`appendix-D.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-D/01_main-chapter-code/appendix-D.ipynb>`_
+ក្នុងថត `appendix-D <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-D>`_។
+
+ភាគបន្ថែម E — Parameter-efficient Finetuning with LoRA
+--------------------------------------------------------
+
+ការ finetune ដោយសន្សំសំចៃ parameters ជាមួយវិធីសាស្ត្រ LoRA។ កូដមេ៖
+`appendix-E.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb>`_
+ក្នុងថត `appendix-E <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-E>`_។
+
+.. tip::
+
+   សម្រាប់បញ្ជីសម្ភារៈ bonus ទាំងអស់តាមជំពូក សូមមើលទំព័រ
+   :doc:`សម្ភារៈបន្ថែម`។

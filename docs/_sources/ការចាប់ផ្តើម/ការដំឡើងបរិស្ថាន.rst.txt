@@ -1,0 +1,158 @@
+.. meta::
+   :description: ការដំឡើងបរិស្ថានសម្រាប់ LLMs-from-scratch — Python, pip/uv, Docker, VSCode និងវេទិកា cloud ដូចជា Colab និង Lightning Studio។ Environment setup for LLMs-from-scratch — Python, pip/uv, Docker, VSCode, Colab and Lightning Studio.
+   :keywords: setup, ការដំឡើង, pip, uv, requirements.txt, Docker, DevContainer, VSCode, Colab, Lightning Studio
+
+ការដំឡើងបរិស្ថាន
+===================
+
+.. note::
+
+   ប្រភព៖ `setup/README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/setup/README.md>`_
+   និង `requirements.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/requirements.txt>`_
+   នៃឃ្លាំង upstream។
+
+ចាប់ផ្តើមរហ័ស (Quickstart)
+-----------------------------
+
+បើម៉ាស៊ីនរបស់អ្នកមាន Python រួចហើយ វិធីលឿនបំផុតគឺដំឡើង packages តាមឯកសារ
+``requirements.txt`` ពីថត root នៃឃ្លាំងកូដ៖
+
+.. code-block:: bash
+
+   pip install -r requirements.txt
+
+បញ្ជី packages ដែលត្រូវការ (តាម ``requirements.txt`` របស់ upstream)៖
+
+.. list-table::
+   :header-rows: 1
+   :widths: 30 25 45
+
+   * - Package
+     - កំណែអប្បបរមា
+     - ប្រើសម្រាប់
+   * - ``torch``
+     - >= 2.2.2
+     - គ្រប់ជំពូក (Intel macOS កំណត់ត្រឹម < 2.6)
+   * - ``jupyterlab``
+     - >= 4.0
+     - គ្រប់ជំពូក
+   * - ``tiktoken``
+     - >= 0.5.1
+     - ch02 · ch04 · ch05
+   * - ``matplotlib``
+     - >= 3.7.1
+     - ch04 · ch06 · ch07
+   * - ``tensorflow``
+     - >= 2.18.0
+     - ch05 · ch06 · ch07 (Intel macOS >= 2.16.2)
+   * - ``tqdm``
+     - >= 4.66.1
+     - ch05 · ch07
+   * - ``numpy``
+     - >= 1.26
+     - ជា dependency នៃបណ្ណាល័យផ្សេងៗដូចជា torch និង pandas
+   * - ``pandas``
+     - >= 2.2.1
+     - ch06
+   * - ``psutil``
+     - >= 5.9.5
+     - ch07 (ដំឡើងស្វ័យប្រវត្តិជាមួយ torch)
+
+ការដំឡើងលើ Google Colab
+~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+បើអ្នកដំណើរការ notebooks លើ Google Colab ដំឡើង dependencies ដោយរន់កូដខាងក្រោម
+ក្នុង cell ថ្មីនៅផ្នែកខាងលើ notebook៖
+
+.. code-block:: bash
+
+   pip install uv && uv pip install --system -r https://raw.githubusercontent.com/rasbt/LLMs-from-scratch/refs/heads/main/requirements.txt
+
+ជាជម្រើស បន្ទាប់ពី clone ឃ្លាំង អ្នកអាចដំឡើង dependencies សម្រាប់សម្ភារៈបន្ថែម (bonus)
+ទាំងអស់ពីថត root របស់គម្រោង៖
+
+.. code-block:: bash
+
+   uv pip install --group bonus
+
+ជំហានដំឡើងក្នុងមូលដ្ឋាន (Local)
+------------------------------------
+
+1. ដំឡើង Python — បើមិនទាន់មាន សូមអានការណែនាំក្នុងថត
+   `01_optional-python-setup-preferences <https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/01_optional-python-setup-preferences>`_
+   និង `02_installing-python-libraries <https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/02_installing-python-libraries>`_។
+2. clone ឃ្លាំងកូដ (មើលទំព័រ :doc:`ការទាញយកកូដ`)។
+3. ដំឡើង packages ដោយ ``pip install -r requirements.txt``។
+4. បើក notebook របស់ជំពូកដែលអ្នកចង់សិក្សាក្នុង JupyterLab ឬ VSCode។
+
+អ្នកនិពន្ធក៏បានចែករំលែកវិធីសាស្ត្រផ្ទាល់ខ្លួនក្នុងការរៀបចំបរិស្ថាន Python
+ក្នុងវីដេអូ `នៅលើ YouTube <https://www.youtube.com/watch?v=yAcWnfsZhzo>`_ ផងដែរ។
+
+ជម្រើស Docker DevContainer
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+បើអ្នកចង់បានបរិស្ថានអភិវឌ្ឍន៍ដែលញែក dependencies និងការកំណត់រចនាសម្ព័ន្ធរបស់គម្រោង
+ដាច់ដោយឡែក ការប្រើ Docker ជាដំណោះស្រាយដែលមានប្រសិទ្ធភាពខ្ពស់ — មិនចាំបាច់ដំឡើង
+packages ដោយដៃ ហើយបរិស្ថានអភិវឌ្ឍន៍មានភាពស្របគ្នាជានិច្ច។ មើលការណែនាំលម្អិតក្នុងថត
+`03_optional-docker-environment <https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/03_optional-docker-environment>`_។
+
+កម្មវិធីកែសម្រួលកូដ VSCode
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+ជម្រើសដែលអ្នកនិពន្ធប្រើគឺ `Visual Studio Code (VSCode) <https://code.visualstudio.com>`_
+ដែលអាចពង្រីកមុខងារដោយ plugins និង extensions ជាច្រើន។
+
+Extensions ដែលណែនាំមានក្នុងថតរង ``.vscode``។ វិធីដំឡើង៖
+
+1. បើកថត ``setup`` ក្នុង VSCode (File → Open Folder...)។
+2. ចុចប៊ូតុង **Install** ក្នុង menu ដែលលោតមកនៅផ្នែកខាងក្រោមស្តាំ។
+
+ឬផ្លាស់ទីថត extensions ទៅ root នៃឃ្លាំង ដើម្បីឱ្យ VSCode ពិនិត្យស្វ័យប្រវត្តិរាល់ពេល
+បើកថត ``LLMs-from-scratch``៖
+
+.. code-block:: bash
+
+   mv setup/.vscode ./
+
+ធនធាន Cloud
+--------------
+
+កូដអាចដំណើរការលើកុំព្យូទ័រធម្មតាដោយគ្មាន GPU ជាក់លាក់ ប៉ុន្តែវេទិកា cloud
+ដែលមាន NVIDIA GPU អាចកាត់បន្ថយរយៈពេលដំណើរការបានច្រើន ជាពិសេសជំពូក ៥ ដល់ ៧។
+
+Lightning Studio
+~~~~~~~~~~~~~~~~
+
+វេទិកា `Lightning AI Studio <https://lightning.ai/>`_ អនុញ្ញាតឱ្យរៀបចំបរិស្ថានអចិន្ត្រៃយ៍
+(persistent) ហើយប្រើបានទាំង VSCode និង Jupyter Lab លើ CPU និង GPU ក្នុង cloud។
+បន្ទាប់ពីចាប់ផ្តើម Studio ថ្មី បើក terminal ហើយដំណើរការ៖
+
+.. code-block:: bash
+
+   git clone https://github.com/rasbt/LLMs-from-scratch.git
+   cd LLMs-from-scratch
+   pip install -r requirements.txt
+
+ខុសពី Google Colab ជំហានទាំងនេះត្រូវដំណើរការតែម្តងគត់ ព្រោះបរិស្ថាន Lightning AI Studio
+មានលក្ខណៈអចិន្ត្រៃយ៍ ទោះអ្នកប្តូររវាងម៉ាស៊ីន CPU និង GPU ក៏ដោយ។ បន្ទាប់មកអាចភ្ជាប់ GPU
+ដើម្បីបង្កើនល្បឿន ឧទាហរណ៍ពេល pretrain ម៉ូដែលក្នុងជំពូក ៥ ឬ finetune ក្នុងជំពូក ៦ និង ៧។
+
+Google Colab
+~~~~~~~~~~~~
+
+1. ចូលទៅ `https://colab.research.google.com/ <https://colab.research.google.com/>`_។
+2. បើក notebook របស់ជំពូកតាម menu GitHub ឬអូស notebook ចូលផ្នែក *Upload*។
+3. upload ឯកសារពាក់ព័ន្ធ (ឯកសារ dataset និងឯកសារ ``.py`` ដែល notebook import) ចូលបរិស្ថាន Colab ផងដែរ។
+4. ជាជម្រើស ប្តូរ *Runtime* ដើម្បីដំណើរការលើ GPU។
+
+ដោះស្រាយបញ្ហា (Troubleshooting)
+------------------------------------
+
+Upstream មានមគ្គុទ្ទេសក៍ដោះស្រាយបញ្ហា៖
+`troubleshooting.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/troubleshooting.md>`_។
+បើនៅមានសំណួរ សូមសួរក្នុងវេទិកា
+`Discussions <https://github.com/rasbt/LLMs-from-scratch/discussions>`_ នៃឃ្លាំង upstream។
+
+.. tip::
+
+   បន្ទាប់៖ ទាញយកកូដ និងស្វែងយល់ពីរចនាសម្ព័ន្ធឃ្លាំងក្នុងទំព័រ :doc:`ការទាញយកកូដ`។

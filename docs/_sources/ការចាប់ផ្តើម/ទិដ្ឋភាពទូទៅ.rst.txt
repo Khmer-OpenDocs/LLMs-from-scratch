@@ -1,0 +1,131 @@
+.. meta::
+   :description: ទិដ្ឋភាពទូទៅនៃគម្រោង LLMs-from-scratch — តម្រូវការ ផ្នែករឹង និងផែនទីជំពូក។ Overview of the LLMs-from-scratch project — prerequisites, hardware and chapter map.
+   :keywords: ទិដ្ឋភាពទូទៅ, overview, LLM, GPT, PyTorch, prerequisites, តម្រូវការ
+
+ទិដ្ឋភាពទូទៅ
+=============
+
+.. note::
+
+   ប្រភព៖ `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_
+   និង `setup/README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/setup/README.md>`_
+   នៃឃ្លាំង upstream។
+
+តើគម្រោងនេះជាអ្វី?
+----------------------
+
+`LLMs-from-scratch <https://github.com/rasbt/LLMs-from-scratch>`_ គឺជាឃ្លាំងកូដផ្លូវការ
+សម្រាប់សៀវភៅ *Build a Large Language Model (From Scratch)* ដែលណែនាំអ្នកអានឱ្យស្វែងយល់
+ពីរបៀបដែល LLM ដំណើរការពីខាងក្នុង តាមរយៈការសរសេរកូដពីមូលដ្ឋានម្តងមួយៗជំហានៗ។
+
+ចំណុចសំខាន់ៗ៖
+
+- វិធីសាស្ត្រក្នុងសៀវភៅបង្កើតម៉ូដែលតូចប៉ុន្តែដំណើរការបាន សម្រាប់គោលបំណងអប់រំ ដែលឆ្លុះបញ្ចាំង
+  ពីវិធីសាស្ត្របង្កើតម៉ូដែលមូលដ្ឋានខ្នាតធំ (ដូចជាម៉ូដែលនៅពីក្រោយ ChatGPT)។
+- សៀវភៅរួមបញ្ចូលកូដសម្រាប់ផ្ទុក weights នៃម៉ូដែល pretrained ធំៗ ដើម្បី finetune។
+- ការអនុវត្តទាំងអស់ប្រើ PyTorch ដោយមិនប្រើបណ្ណាល័យ LLM ខាងក្រៅទេ។
+- មានវីដេអូមេរៀនអមសៀវភៅរយៈពេល 17 ម៉ោង 15 នាទី (`Master and Build Large Language Models
+  <https://www.manning.com/livevideo/master-and-build-large-language-models>`_) ដែលរៀបចំជាជំពូក
+  និងផ្នែកស្របតាមរចនាសម្ព័ន្ធសៀវភៅ។
+
+តំណភ្ជាប់ផ្លូវការ
+-----------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - ធនធាន
+     - តំណភ្ជាប់
+   * - ឃ្លាំងកូដផ្លូវការ
+     - https://github.com/rasbt/LLMs-from-scratch
+   * - សៀវភៅនៅ Manning
+     - http://mng.bz/orYv
+   * - សៀវភៅនៅ Amazon.com
+     - https://www.amazon.com/gp/product/1633437167
+   * - ISBN
+     - 9781633437166
+
+តម្រូវការជាមុន
+----------------
+
+តម្រូវការសំខាន់បំផុតគឺ **មូលដ្ឋានគ្រឹះរឹងមាំក្នុងការសរសេរកម្មវិធី Python**។
+
+- បើអ្នកមានបទពិសោធជាមួយ deep neural networks ខ្លះ នោះគំនិតមួយចំនួននឹងកាន់តែងាយយល់
+  ព្រោះ LLM សាងសង់លើស្ថាപត្យកម្មទាំងនោះ។
+- ជំនាញ PyTorch មិនមែនជាតម្រូវការជាមុនទេ ប៉ុន្តែការស្គាល់មូលដ្ឋាន PyTorch មានប្រយោជន៍។
+  ភាគបន្ថែម A (Appendix A) ផ្តល់ការណែនាំសង្ខេបអំពី PyTorch។
+- ជម្រើសបន្ថែម៖ សៀវភៅ `PyTorch in One Hour
+  <https://sebastianraschka.com/teaching/pytorch-1h/>`_ របស់អ្នកនិពន្ធដូចគ្នា។
+
+តម្រូវការផ្នែករឹង
+-------------------
+
+កូដក្នុងជំពូកមេរបស់សៀវភៅត្រូវបានរចនាឡើងដើម្បីដំណើរការលើកុំព្យូទ័រយួរដៃធម្មតា
+ក្នុងរយៈពេលសមហេតុផល ដោយមិនត្រូវការផ្នែករឹងពិសេសទេ។ កូដនឹងប្រើ GPU ដោយស្វ័យប្រវត្តិ
+បើមាន។ អ្នកនិពន្ធបានសាកល្បងជំពូកមេទាំងអស់លើកុំព្យូទ័រ M3 MacBook Air។
+
+.. note::
+
+   វេទិកាពពក (cloud) ដែលមាន NVIDIA GPU អាចជួយបង្កើនល្បឿនដំណើរការបានយ៉ាងច្រើន
+   ជាពិសេសសម្រាប់ជំពូក ៥ ដល់ ៧។ មើលទំព័រ :doc:`ការដំឡើងបរិស្ថាន` សម្រាប់ព័ត៌មានលម្អិត។
+
+ផែនទីជំពូក និងកូដសំខាន់ៗ
+---------------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 34 42 24
+
+   * - ជំពូក
+     - កូដមេ (ចូលដំណើរការរហ័ស)
+     - ថតកូដទាំងអស់
+   * - ជំពូក ១៖ Understanding Large Language Models
+     - គ្មានកូដ
+     - —
+   * - ជំពូក ២៖ Working with Text Data
+     - ``ch02.ipynb`` · ``dataloader.ipynb`` (summary) · ``exercise-solutions.ipynb``
+     - `./ch02 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02>`_
+   * - ជំពូក ៣៖ Coding Attention Mechanisms
+     - ``ch03.ipynb`` · ``multihead-attention.ipynb`` (summary) · ``exercise-solutions.ipynb``
+     - `./ch03 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch03>`_
+   * - ជំពូក ៤៖ Implementing a GPT Model from Scratch
+     - ``ch04.ipynb`` · ``gpt.py`` (summary) · ``exercise-solutions.ipynb``
+     - `./ch04 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04>`_
+   * - ជំពូក ៥៖ Pretraining on Unlabeled Data
+     - ``ch05.ipynb`` · ``gpt_train.py`` (summary) · ``gpt_generate.py`` (summary) · ``exercise-solutions.ipynb``
+     - `./ch05 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05>`_
+   * - ជំពូក ៦៖ Finetuning for Text Classification
+     - ``ch06.ipynb`` · ``gpt_class_finetune.py`` · ``exercise-solutions.ipynb``
+     - `./ch06 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06>`_
+   * - ជំពូក ៧៖ Finetuning to Follow Instructions
+     - ``ch07.ipynb`` · ``gpt_instruction_finetuning.py`` (summary) · ``ollama_evaluate.py`` (summary) · ``exercise-solutions.ipynb``
+     - `./ch07 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07>`_
+
+កូដមេទាំងអស់ស្ថិតនៅក្នុងថតย่อย ``01_main-chapter-code`` នៃជំពូកនីមួយៗ។
+
+លំហាត់ និងការធ្វើតេស្តចំណេះដឹង
+-------------------------------------
+
+- ជំពូកនីមួយៗមានលំហាត់ជាច្រើន។ ចម្លើយត្រូវបានសង្ខេបក្នុងភាគបន្ថែម C (Appendix C)
+  ហើយ notebook ចម្លើយមានក្នុងថតជំពូកនីមួយៗ ឧទាហរណ៍
+  `./ch02/01_main-chapter-code/exercise-solutions.ipynb
+  <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_។
+- មាន PDF ឥតគិតថ្លៃ 170 ទំព័រ `Test Yourself On Build a Large Language Model (From Scratch)
+  <https://www.manning.com/books/test-yourself-on-build-a-large-language-model-from-scratch>`_
+  ពីគេហទំព័រ Manning ដែលមានសំណួរ quiz ប្រហែល 30 សំណួរ និងចម្លើយក្នុងមួយជំពូក។
+
+សៀវភៅបន្ត (Companion Book)
+-----------------------------
+
+`Build A Reasoning Model (From Scratch) <https://mng.bz/lZ5B>`_ គឺជាសៀវភៅឯករាជ្យមួយ
+ដែលអាចចាត់ទុកជាភាគបន្តនៃសៀវភៅនេះ។ វាចាប់ផ្តើមពីម៉ូដែល pretrained ហើយអនុវត្តវិធីសាស្ត្រ
+reasoning ផ្សេងៗ រួមមាន inference-time scaling, reinforcement learning និង distillation។
+
+- `Amazon link <https://amzn.to/4aAKiFY>`_ · `Manning link <https://mng.bz/lZ5B>`_ ·
+  `GitHub repository <https://github.com/rasbt/reasoning-from-scratch>`_
+
+.. tip::
+
+   បន្ទាប់៖ រៀបចំបរិស្ថាន Python និងឧបករណ៍របស់អ្នកក្នុងទំព័រ
+   :doc:`ការដំឡើងបរិស្ថាន`។

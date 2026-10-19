@@ -1,0 +1,265 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="km" data-content_root="../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ជំពូក ៤ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន — ស្ថាបត្យកម្មម៉ូដែល, KV cache, GQA, MLA, SWA, MoE។ Chapter 4 Implementing a GPT Model from Scratch — architecture, KV cache, GQA, MLA, SWA, MoE." name="description" />
+<meta content="ជំពូក ៤, GPT, from scratch, gpt.py, KV cache, GQA, MLA, SWA, MoE, DeltaNet, DSA, FLOPs" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន &mdash; LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="../_static/custom.css?v=d76498cc" />
+
+  
+    <link rel="shortcut icon" href="../_static/logo.svg"/>
+    <link rel="canonical" href="https://seyhalite.github.io/LLMs-from-scratch/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html" />
+      <script src="../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../_static/documentation_options.js?v=906b1b25"></script>
+      <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html" />
+    <link rel="prev" title="ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="../_static/logo-og.png">
+<meta property="og:title" content="ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="km_KH">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<meta property="og:url" content="https://seyhalite.github.io/LLMs-from-scratch/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">
+<meta property="og:site_name" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន">
+<meta name="twitter:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"","url":"https://seyhalite.github.io/LLMs-from-scratch/","inLanguage":["km","en"],"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://seyhalite.github.io/LLMs-from-scratch/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script>try{var t=localStorage.getItem("km-docs-theme");if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1f2430" >
+<a href="../index.html" class="icon icon-home"> LLMs-from-scratch
+</a>
+<div class="km-version-badge" title="Upstream version tracked by this site">upstream: main @ cdbd33e (2026-10-02)</div>
+<button id="km-theme-toggle" type="button" class="km-theme-toggle">ងងឹត / ភ្លឺ</button><script>
+(function(){
+  var b = document.getElementById("km-theme-toggle");
+  function label(){
+    var cur = document.documentElement.getAttribute("data-theme");
+    b.textContent = (cur === "light") ? "ស្បែក៖ ភ្លឺ" : "ស្បែក៖ ងងឹត";
+  }
+  label();
+  b.addEventListener("click", function(){
+    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", cur);
+    try{ localStorage.setItem("km-docs-theme", cur); }catch(e){}
+    label();
+  });
+})();
+</script>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ការចាប់ផ្តើម</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html">ទិដ្ឋភាពទូទៅ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html">ការដំឡើងបរិស្ថាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html">ការទាញយកកូដ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ជំពូកស្នូល</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#attention">សម្ភារៈបន្ថែម និងជម្រើស Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">លំហាត់</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html">ជំពូក ៦៖ Finetuning សម្រាប់ចំណាត់ថ្នាក់អត្ថបទ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html">ជំពូក ៧៖ Finetuning ដើម្បីធ្វើតាមការណែនាំ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ឯកសារយោង</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">ភាគបន្ថែម (Appendices A–E)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">សម្ភារៈបន្ថែម (Bonus Material)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html">វចនានុក្រម (ខ្មែរ–អង់គ្លេស)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html">ឯកសារយោង</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1f2430" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">LLMs-from-scratch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/source/ជំពូក/ជំពូក៤-ម៉ូដែល-GPT.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gpt">
+<h1>ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន<a class="headerlink" href="#gpt" title="Link to this heading"></a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ប្រភព៖ ថត <a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04">ch04</a>
+និងតារាងមាតិកាក្នុង <a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md">README.md</a> របស់ upstream។</p>
+</div>
+<p>ជំពូកនេះជាជំហានសំខាន់ — ការផ្គុំបំណែកទាំងអស់ចេញជាម៉ូដែល GPT ពេញលេញ
+ដែលអនុវត្តពីមូលដ្ឋានដោយប្រើ PyTorch។ ក្រៅពីកូដមេ ជំពូកនេះមានសម្ភារៈបន្ថែម
+ច្រើនជាងគេអំពីជម្រើសស្ថាបត្យកម្ម Attention និងការវិភាគប្រសិទ្ធភាព។</p>
+<section id="id1">
+<h2>កូដមេ<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>កូដមេស្ថិតក្នុងថត
+<a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/01_main-chapter-code">ch04/01_main-chapter-code</a>៖</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 45.0%" />
+<col style="width: 55.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ឯកសារ</p></th>
+<th class="head"><p>តួនាទី</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/ch04.ipynb">ch04.ipynb</a></p></td>
+<td><p>notebook មេរបស់ជំពូក</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/gpt.py">gpt.py</a></p></td>
+<td><p>សង្ខេប (summary) ម៉ូដែល GPT ជាឯកសារ Python</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/exercise-solutions.ipynb">exercise-solutions.ipynb</a></p></td>
+<td><p>ចម្លើយលំហាត់របស់ជំពូក</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="attention">
+<h2>សម្ភារៈបន្ថែម និងជម្រើស Attention<a class="headerlink" href="#attention" title="Link to this heading"></a></h2>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 34.0%" />
+<col style="width: 66.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ថត</p></th>
+<th class="head"><p>ខ្លឹមសារ</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">02_performance-analysis</span></code></p></td>
+<td><p>ការវិភាគ FLOPs (<code class="docutils literal notranslate"><span class="pre">flops-analysis.ipynb</span></code>)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">03_kv-cache</span></code></p></td>
+<td><p>KV Cache</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">04_gqa</span></code></p></td>
+<td><p>Grouped-Query Attention (GQA)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">05_mla</span></code></p></td>
+<td><p>Multi-Head Latent Attention (MLA)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">06_swa</span></code></p></td>
+<td><p>Sliding Window Attention (SWA)</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">07_moe</span></code></p></td>
+<td><p>Mixture-of-Experts (MoE)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">08_deltanet</span></code></p></td>
+<td><p>Gated DeltaNet</p></td>
+</tr>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">09_dsa</span></code></p></td>
+<td><p>DeepSeek Sparse Attention (DSA)</p></td>
+</tr>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">10_kv-sharing</span></code></p></td>
+<td><p>Cross-Layer KV Sharing</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>បញ្ជីខាងលើឆ្លុះបញ្ចាំងពីរចនាសម្ព័ន្ធថតពិត និងបញ្ជីសម្ភារៈបន្ថែមក្នុង <code class="docutils literal notranslate"><span class="pre">README.md</span></code>
+របស់ upstream។ លម្អិតបច្ចេកទេសនៃវិធីសាស្ត្រនីមួយៗ សូមអានក្នុង notebooks
+ផ្លូវការនៅឃ្លាំង upstream។</p>
+</div>
+</section>
+<section id="id2">
+<h2>លំហាត់<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>ចម្លើយលំហាត់មានក្នុង <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code> ខាងលើ និងក្នុងសង្ខេបនៃភាគបន្ថែម C។</p>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>បន្ទាប់៖ បណ្តុះបណ្តាលម៉ូដែលឱ្យដំណើរការពិតប្រាកដក្នុង
+<a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html"><span class="doc">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</span></a>។</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html" class="btn btn-neutral float-left" title="ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html" class="btn btn-neutral float-right" title="ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 SeyhaLite (community translation); upstream code (c) Sebastian Raschka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+.. meta::
+   :description: របៀបទាញយកកូដ LLMs-from-scratch និងរចនាសម្ព័ន្ធឃ្លាំង — clone, ZIP និងថតនីមួយៗ។ How to download the LLMs-from-scratch code and the repository structure — clone, ZIP and folders.
+   :keywords: git clone, Download ZIP, រចនាសម្ព័ន្ធ, repository structure, submodule, troubleshooting
+
+ការទាញយកកូដ
+=============
+
+.. note::
+
+   ប្រភព៖ `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_
+   និងរចនាសម្ព័ន្ធឃ្លាំងពិតរបស់ upstream។
+
+ទាញយកឃ្លាំងកូដ
+----------------
+
+វិធីទី ១ — clone ដោយ ``git`` (ណែនាំ)៖
+
+.. code-block:: bash
+
+   git clone --depth 1 https://github.com/rasbt/LLMs-from-scratch.git
+
+វិធីទី ២ — ចុចប៊ូតុង `Download ZIP <https://github.com/rasbt/LLMs-from-scratch/archive/refs/heads/main.zip>`_
+នៅលើគេហទំព័រ GitHub។
+
+.. note::
+
+   បើអ្នកបានទាញយក code bundle ពីគេហទំព័រ Manning សូមពិនិត្យឃ្លាំងកូដផ្លូវការនៅលើ GitHub
+   `https://github.com/rasbt/LLMs-from-scratch <https://github.com/rasbt/LLMs-from-scratch>`_
+   ជាប្រចាំ ដើម្បីទទួលបានបច្ចុប្បន្នភាពថ្មីៗ។
+
+រចនាសម្ព័ន្ធឃ្លាំង
+------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 32 68
+
+   * - ថត/ឯកសារ
+     - ខ្លឹមសារ
+   * - ``ch01/`` … ``ch07/``
+     - កូដ និងសម្ភារៈរបស់ជំពូក ១ ដល់ ៧ (កូដមេក្នុងថតរង ``01_main-chapter-code``)
+   * - ``appendix-A/`` … ``appendix-E/``
+     - សម្ភារៈភាគបន្ថែម A ដល់ E
+   * - ``setup/``
+     - ការណែនាំដំឡើងបរិស្ថាន (Python, libraries, Docker, AWS SageMaker notebook)
+   * - ``pkg/llms_from_scratch/``
+     - package Python របស់គម្រោង
+   * - ``reasoning-from-scratch/``
+     - git submodule ទៅឃ្លាំង `rasbt/reasoning-from-scratch <https://github.com/rasbt/reasoning-from-scratch>`_
+   * - ``requirements.txt``
+     - បញ្ជី packages ដែលត្រូវការ (មើលទំព័រ :doc:`ការដំឡើងបរិស្ថាន`)
+   * - ``pyproject.toml`` / ``pixi.toml`` / ``conftest.py``
+     - ការកំណត់រចនាសម្ព័ន្ធគម្រោង និងតេស្ត
+   * - ``troubleshooting.md``
+     - `មគ្គុទ្ទេសក៍ដោះស្រាយបញ្ហា <https://github.com/rasbt/LLMs-from-scratch/blob/main/troubleshooting.md>`_
+   * - ``README.md`` / ``LICENSE.txt`` / ``CITATION.cff``
+     - ឯកសារណែនាំ អាជ្ញាបណ្ណ និងទិន្នន័យ citation
+
+ការមើលឯកសារ Markdown
+------------------------
+
+ឯកសារ ``README.md`` ជាឯកសារ Markdown (``.md``)។ បើអ្នកមើលវានៅលើកុំព្យូទ័រផ្ទាល់ខ្លួន
+គួរប្រើកម្មវិធីកែសម្រួល ឬមើលជាមុន Markdown សម្រាប់ការបង្ហាញត្រឹមត្រូវ —
+`Ghostwriter <https://ghostwriter.kde.org>`_ គឺជាជម្រើសឥតគិតថ្លៃដ៏ល្អមួយ។
+ជាជម្រើសទីពីរ មើលឯកសារទាំងនេះនៅលើ GitHub ផ្ទាល់ ដែល render Markdown ដោយស្វ័យប្រវត្តិ។
+
+ការធ្វើតេស្តកូដ (CI)
+-----------------------
+
+ឃ្លាំង upstream មាន GitHub Actions workflow សម្រាប់ធ្វើតេស្តកូដលើប្រព័ន្ធទាំងបី៖
+Linux, Windows និង macOS។ នេះមានន័យថាកូដត្រូវបានផ្ទៀងផ្ទាត់ជាប្រចាំលើប្រព័ន្ធប្រតិបត្តិការទាំងអស់។
+
+.. tip::
+
+   បន្ទាប់៖ សិក្សាជំពូកស្នូល ចាប់ផ្តើមពី :doc:`../ជំពូក/ជំពូក១-ស្វែងយល់ពី-LLM`។

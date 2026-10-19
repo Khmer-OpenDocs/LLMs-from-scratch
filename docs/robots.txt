@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_sources/
+
+Sitemap: https://seyhalite.github.io/LLMs-from-scratch/sitemap.xml

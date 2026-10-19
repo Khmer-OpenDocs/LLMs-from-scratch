@@ -1,0 +1,531 @@
+/* ==========================================================================
+   Community Khmer docs — custom theme layer for sphinx_rtd_theme
+   Default palette: dark (ungated). Light mode: html[data-theme="light"].
+   Fonts: Noto Sans Khmer + Noto Serif Khmer (fallback Khmer OS).
+   ========================================================================== */
+
+:root {
+  --km-bg: #171b24;
+  --km-bg-content: #1c212c;
+  --km-bg-sidebar: #1f2430;
+  --km-bg-code: #12151d;
+  --km-bg-inline-code: #262d3d;
+  --km-bg-table-head: #232a38;
+  --km-bg-table-row: #20263280;
+  --km-text: #d8dee9;
+  --km-text-muted: #9aa4b2;
+  --km-heading: #eef2f7;
+  --km-accent: #4cc38a;
+  --km-accent-strong: #67d8a2;
+  --km-link: #6ab0f3;
+  --km-link-hover: #9ccbff;
+  --km-border: #2c3444;
+  --km-note-bg: #1d2c3d;
+  --km-note-head: #3d7ec2;
+  --km-warn-bg: #3a2e1d;
+  --km-warn-head: #c2913d;
+  --km-tip-bg: #1d3a2e;
+  --km-tip-head: #3dc283;
+}
+
+/* ---------- Fonts & base ---------- */
+
+body,
+.wy-body-for-nav,
+.rst-content,
+.wy-menu-vertical,
+input,
+button {
+  font-family: "Noto Sans Khmer", "Noto Serif Khmer", "Khmer OS", "Khmer OS System",
+    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.rst-content h1, .rst-content h2, .rst-content h3,
+.rst-content h4, .rst-content h5, .rst-content h6 {
+  font-family: "Noto Serif Khmer", "Noto Sans Khmer", "Khmer OS", "Lato",
+    "proxima-nova", Arial, sans-serif;
+}
+
+body {
+  line-height: 1.8;
+}
+
+.rst-content p,
+.rst-content li {
+  line-height: 1.9;
+}
+
+/* Keep code in monospace (identifiers stay in English) */
+code, pre, tt, .highlight {
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace,
+    "Noto Sans Khmer", "Khmer OS";
+}
+
+html {
+  scroll-padding-top: 1rem;
+}
+
+/* ---------- Dark palette (default, ungated) ---------- */
+
+body,
+.wy-body-for-nav {
+  background: var(--km-bg);
+}
+
+.wy-nav-side,
+.wy-nav-top {
+  background: var(--km-bg-sidebar);
+}
+
+.wy-nav-top {
+  color: var(--km-text);
+}
+
+.wy-nav-top a {
+  color: var(--km-heading);
+}
+
+.wy-nav-content-wrap {
+  background: var(--km-bg);
+}
+
+.wy-nav-content {
+  background: var(--km-bg-content);
+  max-width: 900px;
+}
+
+.rst-content {
+  color: var(--km-text);
+}
+
+.rst-content h1, .rst-content h2, .rst-content h3,
+.rst-content h4, .rst-content h5, .rst-content h6 {
+  color: var(--km-heading);
+}
+
+.rst-content h1 { border-bottom: 2px solid var(--km-accent); padding-bottom: .3rem; }
+.rst-content h2 { border-bottom: 1px solid var(--km-border); padding-bottom: .25rem; }
+
+.rst-content a,
+.wy-menu-vertical a {
+  color: var(--km-link);
+}
+
+.rst-content a:hover {
+  color: var(--km-link-hover);
+}
+
+.rst-content hr {
+  border-color: var(--km-border);
+}
+
+/* Sidebar nav */
+.wy-menu-vertical li.toctree-l1 > a {
+  color: #c9d3e0;
+}
+
+.wy-menu-vertical li.toctree-l2 a,
+.wy-menu-vertical li.toctree-l3 a {
+  color: #a8b2c1;
+  background-color: transparent;
+}
+
+.wy-menu-vertical li.current {
+  background: #262d3d;
+}
+
+.wy-menu-vertical li.current > a,
+.wy-menu-vertical li.toctree-l2.current > a {
+  background: #2b3345;
+  color: var(--km-heading);
+  border-color: var(--km-border);
+}
+
+.wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
+  background: #262d3d;
+}
+
+.wy-menu-vertical a:hover {
+  background-color: #2f3850 !important;
+  color: #fff;
+}
+
+.wy-nav-side .wy-side-nav-search {
+  background-color: var(--km-bg-sidebar);
+  border-bottom: 1px solid var(--km-border);
+}
+
+.wy-side-nav-search input[type="text"] {
+  border-color: var(--km-border);
+  border-radius: 4px;
+  background: #12151d;
+  color: var(--km-text);
+}
+
+.wy-side-nav-search > a.icon-home {
+  color: var(--km-heading);
+  font-weight: 600;
+}
+
+.wy-side-nav-search img.logo {
+  background: transparent;
+  padding: 4px;
+  max-width: 64px;
+}
+
+/* Breadcrumbs & footer */
+.rst-content .wy-breadcrumbs {
+  color: var(--km-text-muted);
+}
+
+.rst-content .wy-breadcrumbs li a {
+  color: var(--km-link);
+}
+
+footer {
+  color: var(--km-text-muted);
+}
+
+.rst-footer-buttons a.btn-neutral {
+  background-color: #232a38 !important;
+  color: var(--km-link) !important;
+  border-color: var(--km-border);
+}
+
+/* Inline code & code blocks */
+.rst-content code,
+.rst-content tt {
+  background: var(--km-bg-inline-code);
+  border: 1px solid var(--km-border);
+  border-radius: 3px;
+  color: #e3b587;
+  padding: 1px 5px;
+}
+
+.rst-content code.literal,
+.rst-content tt.literal {
+  color: #e3b587;
+}
+
+.rst-content pre.literal-block,
+.rst-content div[class^="highlight"],
+.highlight {
+  background: var(--km-bg-code);
+  border-color: var(--km-border);
+  border-radius: 4px;
+}
+
+.highlight pre {
+  color: #cdd6e4;
+  line-height: 1.6;
+}
+
+/* Pygments tokens — dark (only when NOT light mode) */
+html:not([data-theme="light"]) .highlight .c,
+html:not([data-theme="light"]) .highlight .c1,
+html:not([data-theme="light"]) .highlight .cm,
+html:not([data-theme="light"]) .highlight .ch { color: #7f8b9c; font-style: italic; }
+html:not([data-theme="light"]) .highlight .k,
+html:not([data-theme="light"]) .highlight .kd,
+html:not([data-theme="light"]) .highlight .kn,
+html:not([data-theme="light"]) .highlight .kr,
+html:not([data-theme="light"]) .highlight .kt { color: #c792ea; }
+html:not([data-theme="light"]) .highlight .s,
+html:not([data-theme="light"]) .highlight .s1,
+html:not([data-theme="light"]) .highlight .s2,
+html:not([data-theme="light"]) .highlight .sb,
+html:not([data-theme="light"]) .highlight .se,
+html:not([data-theme="light"]) .highlight .sh { color: #c3e88d; }
+html:not([data-theme="light"]) .highlight .m,
+html:not([data-theme="light"]) .highlight .mi,
+html:not([data-theme="light"]) .highlight .mf,
+html:not([data-theme="light"]) .highlight .mh { color: #f78c6c; }
+html:not([data-theme="light"]) .highlight .n,
+html:not([data-theme="light"]) .highlight .na,
+html:not([data-theme="light"]) .highlight .nf,
+html:not([data-theme="light"]) .highlight .nn,
+html:not([data-theme="light"]) .highlight .nc { color: #82aaff; }
+html:not([data-theme="light"]) .highlight .nb { color: #ffcb6b; }
+html:not([data-theme="light"]) .highlight .o,
+html:not([data-theme="light"]) .highlight .p { color: #89ddff; }
+html:not([data-theme="light"]) .highlight .cp { color: #f07178; }
+
+/* Tables */
+.rst-content table.docutils {
+  border-color: var(--km-border);
+}
+
+.rst-content table.docutils th {
+  background: var(--km-bg-table-head);
+  color: var(--km-heading);
+  border-color: var(--km-border) !important;
+}
+
+.rst-content table.docutils td {
+  border-color: var(--km-border) !important;
+}
+
+.rst-content table.docutils tr:nth-child(2n) {
+  background-color: var(--km-bg-table-row);
+}
+
+/* Admonitions */
+.rst-content .admonition,
+.rst-content .note,
+.rst-content .tip,
+.rst-content .warning {
+  border-radius: 4px;
+}
+
+.rst-content .note,
+.rst-content .admonition {
+  background: var(--km-note-bg) !important;
+}
+
+.rst-content .note > .admonition-title,
+.rst-content .admonition > .admonition-title {
+  background: var(--km-note-head) !important;
+}
+
+.rst-content .warning {
+  background: var(--km-warn-bg) !important;
+}
+
+.rst-content .warning > .admonition-title {
+  background: var(--km-warn-head) !important;
+}
+
+.rst-content .tip {
+  background: var(--km-tip-bg) !important;
+}
+
+.rst-content .tip > .admonition-title {
+  background: var(--km-tip-head) !important;
+}
+
+.rst-content .admonition-title {
+  color: #fff;
+  border: none;
+}
+
+.rst-content .admonition-title::before {
+  color: #fff;
+}
+
+/* Figures */
+.rst-content .figure,
+.rst-content figure {
+  background: transparent;
+}
+
+.rst-content .figure img,
+.rst-content figure img {
+  border: 1px solid var(--km-border);
+  border-radius: 6px;
+  background: #fff;
+}
+
+.rst-content .caption-text,
+.rst-content figcaption {
+  color: var(--km-text-muted);
+  font-size: 90%;
+}
+
+/* Search page */
+#search-results .search li,
+#search-results p {
+  color: var(--km-text);
+}
+
+/* ---------- Sidebar header extras (badge + theme toggle) ---------- */
+
+.km-version-badge {
+  display: block;
+  margin: 6px 12px 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  letter-spacing: .2px;
+  color: #a8b2c1;
+  background: #12151d;
+  border: 1px solid var(--km-border);
+  border-radius: 999px;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.km-theme-toggle {
+  display: block;
+  width: calc(100% - 24px);
+  margin: 4px 12px 10px;
+  padding: 5px 8px;
+  font-size: 12px;
+  color: #d8dee9;
+  background: #232a38;
+  border: 1px solid var(--km-border);
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.km-theme-toggle:hover {
+  background: #2f3850;
+  color: #fff;
+}
+
+/* ==========================================================================
+   Light palette (opt-in via data-theme="light")
+   ========================================================================== */
+
+html[data-theme="light"] body,
+html[data-theme="light"] .wy-body-for-nav {
+  background: #edf0f2;
+}
+
+html[data-theme="light"] .wy-nav-content-wrap {
+  background: #edf0f2;
+}
+
+html[data-theme="light"] .wy-nav-content {
+  background: #fcfcfc;
+}
+
+html[data-theme="light"] .rst-content {
+  color: #404040;
+}
+
+html[data-theme="light"] .rst-content h1,
+html[data-theme="light"] .rst-content h2,
+html[data-theme="light"] .rst-content h3,
+html[data-theme="light"] .rst-content h4,
+html[data-theme="light"] .rst-content h5,
+html[data-theme="light"] .rst-content h6 {
+  color: #2980b9;
+}
+
+html[data-theme="light"] .rst-content h1 { border-bottom-color: #4cc38a; }
+html[data-theme="light"] .rst-content h2 { border-bottom-color: #e1e4e5; }
+
+html[data-theme="light"] .rst-content a {
+  color: #2980b9;
+}
+
+html[data-theme="light"] .rst-content a:hover {
+  color: #3091d1;
+}
+
+html[data-theme="light"] .rst-content hr {
+  border-color: #e1e4e5;
+}
+
+/* Sidebar stays dark (classic Read the Docs look) in light mode */
+html[data-theme="light"] .wy-menu-vertical a {
+  color: #d9d9d9;
+}
+
+html[data-theme="light"] .wy-menu-vertical li.toctree-l2 a,
+html[data-theme="light"] .wy-menu-vertical li.toctree-l3 a {
+  color: #b3b3b3;
+}
+
+/* Code */
+html[data-theme="light"] .rst-content code,
+html[data-theme="light"] .rst-content tt {
+  background: #fff;
+  border: 1px solid #e1e4e5;
+  color: #e74c3c;
+}
+
+html[data-theme="light"] .rst-content code.literal,
+html[data-theme="light"] .rst-content tt.literal {
+  color: #e74c3c;
+}
+
+html[data-theme="light"] .rst-content pre.literal-block,
+html[data-theme="light"] .rst-content div[class^="highlight"],
+html[data-theme="light"] .highlight {
+  background: #fff;
+  border-color: #e1e4e5;
+}
+
+html[data-theme="light"] .highlight pre {
+  color: #404040;
+}
+
+/* Tables */
+html[data-theme="light"] .rst-content table.docutils {
+  border-color: #e1e4e5;
+}
+
+html[data-theme="light"] .rst-content table.docutils th {
+  background: #f3f6f6;
+  color: #404040;
+  border-color: #e1e4e5 !important;
+}
+
+html[data-theme="light"] .rst-content table.docutils td {
+  border-color: #e1e4e5 !important;
+}
+
+html[data-theme="light"] .rst-content table.docutils tr:nth-child(2n) {
+  background-color: #f8f9fa;
+}
+
+/* Admonitions — restore theme defaults */
+html[data-theme="light"] .rst-content .note,
+html[data-theme="light"] .rst-content .admonition {
+  background: #e7f2fa !important;
+}
+
+html[data-theme="light"] .rst-content .note > .admonition-title,
+html[data-theme="light"] .rst-content .admonition > .admonition-title {
+  background: #6ab0de !important;
+}
+
+html[data-theme="light"] .rst-content .warning {
+  background: #ffedcc !important;
+}
+
+html[data-theme="light"] .rst-content .warning > .admonition-title {
+  background: #f0b37e !important;
+}
+
+html[data-theme="light"] .rst-content .tip {
+  background: #dbfaf4 !important;
+}
+
+html[data-theme="light"] .rst-content .tip > .admonition-title {
+  background: #1abc9c !important;
+}
+
+/* Figures */
+html[data-theme="light"] .rst-content .figure img,
+html[data-theme="light"] .rst-content figure img {
+  border-color: #e1e4e5;
+}
+
+html[data-theme="light"] .rst-content .caption-text,
+html[data-theme="light"] .rst-content figcaption {
+  color: #6f777d;
+}
+
+/* Footer / misc */
+html[data-theme="light"] footer {
+  color: #808080;
+}
+
+html[data-theme="light"] .rst-content .wy-breadcrumbs {
+  color: #6f777d;
+}
+
+html[data-theme="light"] .rst-footer-buttons a.btn-neutral {
+  background-color: #fff !important;
+  color: #404040 !important;
+  border-color: #e1e4e5;
+}
+
+html[data-theme="light"] #search-results .search li,
+html[data-theme="light"] #search-results p {
+  color: #404040;
+}

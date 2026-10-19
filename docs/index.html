@@ -1,0 +1,334 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="km" data-content_root="./">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="ឯកសារសហគមន៍ភាសាខ្មែរសម្រាប់គម្រោង LLMs-from-scratch របស់ Sebastian Raschka — សង្ខេបព័ត៌មានពិតពីឃ្លាំងកូដផ្លូវការ។ Khmer community documentation for the LLMs-from-scratch project by Sebastian Raschka." name="description" />
+<meta content="LLM, GPT, PyTorch, ខ្មែរ, Khmer, from scratch, ឯកសារ, documentation" name="keywords" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ &mdash; LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ</title>
+      <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="_static/css/theme.css?v=9edc463e" />
+      <link rel="stylesheet" type="text/css" href="_static/custom.css?v=d76498cc" />
+
+  
+    <link rel="shortcut icon" href="_static/logo.svg"/>
+    <link rel="canonical" href="https://seyhalite.github.io/LLMs-from-scratch/index.html" />
+      <script src="_static/jquery.js?v=5d32c60e"></script>
+      <script src="_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="_static/documentation_options.js?v=906b1b25"></script>
+      <script src="_static/doctools.js?v=fd6eb6e6"></script>
+      <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="ទិដ្ឋភាពទូទៅ" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Khmer:wght@400;500;600;700&family=Noto+Serif+Khmer:wght@400;700&display=swap" rel="stylesheet">
+<link rel="apple-touch-icon" href="_static/logo-og.png">
+<meta property="og:title" content="LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="km_KH">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="og:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<meta property="og:url" content="https://seyhalite.github.io/LLMs-from-scratch/index.html">
+<meta property="og:site_name" content="">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ">
+<meta name="twitter:image" content="https://seyhalite.github.io/LLMs-from-scratch/_static/logo-og.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebSite","name":"","url":"https://seyhalite.github.io/LLMs-from-scratch/","inLanguage":["km","en"],"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://seyhalite.github.io/LLMs-from-scratch/search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
+</script>
+<script>try{var t=localStorage.getItem("km-docs-theme");if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
+
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search"  style="background: #1f2430" >
+<a href="#" class="icon icon-home"> LLMs-from-scratch
+</a>
+<div class="km-version-badge" title="Upstream version tracked by this site">upstream: main @ cdbd33e (2026-10-02)</div>
+<button id="km-theme-toggle" type="button" class="km-theme-toggle">ងងឹត / ភ្លឺ</button><script>
+(function(){
+  var b = document.getElementById("km-theme-toggle");
+  function label(){
+    var cur = document.documentElement.getAttribute("data-theme");
+    b.textContent = (cur === "light") ? "ស្បែក៖ ភ្លឺ" : "ស្បែក៖ ងងឹត";
+  }
+  label();
+  b.addEventListener("click", function(){
+    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
+    document.documentElement.setAttribute("data-theme", cur);
+    try{ localStorage.setItem("km-docs-theme", cur); }catch(e){}
+    label();
+  });
+})();
+</script>
+
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">ការចាប់ផ្តើម</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html">ទិដ្ឋភាពទូទៅ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html">ការដំឡើងបរិស្ថាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html">ការទាញយកកូដ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ជំពូកស្នូល</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html">ជំពូក ៦៖ Finetuning សម្រាប់ចំណាត់ថ្នាក់អត្ថបទ</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html">ជំពូក ៧៖ Finetuning ដើម្បីធ្វើតាមការណែនាំ</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">ឯកសារយោង</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">ភាគបន្ថែម (Appendices A–E)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">សម្ភារៈបន្ថែម (Bonus Material)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html">វចនានុក្រម (ខ្មែរ–អង់គ្លេស)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html">ឯកសារយោង</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu"  style="background: #1f2430" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="#">LLMs-from-scratch</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="#" class="icon icon-home" aria-label="Home"></a></li>
+      <li class="breadcrumb-item active">LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ</li>
+      <li class="wy-breadcrumbs-aside">
+              <a href="https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/source/index.rst" class="fa fa-github"> Edit on GitHub</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="llms">
+<h1>LLMs ពីមូលដ្ឋាន — ឯកសារសហគមន៍ភាសាខ្មែរ<a class="headerlink" href="#llms" title="Link to this heading"></a></h1>
+<p>នេះជាគេហទំព័រឯកសារសហគមន៍ (community documentation) ភាសាខ្មែរ ដែលសង្ខេបព័ត៌មានពិតៗ
+ពីឃ្លាំងកូដផ្លូវការ <a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch">rasbt/LLMs-from-scratch</a> —
+ឃ្លាំងកូដផ្លូវការសម្រាប់សៀវភៅ <em>Build a Large Language Model (From Scratch)</em> របស់
+Sebastian Raschka (Manning)។ ឃ្លាំងកូដនេះណែនាំការអភិវឌ្ឍ (develop) ការបណ្តុះបណ្តាលមុន
+(pretrain) និងការកែសម្រួល (finetune) ម៉ូដែលភាសាធំស្រដៀង GPT ដោយប្រើ PyTorch
+ពីមូលដ្ឋាន ដោយមិនប្រើបណ្ណាល័យ LLM ខាងក្រៅ។</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>ឯកសារនេះជាការបកប្រែ/សង្ខេបរបស់សហគមន៍ — <strong>មិនមែនជាឯកសារផ្លូវការ</strong> របស់អ្នកនិពន្ធ
+ឬក្រុមហ៊ុន Manning ទេ។ ប្រភពចម្បងដែលត្រូវយកជាគោលគឺឃ្លាំងកូដ upstream ភាសាអង់គ្លេស។
+អត្ថបទ និងរូបភាពក្នុងសៀវភៅជាកម្មសិទ្ធិរបស់ Manning — គេហទំព័រនេះមិនចម្លងវាទេ។</p>
+</div>
+<section id="id1">
+<h2>កំណែដែលឯកសារនេះតាមដាន<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>ឃ្លាំង upstream មិនមាន tag ឬ release ផ្លូវការទេ — ការអភិវឌ្ឍធ្វើឡើងផ្ទាល់លើសាខា <code class="docutils literal notranslate"><span class="pre">main</span></code>។</p>
+<table class="docutils align-default">
+<colgroup>
+<col style="width: 20.0%" />
+<col style="width: 30.0%" />
+<col style="width: 50.0%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>ស្ថានភាព</p></th>
+<th class="head"><p>កំណែ</p></th>
+<th class="head"><p>ព័ត៌មាន</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Release (stable)</p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">main</span></code> &#64; <code class="docutils literal notranslate"><span class="pre">cdbd33e</span></code> (2026-10-02)</p></td>
+<td><p>commit ចុងក្រោយនៃឃ្លាំង upstream នៅពេលឯកសារនេះត្រូវបានបង្កើត</p></td>
+</tr>
+<tr class="row-odd"><td><p>Beta</p></td>
+<td><p>—</p></td>
+<td><p>upstream មិនប្រើសាខា beta ទេ</p></td>
+</tr>
+<tr class="row-even"><td><p>Dev</p></td>
+<td><p><a class="reference external" href="https://github.com/rasbt/LLMs-from-scratch/tree/main">main</a></p></td>
+<td><p>សាខាអភិវឌ្ឍន៍ផ្ទាល់របស់ upstream</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="id2">
+<h2>ផែនទីបង្ហាញផ្លូវសិក្សា<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="_images/diagram-learning-path.svg"><img alt="Learning path diagram of the book chapters" src="_images/diagram-learning-path.svg" style="width: 100%;" />
+</a>
+<figcaption>
+<p><span class="caption-text">លំហូរមាតិការបស់សៀវភៅ — រូបភាពដើមរចនាឡើងសម្រាប់ឯកសារសហគមន៍នេះ។</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id3">
+<h2>មាតិកា<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">ការចាប់ផ្តើម</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html">ទិដ្ឋភាពទូទៅ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#id2">តើគម្រោងនេះជាអ្វី?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#id3">តំណភ្ជាប់ផ្លូវការ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#id4">តម្រូវការជាមុន</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#id5">តម្រូវការផ្នែករឹង</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#id6">ផែនទីជំពូក និងកូដសំខាន់ៗ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#id7">លំហាត់ និងការធ្វើតេស្តចំណេះដឹង</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html#companion-book">សៀវភៅបន្ត (Companion Book)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html">ការដំឡើងបរិស្ថាន</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html#quickstart">ចាប់ផ្តើមរហ័ស (Quickstart)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html#local">ជំហានដំឡើងក្នុងមូលដ្ឋាន (Local)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html#cloud">ធនធាន Cloud</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%8A%E1%9F%86%E1%9E%A1%E1%9E%BE%E1%9E%84%E1%9E%94%E1%9E%9A%E1%9E%B7%E1%9E%9F%E1%9F%92%E1%9E%90%E1%9E%B6%E1%9E%93.html#troubleshooting">ដោះស្រាយបញ្ហា (Troubleshooting)</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html">ការទាញយកកូដ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html#id2">ទាញយកឃ្លាំងកូដ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html#id3">រចនាសម្ព័ន្ធឃ្លាំង</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html#markdown">ការមើលឯកសារ Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%91%E1%9E%B6%E1%9E%89%E1%9E%99%E1%9E%80%E1%9E%80%E1%9E%BC%E1%9E%8A.html#ci">ការធ្វើតេស្តកូដ (CI)</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">ជំពូកស្នូល</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html#id1">ខ្លឹមសារក្នុងថត <code class="docutils literal notranslate"><span class="pre">ch01</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html#id2">របៀបអានសៀវភៅបានល្អបំផុត</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html#id2">រចនាសម្ព័ន្ធថត</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html#id3">លំហាត់</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html#id2">រចនាសម្ព័ន្ធថត</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html#id3">លំហាត់</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html#attention">សម្ភារៈបន្ថែម និងជម្រើស Attention</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html#id2">លំហាត់</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html#id2">សម្ភារៈបន្ថែម</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A5-pretraining.html#id3">លំហាត់</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html">ជំពូក ៦៖ Finetuning សម្រាប់ចំណាត់ថ្នាក់អត្ថបទ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html#id2">រចនាសម្ព័ន្ធថត</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html#id3">លំហាត់</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html">ជំពូក ៧៖ Finetuning ដើម្បីធ្វើតាមការណែនាំ</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html#id2">សម្ភារៈបន្ថែម</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80/%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A7-finetuning-instructions.html#id3">លំហាត់</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">ឯកសារយោង</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">ភាគបន្ថែម (Appendices A–E)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#a-introduction-to-pytorch">ភាគបន្ថែម A — Introduction to PyTorch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#b-references-and-further-reading">ភាគបន្ថែម B — References and Further Reading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#c-exercise-solutions">ភាគបន្ថែម C — Exercise Solutions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#d-adding-bells-and-whistles-to-the-training-loop">ភាគបន្ថែម D — Adding Bells and Whistles to the Training Loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#e-parameter-efficient-finetuning-with-lora">ភាគបន្ថែម E — Parameter-efficient Finetuning with LoRA</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html">សម្ភារៈបន្ថែម (Bonus Material)</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#setup">Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#working-with-text-data">ជំពូក ២ — Working With Text Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#coding-attention-mechanisms">ជំពូក ៣ — Coding Attention Mechanisms</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#implementing-a-gpt-model-from-scratch">ជំពូក ៤ — Implementing a GPT Model From Scratch</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#pretraining-on-unlabeled-data">ជំពូក ៥ — Pretraining on Unlabeled Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#finetuning-for-classification">ជំពូក ៦ — Finetuning for classification</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#finetuning-to-follow-instructions">ជំពូក ៧ — Finetuning to follow instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9F%E1%9E%98%E1%9F%92%E1%9E%97%E1%9E%B6%E1%9E%9A%E1%9F%88%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html#reasoning-from-scratch">ពីឃ្លាំង Reasoning From Scratch</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%9C%E1%9E%85%E1%9E%93%E1%9E%B6%E1%9E%93%E1%9E%BB%E1%9E%80%E1%9F%92%E1%9E%9A%E1%9E%98.html">វចនានុក្រម (ខ្មែរ–អង់គ្លេស)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html">ឯកសារយោង</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html#id2">តំណភ្ជាប់ផ្លូវការ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html#upstream">សំណួរ និងមតិកែលម្អ (upstream)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html#citation">Citation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html#id3">អាជ្ញាបណ្ណ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%AF%E1%9E%80%E1%9E%9F%E1%9E%B6%E1%9E%9A%E1%9E%99%E1%9F%84%E1%9E%84.html#id5">ការចូលរួមជាមួយឯកសារសហគមន៍នេះ</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>ចាប់ផ្តើមពីទំព័រ <a class="reference internal" href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html"><span class="doc">ទិដ្ឋភាពទូទៅ</span></a> ដើម្បីស្វែងយល់ពីរចនាសម្ព័ន្ធ
+និងតម្រូវការរបស់គម្រោង។</p>
+</div>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="%E1%9E%80%E1%9E%B6%E1%9E%9A%E1%9E%85%E1%9E%B6%E1%9E%94%E1%9F%8B%E1%9E%95%E1%9F%92%E1%9E%8F%E1%9E%BE%E1%9E%98/%E1%9E%91%E1%9E%B7%E1%9E%8A%E1%9F%92%E1%9E%8B%E1%9E%97%E1%9E%B6%E1%9E%96%E1%9E%91%E1%9E%BC%E1%9E%91%E1%9F%85.html" class="btn btn-neutral float-right" title="ទិដ្ឋភាពទូទៅ" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2026 SeyhaLite (community translation); upstream code (c) Sebastian Raschka.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,108 @@
+.. meta::
+   :description: ឯកសារយោង — តំណភ្ជាប់ផ្លូវការ សៀវភៅ វីដេអូមេរៀន citation និងអាជ្ញាបណ្ណនៃគម្រោង LLMs-from-scratch។ Reference — official links, book, video course, citation and licensing of the LLMs-from-scratch project.
+   :keywords: reference, ឯកសារយោង, citation, BibTeX, ISBN, Manning, license, Apache 2.0, CC BY 4.0
+
+ឯកសារយោង
+===========
+
+.. note::
+
+   ប្រភព៖ `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_
+   និង `LICENSE.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/LICENSE.txt>`_
+   នៃឃ្លាំង upstream។
+
+តំណភ្ជាប់ផ្លូវការ
+-------------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 60
+
+   * - ធនធាន
+     - តំណភ្ជាប់
+   * - ឃ្លាំងកូដ upstream
+     - https://github.com/rasbt/LLMs-from-scratch
+   * - សៀវភៅនៅ Manning (ក្រុមហ៊ុនបោះពុម្ព)
+     - http://mng.bz/orYv
+   * - សៀវភៅនៅ Amazon.com
+     - https://www.amazon.com/gp/product/1633437167
+   * - ISBN
+     - 9781633437166
+   * - វីដេអូមេរៀន (17 ម៉ោង 15 នាទី)
+     - https://www.manning.com/livevideo/master-and-build-large-language-models
+   * - PDF ឥតគិតថ្លៃ Test Yourself (170 ទំព័រ)
+     - https://www.manning.com/books/test-yourself-on-build-a-large-language-model-from-scratch
+   * - សៀវភៅបន្ត Build A Reasoning Model (From Scratch)
+     - https://mng.bz/lZ5B
+   * - ឃ្លាំង Reasoning From Scratch
+     - https://github.com/rasbt/reasoning-from-scratch
+   * - របៀបអានសៀវភៅបច្ចេកទេស
+     - https://sebastianraschka.com/blog/2025/reading-books.html
+   * - PyTorch in One Hour (សៀវភៅអម)
+     - https://sebastianraschka.com/teaching/pytorch-1h/
+
+សំណួរ និងមតិកែលម្អ (upstream)
+--------------------------------
+
+អ្នកនិពន្ធស្វាគមន៍មតិគ្រប់ប្រភេទ តាមរយៈ
+`Manning Forum <https://livebook.manning.com/forum?product=raschka&page=1>`_
+ឬ `GitHub Discussions <https://github.com/rasbt/LLMs-from-scratch/discussions>`_។
+
+.. warning::
+
+   ដោយសារឃ្លាំង upstream មានកូដដែលត្រូវនឹងសៀវភៅបោះពុម្ព អ្នកនិពន្ធមិនអាចទទួល
+   contribution ដែលពង្រីកខ្លឹមសារកូដជំពូកមេបានទេ ព្រោះវានឹងធ្វើឱ្យខុសពីសៀវភៅ។
+
+Citation
+---------
+
+បើសៀវភៅ ឬកូដនេះមានប្រយោជន៍សម្រាប់ការស្រាវជ្រាវរបស់អ្នក សូម cite តាមទម្រង់ Chicago៖
+
+   Raschka, Sebastian. *Build A Large Language Model (From Scratch)*. Manning, 2024.
+   ISBN: 978-1633437166.
+
+BibTeX entry៖
+
+.. code-block:: bibtex
+
+   @book{build-llms-from-scratch-book,
+     author       = {Sebastian Raschka},
+     title        = {Build A Large Language Model (From Scratch)},
+     publisher    = {Manning},
+     year         = {2024},
+     isbn         = {978-1633437166},
+     url          = {https://www.manning.com/books/build-a-large-language-model-from-scratch},
+     github       = {https://github.com/rasbt/LLMs-from-scratch}
+   }
+
+អាជ្ញាបណ្ណ
+-----------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 34 66
+
+   * - ខ្លឹមសារ
+     - អាជ្ញាបណ្ណ
+   * - កូដក្នុងឃ្លាំង upstream
+     - Apache License 2.0 (មើល `LICENSE.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/LICENSE.txt>`_)
+   * - អត្ថបទសៀវភៅ និងរូបភាពពាក់ព័ន្ធ
+     - ត្រូវបានដកចេញពីវិសាលភាព Apache — ជាកម្មសិទ្ធិបញ្ញារបស់ Manning/អ្នកនិពន្ធ។ គេហទំព័រនេះមិនចម្លងខ្លឹមសារទាំងនោះទេ
+   * - អត្ថបទបកប្រែ/សង្ខេបក្នុងឯកសារសហគមន៍នេះ
+     - Creative Commons Attribution 4.0 (CC BY 4.0) — មើលឯកសារ ``LICENSE`` ក្នុងឃ្លាំងនេះ
+   * - កូដ theme/config នៃគេហទំព័រនេះ
+     - MIT — មើលឯកសារ ``LICENSE-CODE`` ក្នុងឃ្លាំងនេះ
+
+ការចូលរួមជាមួយឯកសារសហគមន៍នេះ
+-------------------------------------
+
+ឯកសារនេះសាងសង់ដោយសហគមន៍។ ដើម្បីកែតម្រូវ ឬបន្ថែមខ្លឹមសារ សូមបើក issue ឬ
+pull request នៅឃ្លាំង `SeyhaLite/LLMs-from-scratch <https://github.com/SeyhaLite/LLMs-from-scratch>`_។
+រាល់ទំព័រមានតំណ **Edit on GitHub** នៅផ្នែកខាងលើ ដើម្បីកែឯកសារប្រភព (``.rst``) ផ្ទាល់។
+
+គោលការណ៍សំខាន់៖ ព័ត៌មានពិតប៉ុណ្ណោះ — សូមផ្ទៀងផ្ទាត់ជាមួយឃ្លាំង upstream មុននឹង
+បន្ថែមខ្លឹមសារ ហើយរក្សាពាក្យបច្ចេកទេសអង់គ្លេសដដែល។
+
+.. tip::
+
+   ត្រឡប់ទៅទំព័រដើម :doc:`../index`។
