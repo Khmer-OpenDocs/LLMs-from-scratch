@@ -1,0 +1,136 @@
+.. meta::
+   :description: វចនានុក្រមពាក្យបច្ចេកទេស ខ្មែរ–អង់គ្លេស សម្រាប់គម្រោង LLMs-from-scratch។ Khmer–English glossary of technical terms for the LLMs-from-scratch project.
+   :keywords: វចនានុក្រម, glossary, ខ្មែរ, Khmer, English, LLM, token, attention, finetuning
+
+វចនានុក្រម (ខ្មែរ–អង់គ្លេស)
+==============================
+
+.. note::
+
+   ពាក្យទាំងអស់ខាងក្រោមជាពាក្យបច្ចេកទេសដែលបង្ហាញជាក់ស្តែងក្នុងឃ្លាំង
+   `rasbt/LLMs-from-scratch <https://github.com/rasbt/LLMs-from-scratch>`_។
+   តាមគោលការណ៍របស់ឯកសារនេះ ពាក្យបច្ចេកទេសអង់គ្លេសត្រូវបានរក្សាទុកដដែល។
+
+.. list-table::
+   :header-rows: 1
+   :widths: 26 26 48
+
+   * - ពាក្យអង់គ្លេស
+     - ពាក្យ/ការបកប្រែខ្មែរ
+     - ការពន្យល់សង្ខេប
+   * - Large Language Model (LLM)
+     - ម៉ូដែលភាសាធំ
+     - ម៉ូដែលសរសៃប្រសាទសិប្បនិម្មិតដែលបណ្តុះបណ្តាលលើអត្ថបទច្រើនដើម្បីយល់ និងបង្កើតភាសា
+   * - GPT
+     - GPT (រក្សាដដែល)
+     - ស្ថាបត្យកម្ម LLM ដែលសៀវភៅនេះសាងសង់ពីមូលដ្ឋាន
+   * - token
+     - token / ធាតុអត្ថបទ
+     - ឯកតាតូចបំផុតនៃអត្ថបទ (ពាក្យ ឬផ្នែកនៃពាក្យ) ដែលម៉ូដែលដំណើរការ
+   * - tokenizer
+     - tokenizer / កម្មវិធីបំបែក token
+     - ឧបករណ៍បំបែកអត្ថបទទៅជា token
+   * - Byte Pair Encoding (BPE)
+     - BPE (រក្សាដដែល)
+     - ក្បួនបង្កើត tokenizer ដោយផ្គុំអក្សរ/ផ្នែកពាក្យដែលកើតញឹកញាប់
+   * - tiktoken
+     - tiktoken (រក្សាដដែល)
+     - បណ្ណាល័យ BPE tokenizer ដែលឃ្លាំងនេះប្រើ
+   * - embedding
+     - embedding / ការបង្កប់វ៉ិចទ័រ
+     - ការតំណាង token ជាវ៉ិចទ័រលេខ
+   * - dataloader
+     - dataloader (រក្សាដដែល)
+     - យន្តការផ្គត់ផ្គង់ទិន្នន័យជា batch សម្រាប់ការបណ្តុះបណ្តាល
+   * - attention
+     - attention / យន្តការចាប់អារម្មណ៍
+     - យន្តការដែលឱ្យម៉ូដែលថ្លឹងសារៈសំខាន់នៃផ្នែកផ្សេងៗនៃទិន្នន័យបញ្ចូល
+   * - multi-head attention
+     - multi-head attention (រក្សាដដែល)
+     - ការប្រើ attention ច្រើន "head" ក្នុងពេលតែមួយ
+   * - PyTorch buffers
+     - PyTorch buffers (រក្សាដដែល)
+     - tensor ដែលភ្ជាប់នឹង module ប៉ុន្តែមិនមែនជា parameter ដែលត្រូវបណ្តុះបណ្តាល
+   * - FLOPs
+     - FLOPs (រក្សាដដែល)
+     - រង្វាស់ចំនួនប្រតិបត្តិការគណនាអញ្ញាត (floating-point operations)
+   * - KV cache
+     - KV cache (រក្សាដដែល)
+     - ការរក្សាទុក key/value នៃ attention ដើម្បីបង្កើនល្បឿនការបង្កើតអត្ថបទ
+   * - Grouped-Query Attention (GQA)
+     - GQA (រក្សាដដែល)
+     - វិធីសាស្ត្រ attention ជំនួសដែលចែក head ជាក្រុម
+   * - Multi-Head Latent Attention (MLA)
+     - MLA (រក្សាដដែល)
+     - វិធីសាស្ត្រ attention ជំនួសមួយទៀត
+   * - Sliding Window Attention (SWA)
+     - SWA (រក្សាដដែល)
+     - attention ដែលមើលតែ token ក្នុងបង្អួចកំណត់មួយ
+   * - Gated DeltaNet
+     - Gated DeltaNet (រក្សាដដែល)
+     - ស្ថាបត្យកម្ម attention ជំនួសក្នុងសម្ភារៈបន្ថែម
+   * - DeepSeek Sparse Attention (DSA)
+     - DSA (រក្សាដដែល)
+     - វិធីសាស្ត្រ attention បែប sparse
+   * - Mixture-of-Experts (MoE)
+     - MoE (រក្សាដដែល)
+     - ស្ថាបត្យកម្មដែលប្រើ "expert" ជាច្រើន ហើយជ្រើសរើសប្រើតែមួយចំនួនក្នុងមួយ token
+   * - pretraining
+     - ការបណ្តុះបណ្តាលមុន
+     - ការបណ្តុះបណ្តាលម៉ូដែលលើទិន្នន័យគ្មានស្លាក មុនពេល finetuning
+   * - unlabeled data
+     - ទិន្នន័យគ្មានស្លាក
+     - ទិន្នន័យដែលគ្មានចម្លើយកំណត់ស្រាប់
+   * - finetuning
+     - ការកែសម្រួលម៉ូដែល
+     - ការបណ្តុះបណ្តាលបន្តលើម៉ូដែល pretrained សម្រាប់កិច្ចការជាក់លាក់
+   * - text classification
+     - ចំណាត់ថ្នាក់អត្ថបទ
+     - កិច្ចការចាត់អត្ថបទចូលក្រុម (ឧ. spam ឬមិនមែន spam)
+   * - instruction finetuning
+     - finetuning តាមការណែនាំ
+     - ការកែសម្រួលម៉ូដែលឱ្យឆ្លើយតបទៅនឹងការណែនាំរបស់អ្នកប្រើ
+   * - LoRA
+     - LoRA (រក្សាដដែល)
+     - Parameter-efficient finetuning ដោយបន្ថែម matrix តូចៗ ជំនួសការកែ weights ទាំងអស់
+   * - Direct Preference Optimization (DPO)
+     - DPO (រក្សាដដែល)
+     - វិធីសាស្ត្រ preference tuning សម្រាប់ LLM alignment
+   * - loss
+     - loss (រក្សាដដែល)
+     - រង្វាស់កំហុសរបស់ម៉ូដែលដែលការបណ្តុះបណ្តាលព្យាយាមបន្ថយ
+   * - learning rate scheduler
+     - កម្មវិធីកំណត់ learning rate
+     - យន្តការកែតម្រូវ learning rate តាមពេលវេលាក្នុងការបណ្តុះបណ្តាល
+   * - hyperparameter
+     - hyperparameter (រក្សាដដែល)
+     - តម្លៃកំណត់មុនការបណ្តុះបណ្តាល (ឧ. learning rate, batch size)
+   * - weight loading
+     - ការផ្ទុក weights
+     - ការនាំចូល weights ពីម៉ូដែល pretrained
+   * - DDP (Distributed Data Parallel)
+     - DDP (រក្សាដដែល)
+     - ការបណ្តុះបណ្តាលស្របគ្នាលើ GPU ច្រើនរបស់ PyTorch
+   * - GPU / CPU / MPS
+     - GPU / CPU / MPS (រក្សាដដែល)
+     - ឧបករណ៍គណនា — MPS គឺជា GPU backend របស់ Apple
+   * - Ollama
+     - Ollama (រក្សាដដែល)
+     - ឧបករណ៍ដំណើរការម៉ូដែលក្នុងមូលដ្ឋាន ដែលប្រើក្នុងជំពូក ៧ សម្រាប់ការវាយតម្លៃ
+   * - DevContainer
+     - DevContainer (រក្សាដដែល)
+     - បរិស្ថានអភិវឌ្ឍន៍ក្នុង Docker ដែលកំណត់ជាមុន
+   * - Google Colab
+     - Google Colab (រក្សាដដែល)
+     - វេទិកា notebook ឥតគិតថ្លៃក្នុង cloud
+   * - Lightning Studio
+     - Lightning Studio (រក្សាដដែល)
+     - វេទិកាអភិវឌ្ឍន៍អចិន្ត្រៃយ៍ក្នុង cloud ដែល upstream ណែនាំ
+   * - uv
+     - uv (រក្សាដដែល)
+     - ឧបករណ៍ដំឡើង package Python ល្បឿនលឿន
+
+.. tip::
+
+   ត្រឡប់ទៅ :doc:`../ការចាប់ផ្តើម/ទិដ្ឋភាពទូទៅ` ឬមើលតំណភ្ជាប់ និងអាជ្ញាបណ្ណទាំងអស់
+   ក្នុងទំព័រ :doc:`ឯកសារយោង`។
