@@ -1,102 +1,52 @@
 /* ==========================================================================
-   Community Khmer docs — custom theme layer for sphinx_rtd_theme 3.x
-   Default palette: dark — rules gated by html:not([data-theme="light"]) so
-   they out-specify theme.css and still apply with JavaScript disabled.
-   Light palette: html[data-theme="light"].
-   Fonts: Noto Sans Khmer + Noto Serif Khmer (fallback Khmer OS).
+   AUDIT-2026-10 — single dark palette override for sphinx_rtd_theme 3.x
+   Tokens: page #14161a · sidebar #1f2328 · cards/rows #1c2027 · alt rows
+   #171a1e · header #232830 · borders #343b45 · text #d9dde4 · headings
+   #eef1f6 · muted #8b949e · chips #262b33/#dfe3ea/#3a414d.
+   All pairs >= 4.5:1. Light palette (opt-in via data-theme) kept at the end.
    ========================================================================== */
 
 :root {
-  --km-bg: #171b24;
-  --km-bg-content: #1c212c;
-  --km-bg-sidebar: #1f2430;
-  --km-bg-code: #12151d;
-  --km-bg-inline-code: #262d3d;
-  --km-bg-table-head: #232a38;
-  --km-bg-table-stripe: #20263280;
-  --km-text: #d8dee9;
-  --km-text-muted: #9aa4b2;
-  --km-heading: #eef2f7;
-  --km-accent: #4cc38a;
+  --km-page: #14161a;
+  --km-sidebar: #1f2328;
+  --km-card: #1c2027;
+  --km-row-alt: #171a1e;
+  --km-head: #232830;
+  --km-border: #343b45;
+  --km-text: #d9dde4;
+  --km-heading: #eef1f6;
+  --km-muted: #8b949e;
+  --km-chip-bg: #262b33;
+  --km-chip-text: #dfe3ea;
+  --km-chip-border: #3a414d;
   --km-link: #6ab0f3;
-  --km-link-hover: #9ccbff;
-  --km-border: #2c3444;
-  --km-code-text: #e3b587;
-  --km-note-bg: #1d2c3d;
-  --km-note-head: #3d7ec2;
-  --km-warn-bg: #3a2e1d;
-  --km-warn-head: #b08232;
-  --km-tip-bg: #1d3a2e;
-  --km-tip-head: #33a871;
+  --km-link-visited: #9db4dd;
+  --km-accent: #4cc38a;
 }
 
-/* ---------- Fonts & base ---------- */
-
-body,
-.wy-body-for-nav,
-.rst-content,
-.wy-menu-vertical,
-input,
-button {
-  font-family: "Noto Sans Khmer", "Noto Serif Khmer", "Khmer OS", "Khmer OS System",
-    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
-}
-
-h1, h2, h3, h4, h5, h6,
-.rst-content h1, .rst-content h2, .rst-content h3,
-.rst-content h4, .rst-content h5, .rst-content h6 {
-  font-family: "Noto Serif Khmer", "Noto Sans Khmer", "Khmer OS", "Lato",
-    "proxima-nova", Arial, sans-serif;
-}
-
-body {
-  line-height: 1.8;
-}
-
-.rst-content p,
-.rst-content li,
-.rst-content td {
-  line-height: 1.9;
-}
-
-code, pre, tt, .highlight, kbd {
-  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace,
-    "Noto Sans Khmer", "Khmer OS";
-}
-
-html {
-  scroll-padding-top: 1rem;
-}
-
-/* ==========================================================================
-   DARK palette — default (no data-theme attribute required)
-   ========================================================================== */
+/* ---------- base surfaces ---------- */
 
 html:not([data-theme="light"]) body,
 html:not([data-theme="light"]) .wy-body-for-nav {
-  background: var(--km-bg);
+  background: var(--km-page);
+}
+
+html:not([data-theme="light"]) .wy-nav-content-wrap {
+  background: var(--km-page);
+}
+
+html:not([data-theme="light"]) .wy-nav-content {
+  background: var(--km-page);
+  max-width: 900px;
 }
 
 html:not([data-theme="light"]) .wy-nav-side,
 html:not([data-theme="light"]) .wy-nav-top {
-  background: var(--km-bg-sidebar);
+  background: var(--km-sidebar);
 }
 
-html:not([data-theme="light"]) .wy-nav-top,
-html:not([data-theme="light"]) .wy-nav-top a {
-  color: var(--km-heading);
-}
+/* ---------- content text & headings ---------- */
 
-html:not([data-theme="light"]) .wy-nav-content-wrap {
-  background: var(--km-bg);
-}
-
-html:not([data-theme="light"]) .wy-nav-content {
-  background: var(--km-bg-content);
-  max-width: 900px;
-}
-
-/* Text & headings */
 html:not([data-theme="light"]) .rst-content {
   color: var(--km-text);
 }
@@ -110,174 +60,135 @@ html:not([data-theme="light"]) .rst-content h6 {
   color: var(--km-heading);
 }
 
-html:not([data-theme="light"]) .rst-content h1 {
-  border-bottom: 2px solid var(--km-accent);
-  padding-bottom: .3rem;
-}
-
-html:not([data-theme="light"]) .rst-content h2 {
-  border-bottom: 1px solid var(--km-border);
-  padding-bottom: .25rem;
-}
+html:not([data-theme="light"]) .rst-content h1 { border-bottom: 2px solid var(--km-accent); }
+html:not([data-theme="light"]) .rst-content h2 { border-bottom: 1px solid var(--km-border); }
 
 html:not([data-theme="light"]) .rst-content .toc-backref,
 html:not([data-theme="light"]) .rst-content .headerlink {
-  color: var(--km-text-muted);
+  color: var(--km-muted);
 }
 
 html:not([data-theme="light"]) .rst-content .toc-backref:hover,
-html:not([data-theme="light"]) .rst-content .headerlink:hover {
-  color: var(--km-link);
+html:not([data-theme="light"]) .rst-content .headerlink:hover { color: var(--km-link); }
+
+html:not([data-theme="light"]) .rst-content hr { border-color: var(--km-border); }
+
+/* ---------- links, breadcrumbs, edit link ---------- */
+
+html:not([data-theme="light"]) .rst-content a { color: var(--km-link); }
+html:not([data-theme="light"]) .rst-content a:visited { color: var(--km-link-visited); }
+html:not([data-theme="light"]) .rst-content a:hover { color: #9ccbff; }
+
+html:not([data-theme="light"]) .rst-content .wy-breadcrumbs,
+html:not([data-theme="light"]) .rst-content .wy-breadcrumbs li.wy-breadcrumbs-aside a {
+  color: var(--km-muted);
 }
 
-/* Links */
-html:not([data-theme="light"]) .rst-content a,
-html:not([data-theme="light"]) .rst-content a .pre {
-  color: var(--km-link);
+html:not([data-theme="light"]) .rst-content .wy-breadcrumbs li a { color: var(--km-link); }
+
+/* ---------- tables ---------- */
+
+html:not([data-theme="light"]) .rst-content table.docutils,
+html:not([data-theme="light"]) .rst-content table.field-list,
+html:not([data-theme="light"]) .wy-table {
+  border-color: var(--km-border);
 }
 
-html:not([data-theme="light"]) .rst-content a:hover {
-  color: var(--km-link-hover);
+html:not([data-theme="light"]) .rst-content table.docutils th,
+html:not([data-theme="light"]) .rst-content table.docutils thead,
+html:not([data-theme="light"]) .rst-content table.docutils thead th {
+  background: var(--km-head) !important;
+  color: var(--km-heading) !important;
+  border-color: var(--km-border) !important;
+}
+
+html:not([data-theme="light"]) .rst-content table.docutils td,
+html:not([data-theme="light"]) .rst-content table.docutils tr {
+  border-color: var(--km-border) !important;
+  color: var(--km-text);
+}
+
+html:not([data-theme="light"]) .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
+html:not([data-theme="light"]) .rst-content table.docutils tr.row-odd td,
+html:not([data-theme="light"]) .wy-table-striped tr:nth-child(2n-1) td,
+html:not([data-theme="light"]) .wy-table-backed,
+html:not([data-theme="light"]) .wy-table-odd td {
+  background-color: var(--km-card) !important;
+}
+
+html:not([data-theme="light"]) .rst-content table.docutils:not(.field-list) tr:nth-child(2n) td,
+html:not([data-theme="light"]) .rst-content table.docutils tr.row-even td {
+  background-color: var(--km-row-alt) !important;
+}
+
+html:not([data-theme="light"]) .rst-content table.docutils caption,
+html:not([data-theme="light"]) .rst-content table.field-list caption {
+  color: var(--km-muted);
+}
+
+/* ---------- inline chips: code, tt, kbd, guilabel, file, samp ---------- */
+
+html:not([data-theme="light"]) .rst-content code,
+html:not([data-theme="light"]) .rst-content tt,
+html:not([data-theme="light"]) code {
+  background: var(--km-chip-bg) !important;
+  border: 1px solid var(--km-chip-border) !important;
+  color: var(--km-chip-text) !important;
+  border-radius: 3px;
 }
 
 html:not([data-theme="light"]) .rst-content a code,
 html:not([data-theme="light"]) .rst-content a tt,
 html:not([data-theme="light"]) .rst-content code.xref,
 html:not([data-theme="light"]) .rst-content tt.xref {
-  color: var(--km-link);
-}
-
-html:not([data-theme="light"]) .rst-content hr {
-  border-color: var(--km-border);
-}
-
-/* Sidebar navigation */
-html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l1 > a {
-  color: #c9d3e0;
-}
-
-html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2 a,
-html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l3 a {
-  color: #a8b2c1;
-  background-color: transparent;
-}
-
-html:not([data-theme="light"]) .wy-menu-vertical li.current {
-  background: #262d3d;
-}
-
-html:not([data-theme="light"]) .wy-menu-vertical li.current > a,
-html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2.current > a {
-  background: #2b3345;
-  color: var(--km-heading);
-  border-color: var(--km-border);
-}
-
-html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a {
-  background: #262d3d;
-}
-
-html:not([data-theme="light"]) .wy-menu-vertical a:hover {
-  background-color: #2f3850 !important;
-  color: #fff;
-}
-
-html:not([data-theme="light"]) .wy-menu-vertical p.caption {
-  color: var(--km-accent);
-}
-
-html:not([data-theme="light"]) .wy-side-nav-search {
-  background-color: var(--km-bg-sidebar);
-  border-bottom: 1px solid var(--km-border);
-}
-
-html:not([data-theme="light"]) .wy-side-nav-search input[type="text"] {
-  border-color: var(--km-border);
-  border-radius: 4px;
-  background: #12151d;
-  color: var(--km-text);
-}
-
-html:not([data-theme="light"]) .wy-side-nav-search > a.icon-home {
-  color: var(--km-heading);
-  font-weight: 600;
-}
-
-html:not([data-theme="light"]) .wy-side-nav-search img.logo {
-  background: transparent;
-  padding: 4px;
-  max-width: 64px;
-}
-
-/* Breadcrumbs & footer */
-html:not([data-theme="light"]) .rst-content .wy-breadcrumbs,
-html:not([data-theme="light"]) .rst-content .wy-breadcrumbs li.wy-breadcrumbs-aside a {
-  color: var(--km-text-muted);
-}
-
-html:not([data-theme="light"]) footer {
-  color: var(--km-text-muted);
-}
-
-html:not([data-theme="light"]) .rst-footer-buttons a.btn,
-html:not([data-theme="light"]) .rst-footer-buttons a.btn-neutral {
-  background-color: #232a38 !important;
   color: var(--km-link) !important;
-  border-color: var(--km-border) !important;
 }
 
-/* Inline code, kbd */
-html:not([data-theme="light"]) .rst-content code,
-html:not([data-theme="light"]) .rst-content tt,
-html:not([data-theme="light"]) code {
-  background: var(--km-bg-inline-code);
-  border: 1px solid var(--km-border);
-  border-radius: 3px;
-  color: var(--km-code-text);
-}
-
-html:not([data-theme="light"]) .rst-content code.literal,
-html:not([data-theme="light"]) .rst-content tt.literal {
-  color: var(--km-code-text);
-}
-
+html:not([data-theme="light"]) .rst-content kbd,
+html:not([data-theme="light"]) .rst-content .kbd,
 html:not([data-theme="light"]) .rst-content :not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > .kbd,
-html:not([data-theme="light"]) .rst-content kbd {
-  background-color: var(--km-bg-inline-code);
-  color: var(--km-text);
-  border: 1px solid var(--km-border);
-  box-shadow: none;
+html:not([data-theme="light"]) .rst-content :not(dl.option-list) > :not(dt):not(kbd):not(.kbd) > kbd {
+  background-color: var(--km-chip-bg) !important;
+  color: var(--km-chip-text) !important;
+  border: 1px solid var(--km-chip-border) !important;
+  box-shadow: none !important;
+  border-radius: 3px;
 }
 
-/* Code blocks */
+html:not([data-theme="light"]) .rst-content .guilabel,
+html:not([data-theme="light"]) .rst-content .file,
+html:not([data-theme="light"]) .rst-content .samp {
+  background: var(--km-chip-bg) !important;
+  border: 1px solid var(--km-chip-border) !important;
+  color: var(--km-chip-text) !important;
+  border-radius: 3px;
+}
+
+/* ---------- code blocks & pygments ---------- */
+
 html:not([data-theme="light"]) .rst-content pre.literal-block,
 html:not([data-theme="light"]) .rst-content div[class^="highlight"],
 html:not([data-theme="light"]) .rst-content div[class*=" highlight"],
-html:not([data-theme="light"]) div.highlight,
-html:not([data-theme="light"]) div.highlight-bash,
-html:not([data-theme="light"]) div.highlight-python {
-  background: var(--km-bg-code);
+html:not([data-theme="light"]) div.highlight {
+  background: var(--km-card);
   border: 1px solid var(--km-border);
   border-radius: 4px;
 }
 
 html:not([data-theme="light"]) .highlight pre,
 html:not([data-theme="light"]) .rst-content pre.literal-block {
-  color: #cdd6e4;
+  color: var(--km-text);
   line-height: 1.6;
 }
 
-html:not([data-theme="light"]) .highlight .linenos,
-html:not([data-theme="light"]) .linenodiv pre {
-  color: #5c6773;
-}
+html:not([data-theme="light"]) .linenodiv pre,
+html:not([data-theme="light"]) .highlight .linenos { color: var(--km-muted); }
 
-/* Pygments tokens — dark */
 html:not([data-theme="light"]) .highlight .c,
 html:not([data-theme="light"]) .highlight .c1,
 html:not([data-theme="light"]) .highlight .cm,
 html:not([data-theme="light"]) .highlight .ch,
-html:not([data-theme="light"]) .highlight .sd { color: #7f8b9c; font-style: italic; }
+html:not([data-theme="light"]) .highlight .sd { color: #8b949e; font-style: italic; }
 html:not([data-theme="light"]) .highlight .k,
 html:not([data-theme="light"]) .highlight .kd,
 html:not([data-theme="light"]) .highlight .kn,
@@ -303,111 +214,103 @@ html:not([data-theme="light"]) .highlight .na,
 html:not([data-theme="light"]) .highlight .nf,
 html:not([data-theme="light"]) .highlight .nx,
 html:not([data-theme="light"]) .highlight .nv,
-html:not([data-theme="light"]) .highlight .bp { color: #cdd6e4; }
+html:not([data-theme="light"]) .highlight .bp { color: #d9dde4; }
 html:not([data-theme="light"]) .highlight .nn,
 html:not([data-theme="light"]) .highlight .nc,
-html:not([data-theme="light"]) .highlight .no { color: #ffcb6b; }
+html:not([data-theme="light"]) .highlight .no,
 html:not([data-theme="light"]) .highlight .nb { color: #ffcb6b; }
-html:not([data-theme="light"]) .highlight .ne { color: #f07178; }
 html:not([data-theme="light"]) .highlight .o,
 html:not([data-theme="light"]) .highlight .ow,
 html:not([data-theme="light"]) .highlight .p { color: #89ddff; }
 html:not([data-theme="light"]) .highlight .cp,
 html:not([data-theme="light"]) .highlight .cpf,
-html:not([data-theme="light"]) .highlight .ni { color: #f07178; }
+html:not([data-theme="light"]) .highlight .ni,
+html:not([data-theme="light"]) .highlight .ne { color: #f07178; }
 html:not([data-theme="light"]) .highlight .gd { color: #f07178; background: #3a1d24; }
 html:not([data-theme="light"]) .highlight .gi { color: #c3e88d; background: #1d3a28; }
-html:not([data-theme="light"]) .highlight .hll { background: #2c3444; }
+html:not([data-theme="light"]) .highlight .hll { background: #343b45; }
 
-/* Tables */
-html:not([data-theme="light"]) .rst-content table.docutils,
-html:not([data-theme="light"]) .rst-content table.field-list,
-html:not([data-theme="light"]) .wy-table {
+/* ---------- sidebar ---------- */
+
+html:not([data-theme="light"]) .wy-side-nav-search {
+  background: var(--km-sidebar);
+  border-bottom: 1px solid var(--km-border);
+}
+
+html:not([data-theme="light"]) .wy-side-nav-search > a.icon-home {
+  color: var(--km-heading);
+  font-weight: 600;
+}
+
+html:not([data-theme="light"]) .wy-side-nav-search input[type="text"] {
+  background: var(--km-page);
+  border-color: var(--km-border);
+  color: var(--km-text);
+  border-radius: 4px;
+}
+
+html:not([data-theme="light"]) .wy-side-nav-search img.logo {
+  background: transparent;
+  padding: 4px;
+  max-width: 64px;
+}
+
+html:not([data-theme="light"]) .wy-menu-vertical p.caption {
+  color: var(--km-muted);
+}
+
+html:not([data-theme="light"]) .wy-menu-vertical a,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l1 > a,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2 a,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l3 a {
+  color: #c4cad3;
+}
+
+html:not([data-theme="light"]) .wy-menu-vertical li.current,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2.current {
+  background: var(--km-card);
+}
+
+html:not([data-theme="light"]) .wy-menu-vertical li.current > a,
+html:not([data-theme="light"]) .wy-menu-vertical li.current a,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2.current > a,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l2.current li.toctree-l3 > a,
+html:not([data-theme="light"]) .wy-menu-vertical li.toctree-l3.current li.toctree-l4 > a {
+  background: var(--km-chip-bg);
+  color: var(--km-text) !important;
   border-color: var(--km-border);
 }
 
-html:not([data-theme="light"]) .rst-content table.docutils th,
-html:not([data-theme="light"]) .rst-content table.docutils thead,
-html:not([data-theme="light"]) .rst-content table.docutils thead th {
-  background: var(--km-bg-table-head) !important;
+html:not([data-theme="light"]) .wy-menu-vertical a:hover,
+html:not([data-theme="light"]) .wy-menu-vertical li.current a:hover {
+  background: var(--km-chip-bg) !important;
   color: var(--km-heading) !important;
-  border-color: var(--km-border) !important;
 }
 
-html:not([data-theme="light"]) .rst-content table.docutils td,
-html:not([data-theme="light"]) .rst-content table.docutils tr {
-  border-color: var(--km-border) !important;
-  color: var(--km-text);
+/* side scrollbars */
+html:not([data-theme="light"]) .wy-side-scroll::-webkit-scrollbar,
+html:not([data-theme="light"]) .wy-nav-side::-webkit-scrollbar { width: 8px; }
+html:not([data-theme="light"]) .wy-side-scroll::-webkit-scrollbar-thumb,
+html:not([data-theme="light"]) .wy-nav-side::-webkit-scrollbar-thumb {
+  background: var(--km-border);
+  border-radius: 4px;
 }
+html:not([data-theme="light"]) .wy-side-scroll::-webkit-scrollbar-track,
+html:not([data-theme="light"]) .wy-nav-side::-webkit-scrollbar-track { background: transparent; }
 
-html:not([data-theme="light"]) .rst-content table.docutils caption,
-html:not([data-theme="light"]) .rst-content table.field-list caption {
-  color: var(--km-text-muted);
-}
+/* ---------- admonitions ---------- */
 
-/* Striped rows — beat the theme's :not(.field-list) tr:nth-child(2n-1) td */
-html:not([data-theme="light"]) .rst-content table.docutils:not(.field-list) tr:nth-child(2n-1) td,
-html:not([data-theme="light"]) .rst-content table.docutils tr.row-odd td,
-html:not([data-theme="light"]) .wy-table-striped tr:nth-child(2n-1) td,
-html:not([data-theme="light"]) .wy-table-backed,
-html:not([data-theme="light"]) .wy-table-odd td {
-  background-color: var(--km-bg-table-stripe) !important;
-}
-
-html:not([data-theme="light"]) .rst-content table.docutils tr:nth-child(2n) td,
-html:not([data-theme="light"]) .rst-content table.docutils tr.row-even td {
-  background-color: transparent !important;
-}
-
-/* Definition lists / glossary / footnotes */
-html:not([data-theme="light"]) .rst-content dl:not(.docutils) dt,
-html:not([data-theme="light"]) .rst-content dl:not(.option-list):not(.field-list):not(.footnote):not(.citation):not(.glossary):not(.simple) dt {
-  background: #232a38;
-  color: var(--km-link);
-  border-top: 3px solid var(--km-accent);
-  border-left: none;
-}
-
-html:not([data-theme="light"]) .rst-content dl dt .headerlink {
-  color: var(--km-text-muted);
-}
-
-html:not([data-theme="light"]) .rst-content .optional {
-  color: var(--km-text-muted);
-}
-
-html:not([data-theme="light"]) .rst-content .sig-name,
-html:not([data-theme="light"]) .rst-content .sig-paren {
-  color: var(--km-heading);
-}
-
-/* Blockquotes & sidebars within content */
-html:not([data-theme="light"]) .rst-content blockquote {
-  color: var(--km-text);
-}
-
-html:not([data-theme="light"]) .rst-content .sidebar {
-  background: #232a38;
-  border-color: var(--km-border);
-}
-
-html:not([data-theme="light"]) .rst-content .sidebar .sidebar-title {
-  background: var(--km-bg-table-head);
-  color: var(--km-heading);
-}
-
-/* Admonitions */
 html:not([data-theme="light"]) .rst-content .admonition,
 html:not([data-theme="light"]) .rst-content .note,
 html:not([data-theme="light"]) .rst-content .seealso {
-  background: var(--km-note-bg) !important;
+  background: #1c2531 !important;
   color: var(--km-text);
 }
 
 html:not([data-theme="light"]) .rst-content .admonition > .admonition-title,
 html:not([data-theme="light"]) .rst-content .note > .admonition-title,
 html:not([data-theme="light"]) .rst-content .seealso > .admonition-title {
-  background: var(--km-note-head) !important;
+  background: #2b62a3 !important;
   color: #fff !important;
   border: none;
 }
@@ -415,45 +318,54 @@ html:not([data-theme="light"]) .rst-content .seealso > .admonition-title {
 html:not([data-theme="light"]) .rst-content .warning,
 html:not([data-theme="light"]) .rst-content .attention,
 html:not([data-theme="light"]) .rst-content .caution {
-  background: var(--km-warn-bg) !important;
+  background: #2e2618 !important;
   color: var(--km-text);
 }
 
 html:not([data-theme="light"]) .rst-content .warning > .admonition-title,
 html:not([data-theme="light"]) .rst-content .attention > .admonition-title,
 html:not([data-theme="light"]) .rst-content .caution > .admonition-title {
-  background: var(--km-warn-head) !important;
+  background: #96692a !important;
   color: #fff !important;
   border: none;
 }
 
 html:not([data-theme="light"]) .rst-content .tip,
-html:not([data-theme="light"]) .rst-content .hint,
-html:not([data-theme="light"]) .rst-content .important {
-  background: var(--km-tip-bg) !important;
+html:not([data-theme="light"]) .rst-content .hint {
+  background: #1c2b24 !important;
   color: var(--km-text);
 }
 
 html:not([data-theme="light"]) .rst-content .tip > .admonition-title,
-html:not([data-theme="light"]) .rst-content .hint > .admonition-title,
-html:not([data-theme="light"]) .rst-content .important > .admonition-title {
-  background: var(--km-tip-head) !important;
+html:not([data-theme="light"]) .rst-content .hint > .admonition-title {
+  background: #268060 !important;
   color: #fff !important;
   border: none;
 }
 
-html:not([data-theme="light"]) .rst-content .admonition-title::before {
-  color: #fff;
+html:not([data-theme="light"]) .rst-content .important {
+  background: #251c31 !important;
+  color: var(--km-text);
 }
 
-/* Figures */
-html:not([data-theme="light"]) .rst-content .figure,
-html:not([data-theme="light"]) .rst-content figure {
-  background: transparent;
+html:not([data-theme="light"]) .rst-content .important > .admonition-title {
+  background: #7a52c2 !important;
+  color: #fff !important;
+  border: none;
+}
+
+html:not([data-theme="light"]) .rst-content .admonition-title::before { color: #fff; }
+
+/* ---------- quotes, figures, footnotes, dl ---------- */
+
+html:not([data-theme="light"]) .rst-content blockquote {
+  color: var(--km-text);
+  border-left: 3px solid var(--km-border);
 }
 
 html:not([data-theme="light"]) .rst-content .figure img,
 html:not([data-theme="light"]) .rst-content figure img {
+  background: transparent;
   border: 1px solid var(--km-border);
   border-radius: 6px;
 }
@@ -461,123 +373,126 @@ html:not([data-theme="light"]) .rst-content figure img {
 html:not([data-theme="light"]) .rst-content .caption-text,
 html:not([data-theme="light"]) .rst-content figcaption,
 html:not([data-theme="light"]) .rst-content .figure .caption {
-  color: var(--km-text-muted);
+  color: var(--km-muted);
   font-size: 90%;
 }
 
-/* Search & index pages */
-html:not([data-theme="light"]) #search-results .search li,
-html:not([data-theme="light"]) #search-results p,
-html:not([data-theme="light"]) .genindextable,
-html:not([data-theme="light"]) .indextable {
+html:not([data-theme="light"]) .rst-content dl:not(.docutils) dt {
+  background: var(--km-head);
+  color: var(--km-link);
+  border-top: 3px solid var(--km-accent);
+}
+
+html:not([data-theme="light"]) .rst-content .footnote td,
+html:not([data-theme="light"]) .rst-content .citation td {
   color: var(--km-text);
 }
 
-html:not([data-theme="light"]) span.highlighted {
-  background-color: #f5c842;
-  color: #171b24;
+/* ---------- buttons, footer, search page ---------- */
+
+html:not([data-theme="light"]) .rst-footer-buttons a.btn,
+html:not([data-theme="light"]) .rst-footer-buttons a.btn-neutral {
+  background-color: var(--km-chip-bg) !important;
+  color: var(--km-chip-text) !important;
+  border-color: var(--km-chip-border) !important;
 }
 
+html:not([data-theme="light"]) .rst-footer-buttons a.btn:hover {
+  background-color: #2f3540 !important;
+  color: var(--km-heading) !important;
+}
+
+html:not([data-theme="light"]) footer { color: var(--km-muted); }
+
+html:not([data-theme="light"]) #search-results .search li,
+html:not([data-theme="light"]) #search-results p,
+html:not([data-theme="light"]) .genindextable,
+html:not([data-theme="light"]) .indextable { color: var(--km-text); }
+
+html:not([data-theme="light"]) span.highlighted {
+  background: #f5c842 !important;
+  color: #14161a !important;
+}
+
+/* ---------- fonts (Khmer) ---------- */
+
+body, .wy-body-for-nav, .rst-content, .wy-menu-vertical, input, button {
+  font-family: "Noto Sans Khmer", "Noto Serif Khmer", "Khmer OS", "Khmer OS System",
+    "Lato", "proxima-nova", "Helvetica Neue", Arial, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.rst-content h1, .rst-content h2, .rst-content h3,
+.rst-content h4, .rst-content h5, .rst-content h6 {
+  font-family: "Noto Serif Khmer", "Noto Sans Khmer", "Khmer OS", "Lato",
+    "proxima-nova", Arial, sans-serif;
+}
+
+body { line-height: 1.8; }
+.rst-content p, .rst-content li, .rst-content td { line-height: 1.9; }
+
+code, pre, tt, .highlight, kbd {
+  font-family: "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace,
+    "Noto Sans Khmer", "Khmer OS";
+}
+
+html { scroll-padding-top: 1rem; }
+
 /* ==========================================================================
-   LIGHT palette — opt-in via data-theme="light"
+   LIGHT palette — opt-in via data-theme="light" (system preference script)
    ========================================================================== */
 
 html[data-theme="light"] body,
-html[data-theme="light"] .wy-body-for-nav {
-  background: #edf0f2;
-}
+html[data-theme="light"] .wy-body-for-nav,
+html[data-theme="light"] .wy-nav-content-wrap { background: #edf0f2; }
 
-html[data-theme="light"] .wy-nav-content-wrap {
-  background: #edf0f2;
-}
+html[data-theme="light"] .wy-nav-content { background: #fcfcfc; max-width: 900px; }
 
-html[data-theme="light"] .wy-nav-content {
-  background: #fcfcfc;
-  max-width: 900px;
-}
-
-html[data-theme="light"] .rst-content {
-  color: #404040;
-}
+html[data-theme="light"] .rst-content { color: #404040; }
 
 html[data-theme="light"] .rst-content h1,
 html[data-theme="light"] .rst-content h2,
 html[data-theme="light"] .rst-content h3,
 html[data-theme="light"] .rst-content h4,
 html[data-theme="light"] .rst-content h5,
-html[data-theme="light"] .rst-content h6 {
-  color: #2980b9;
-}
+html[data-theme="light"] .rst-content h6 { color: #2980b9; }
 
-html[data-theme="light"] .rst-content h1 { border-bottom: 2px solid #4cc38a; padding-bottom: .3rem; }
-html[data-theme="light"] .rst-content h2 { border-bottom: 1px solid #e1e4e5; padding-bottom: .25rem; }
+html[data-theme="light"] .rst-content h1 { border-bottom: 2px solid #4cc38a; }
+html[data-theme="light"] .rst-content h2 { border-bottom: 1px solid #e1e4e5; }
 
 html[data-theme="light"] .rst-content .toc-backref,
-html[data-theme="light"] .rst-content .headerlink {
-  color: #404040;
-}
+html[data-theme="light"] .rst-content .headerlink { color: #404040; }
 
-html[data-theme="light"] .rst-content a {
-  color: #2980b9;
-}
+html[data-theme="light"] .rst-content a { color: #2980b9; }
+html[data-theme="light"] .rst-content a:visited { color: #5b79a5; }
+html[data-theme="light"] .rst-content hr { border-color: #e1e4e5; }
 
-html[data-theme="light"] .rst-content a:hover {
-  color: #3091d1;
-}
-
-html[data-theme="light"] .rst-content hr {
-  border-color: #e1e4e5;
-}
-
-/* Sidebar stays dark (classic Read the Docs look) in light mode */
-html[data-theme="light"] .wy-menu-vertical a {
-  color: #d9d9d9;
-}
-
+html[data-theme="light"] .wy-menu-vertical a { color: #d9d9d9; }
 html[data-theme="light"] .wy-menu-vertical li.toctree-l2 a,
-html[data-theme="light"] .wy-menu-vertical li.toctree-l3 a {
-  color: #b3b3b3;
-}
+html[data-theme="light"] .wy-menu-vertical li.toctree-l3 a { color: #b3b3b3; }
 
-/* Code */
 html[data-theme="light"] .rst-content code,
-html[data-theme="light"] .rst-content tt {
-  background: #fff;
-  border: 1px solid #e1e4e5;
-  color: #e74c3c;
-}
-
-html[data-theme="light"] .rst-content code.literal,
-html[data-theme="light"] .rst-content tt.literal {
-  color: #e74c3c;
+html[data-theme="light"] .rst-content tt,
+html[data-theme="light"] .rst-content kbd,
+html[data-theme="light"] .rst-content .guilabel,
+html[data-theme="light"] .rst-content .file,
+html[data-theme="light"] .rst-content .samp {
+  background: #fff !important;
+  border: 1px solid #e1e4e5 !important;
+  color: #b3403a !important;
 }
 
 html[data-theme="light"] .rst-content a code,
-html[data-theme="light"] .rst-content a tt,
-html[data-theme="light"] .rst-content code.xref,
-html[data-theme="light"] .rst-content tt.xref {
-  color: #2980b9;
-}
+html[data-theme="light"] .rst-content code.xref { color: #2980b9 !important; }
 
 html[data-theme="light"] .rst-content pre.literal-block,
 html[data-theme="light"] .rst-content div[class^="highlight"],
-html[data-theme="light"] div.highlight {
-  background: #fff;
-  border: 1px solid #e1e4e5;
-}
+html[data-theme="light"] div.highlight { background: #fff; border: 1px solid #e1e4e5; }
 
-html[data-theme="light"] .highlight pre {
-  color: #404040;
-}
+html[data-theme="light"] .highlight pre { color: #404040; }
+html[data-theme="light"] .linenodiv pre { color: #a8a8a8; }
 
-html[data-theme="light"] .linenodiv pre {
-  color: #a8a8a8;
-}
-
-/* Tables */
-html[data-theme="light"] .rst-content table.docutils {
-  border-color: #e1e4e5;
-}
+html[data-theme="light"] .rst-content table.docutils { border-color: #e1e4e5; }
 
 html[data-theme="light"] .rst-content table.docutils th,
 html[data-theme="light"] .rst-content table.docutils thead th {
@@ -597,84 +512,46 @@ html[data-theme="light"] .rst-content table.docutils tr.row-odd td {
   background-color: #f3f6f6 !important;
 }
 
-html[data-theme="light"] .rst-content table.docutils tr:nth-child(2n) td,
+html[data-theme="light"] .rst-content table.docutils:not(.field-list) tr:nth-child(2n) td,
 html[data-theme="light"] .rst-content table.docutils tr.row-even td {
-  background-color: transparent !important;
+  background-color: #fbfcfc !important;
 }
 
-html[data-theme="light"] .rst-content table.docutils caption {
-  color: #6f777d;
-}
-
-/* Definition lists */
 html[data-theme="light"] .rst-content dl:not(.docutils) dt {
   background: #f3f6f6;
   color: #404040;
   border-top: 3px solid #6ab0de;
 }
 
-/* Admonitions — classic RTD light colors */
 html[data-theme="light"] .rst-content .admonition,
 html[data-theme="light"] .rst-content .note,
-html[data-theme="light"] .rst-content .seealso {
-  background: #e7f2fa !important;
-  color: #404040;
-}
-
+html[data-theme="light"] .rst-content .seealso { background: #e7f2fa !important; color: #404040; }
 html[data-theme="light"] .rst-content .admonition > .admonition-title,
 html[data-theme="light"] .rst-content .note > .admonition-title,
-html[data-theme="light"] .rst-content .seealso > .admonition-title {
-  background: #6ab0de !important;
-  color: #fff !important;
-}
+html[data-theme="light"] .rst-content .seealso > .admonition-title { background: #4a86c0 !important; color: #fff !important; }
 
 html[data-theme="light"] .rst-content .warning,
 html[data-theme="light"] .rst-content .attention,
-html[data-theme="light"] .rst-content .caution {
-  background: #ffedcc !important;
-  color: #404040;
-}
-
+html[data-theme="light"] .rst-content .caution { background: #ffedcc !important; color: #404040; }
 html[data-theme="light"] .rst-content .warning > .admonition-title,
 html[data-theme="light"] .rst-content .attention > .admonition-title,
-html[data-theme="light"] .rst-content .caution > .admonition-title {
-  background: #f0b37e !important;
-  color: #fff !important;
-}
+html[data-theme="light"] .rst-content .caution > .admonition-title { background: #b0762a !important; color: #fff !important; }
 
 html[data-theme="light"] .rst-content .tip,
-html[data-theme="light"] .rst-content .hint,
-html[data-theme="light"] .rst-content .important {
-  background: #dbfaf4 !important;
-  color: #404040;
-}
-
+html[data-theme="light"] .rst-content .hint { background: #dbfaf4 !important; color: #404040; }
 html[data-theme="light"] .rst-content .tip > .admonition-title,
-html[data-theme="light"] .rst-content .hint > .admonition-title,
-html[data-theme="light"] .rst-content .important > .admonition-title {
-  background: #1abc9c !important;
-  color: #fff !important;
-}
+html[data-theme="light"] .rst-content .hint > .admonition-title { background: #178f77 !important; color: #fff !important; }
 
-/* Figures */
+html[data-theme="light"] .rst-content .important { background: #ece2f7 !important; color: #404040; }
+html[data-theme="light"] .rst-content .important > .admonition-title { background: #6a41b0 !important; color: #fff !important; }
+
+html[data-theme="light"] .rst-content blockquote { border-left: 3px solid #e1e4e5; }
+
 html[data-theme="light"] .rst-content .figure img,
-html[data-theme="light"] .rst-content figure img {
-  border: 1px solid #e1e4e5;
-}
+html[data-theme="light"] .rst-content figure img { border: 1px solid #e1e4e5; }
 
 html[data-theme="light"] .rst-content .caption-text,
-html[data-theme="light"] .rst-content figcaption {
-  color: #6f777d;
-}
-
-/* Footer / misc */
-html[data-theme="light"] footer {
-  color: #808080;
-}
-
-html[data-theme="light"] .rst-content .wy-breadcrumbs {
-  color: #6f777d;
-}
+html[data-theme="light"] .rst-content figcaption { color: #6f777d; }
 
 html[data-theme="light"] .rst-footer-buttons a.btn-neutral {
   background-color: #fff !important;
@@ -682,7 +559,10 @@ html[data-theme="light"] .rst-footer-buttons a.btn-neutral {
   border-color: #e1e4e5 !important;
 }
 
+html[data-theme="light"] footer,
+html[data-theme="light"] .rst-content .wy-breadcrumbs { color: #6f777d; }
+
 html[data-theme="light"] #search-results .search li,
-html[data-theme="light"] #search-results p {
-  color: #404040;
-}
+html[data-theme="light"] #search-results p { color: #404040; }
+
+html[data-theme="light"] span.highlighted { background: #f5c842 !important; color: #14161a !important; }
