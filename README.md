@@ -18,7 +18,8 @@
 |---|---|
 | ការចាប់ផ្តើម | ទិដ្ឋភាពទូទៅ · ការដំឡើងបរិស្ថាន · ការទាញយកកូដ |
 | ជំពូកស្នូល | ជំពូក ១–៧ (Understanding LLMs, Text Data, Attention, GPT Model, Pretraining, Classification, Instructions) |
-| ឯកសារយោង | ភាគបន្ថែម A–E · សម្ភារៈបន្ថែម · វចនានុក្រម · ឯកសារយោង |
+| ឯកសារយោង | ភាគបន្ថែម A–E · សម្ភារៈបន្ថែម · Notebooks ខ្មែរ · វចនានុក្រម · ឯកសារយោង |
+| Notebooks | ថត `ណូតប៊ុក-ខ្មែរ/` — companion notebooks ១០ (កូដដូច upstream ១០០% + ការពន្យល់ខ្មែរដើម) |
 
 ## លក្ខណៈពិសេស
 

@@ -1,0 +1,83 @@
+.. meta::
+   :description: Notebooks ភាសាខ្មែរ (companion notebooks) — កូដដូច upstream ១០% ជាមួយការពន្យល់ខ្មែរដើម។ Khmer companion notebooks — code identical to upstream with original Khmer explanations.
+   :keywords: notebook, ipynb, ណូតប៊ុក, ខ្មែរ, Jupyter, Colab, companion, Apache-2.0
+
+Notebooks ភាសាខ្មែរ (Companion Notebooks)
+===========================================
+
+.. note::
+
+   ឃ្លាំងនេះផ្តល់ **companion notebooks** ជាភាសាខ្មែរ៖ កូដទាំងអស់គឺ **ដូចគ្នា ១០០%**
+   ទៅនឹង notebooks ផ្លូវការរបស់ upstream (អាជ្ញាបណ្ណ Apache-2.0) ហើយការពន្យល់រវាង
+   កូដនីមួយៗគឺជា **អត្ថបទខ្មែរដើម** របស់សហគមន៍ — មិនមែនជាការបកប្រែអត្ថបទសៀវភៅទេ
+   (អត្ថបទសៀវភៅជាកម្មសិទ្ធិ Manning និងស្ថិតក្រៅវិសាលភាពអាជ្ញាបណ្ណបើកចំហ)។
+
+តារាង notebooks
+-----------------
+
+.. list-table::
+   :header-rows: 1
+   :widths: 40 26 34
+
+   * - ឯកសារក្នុងឃ្លាំងនេះ (ថត ``ណូតប៊ុក-ខ្មែរ/``)
+     - ជំពូក
+     - ប្រភព upstream
+   * - ``ជំពូក២-ទិន្នន័យអត្ថបទ.ipynb``
+     - ជំពូក ២
+     - `ch02.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb>`_
+   * - ``ជំពូក៣-យន្តការ-attention.ipynb``
+     - ជំពូក ៣
+     - `ch03.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/ch03.ipynb>`_
+   * - ``ជំពូក៤-ម៉ូដែល-GPT.ipynb``
+     - ជំពូក ៤
+     - `ch04.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/ch04.ipynb>`_
+   * - ``ជំពូក៥-pretraining.ipynb``
+     - ជំពូក ៥
+     - `ch05.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/ch05.ipynb>`_
+   * - ``ជំពូក៦-finetuning-classification.ipynb``
+     - ជំពូក ៦
+     - `ch06.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/ch06.ipynb>`_
+   * - ``ជំពូក៧-finetuning-instructions.ipynb``
+     - ជំពូក ៧
+     - `ch07.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ch07.ipynb>`_
+   * - ``ភាគបន្ថែម-A-ផ្នែក-PyTorch.ipynb``
+     - ភាគបន្ថែម A
+     - `code-part1.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part1.ipynb>`_
+   * - ``ភាគបន្ថែម-A-ផ្នែក២-PyTorch.ipynb``
+     - ភាគបន្ថែម A
+     - `code-part2.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part2.ipynb>`_
+   * - ``ភាគបន្ថែម-D-training-loop.ipynb``
+     - ភាគបន្ថែម D
+     - `appendix-D.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-D/01_main-chapter-code/appendix-D.ipynb>`_
+   * - ``ភាគបន្ថែម-E-LoRA.ipynb``
+     - ភាគបន្ថែម E
+     - `appendix-E.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb>`_
+
+របៀបដំណើរការ
+----------------
+
+1. clone ឃ្លាំង upstream និងឃ្លាំងឯកសារខ្មែរនេះ។
+2. ចម្លង notebook ខ្មែរដែលអ្នកចង់ប្រើ ទៅដាក់ក្នុងថតជំពូកពាក់ព័ន្ធរបស់ upstream
+   (ឧ. ``ch02/01_main-chapter-code/``) ដើម្បី្យកូដរកឃើញឯកសារជំនួយ
+   (``previous_chapters.py``, ``gpt_download.py``, ឯកសារទិន្នន័យ ជាដើម)។
+3. ដំឡើង dependencies៖ ``pip install -r requirements.txt`` ពីថត root របស់ upstream
+   (មើលទំព័រ :doc:`../ការចាប់ផ្តើម/ការដំឡើងបរិស្ថាន`)។
+4. បើក notebook ក្នុង JupyterLab ឬ VSCode ហើយដំណើរការ cells តាមលំដាប់។
+   លើ Google Colab សូម upload ទាំង notebook និងឯកសារជំនួយដែលត្រូវការ។
+
+.. warning::
+
+   កូដខ្លះត្រូវការការទាញយក weights pretrained (ឧ. ជំពូក ៥–៧ និងភាគបន្ថែម E)
+   ដែលត្រូវការអ៊ីនធឺណិត និងទំហំដ៊ីសគ្រប់គ្រាន់។
+
+អាជ្ញាបណ្ណ និងការដាក់ប្រភព
+---------------------------
+
+- **កូដ**៖ Apache-2.0 — (c) Sebastian Raschka, `rasbt/LLMs-from-scratch <https://github.com/rasbt/LLMs-from-scratch>`_ (ចម្លងដោយមិនកែប្រែ)
+- **អត្ថបទពន្យល់ខ្មែរ**៖ CC BY 4.0 — សហគមន៍ឯកសារខ្មែរ
+- **អត្ថបទសៀវភៅ និងរូបភាព**៖ កម្មសិទ្ធិ Manning Publications — មិនត្រូវបានចម្លង ឬបកប្រែមកទីនេះទេ
+
+.. tip::
+
+   ត្រឡប់ទៅមើលការពិពណ៌នាជំពូកនីមួយៗក្នុងផ្នែក :doc:`../ជំពូក/ជំពូក២-ទិន្នន័យអត្ថបទ` ជាដើម
+   ឬទៅទំព័រដើម :doc:`../index`។
