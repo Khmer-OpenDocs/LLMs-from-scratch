@@ -24,62 +24,62 @@ Notebooks ភាសាខ្មែរ (Companion Notebooks)
      - ប្រភព upstream
    * - ``ជំពូក២-ទិន្នន័យអត្ថបទ.ipynb``
      - ជំពូក ២
-     - `ch02.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb>`_
+     - `ch02.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ទិន្នន័យអត្ថបទ.ipynb>`_
    * - ``ជំពូក៣-យន្តការ-attention.ipynb``
      - ជំពូក ៣
-     - `ch03.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/ch03.ipynb>`_
+     - `ch03.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៣-យន្តការ-attention.ipynb>`_
    * - ``ជំពូក៤-ម៉ូដែល-GPT.ipynb``
      - ជំពូក ៤
-     - `ch04.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/ch04.ipynb>`_
+     - `ch04.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៤-ម៉ូដែល-GPT.ipynb>`_
    * - ``ជំពូក៥-pretraining.ipynb``
      - ជំពូក ៥
-     - `ch05.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/ch05.ipynb>`_
+     - `ch05.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៥-pretraining.ipynb>`_
    * - ``ជំពូក៦-finetuning-classification.ipynb``
      - ជំពូក ៦
-     - `ch06.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/ch06.ipynb>`_
+     - `ch06.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៦-finetuning-classification.ipynb>`_
    * - ``ជំពូក៧-finetuning-instructions.ipynb``
      - ជំពូក ៧
-     - `ch07.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ch07.ipynb>`_
+     - `ch07.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៧-finetuning-instructions.ipynb>`_
    * - ``ភាគបន្ថែម-A-ផ្នែក-PyTorch.ipynb``
      - ភាគបន្ថែម A
-     - `code-part1.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part1.ipynb>`_
+     - `code-part1.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-A-ផ្នែក-PyTorch.ipynb>`_
    * - ``ភាគបន្ថែម-A-ផ្នែក២-PyTorch.ipynb``
      - ភាគបន្ថែម A
-     - `code-part2.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part2.ipynb>`_
+     - `code-part2.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-A-ផ្នែក២-PyTorch.ipynb>`_
    * - ``ភាគបន្ថែម-D-training-loop.ipynb``
      - ភាគបន្ថែម D
-     - `appendix-D.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-D/01_main-chapter-code/appendix-D.ipynb>`_
+     - `appendix-D.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-D-training-loop.ipynb>`_
    * - ``ភាគបន្ថែម-E-LoRA.ipynb``
      - ភាគបន្ថែម E
-     - `appendix-E.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb>`_
+     - `appendix-E.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-E-LoRA.ipynb>`_
 
    * - ``ជំពូក២-សង្ខេប-dataloader.ipynb``
      - ជំពូក ២ (សង្ខេប)
-     - `dataloader.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/dataloader.ipynb>`_
+     - `dataloader.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-សង្ខេប-dataloader.ipynb>`_
    * - ``ជំពូក៣-សង្ខេប-multihead-attention.ipynb``
      - ជំពូក ៣ (សង្ខេប)
-     - `multihead-attention.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/multihead-attention.ipynb>`_
+     - `multihead-attention.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៣-សង្ខេប-multihead-attention.ipynb>`_
    * - ``ជំពូក២-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ជំពូក ២
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ចម្លើយលំហាត់.ipynb>`_
    * - ``ជំពូក៣-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ជំពូក ៣
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៣-ចម្លើយលំហាត់.ipynb>`_
    * - ``ជំពូក៤-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ជំពូក ៤
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៤-ចម្លើយលំហាត់.ipynb>`_
    * - ``ជំពូក៥-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ជំពូក ៥
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៥-ចម្លើយលំហាត់.ipynb>`_
    * - ``ជំពូក៦-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ជំពូក ៦
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៦-ចម្លើយលំហាត់.ipynb>`_
    * - ``ជំពូក៧-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ជំពូក ៧
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៧-ចម្លើយលំហាត់.ipynb>`_
    * - ``ភាគបន្ថែម-A-ចម្លើយលំហាត់.ipynb``
      - លំហាត់ ភាគបន្ថែម A
-     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/exercise-solutions.ipynb>`_
+     - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-A-ចម្លើយលំហាត់.ipynb>`_
 
 របៀបដំណើរការ
 ----------------
@@ -97,6 +97,19 @@ Notebooks ភាសាខ្មែរ (Companion Notebooks)
 
    កូដខ្លះត្រូវការការទាញយក weights pretrained (ឧ. ជំពូក ៥–៧ និងភាគបន្ថែម E)
    ដែលត្រូវការអ៊ីនធឺណិត និងទំហំដ៊ីសគ្រប់គ្រាន់។
+
+សម្ភារៈបនថែមទាំងអស់ (49 notebooks)
+--------------------------------------
+
+ក្រៅពី notebooks ស្នូល ១៩ ខាងលើ ឃ្លាំងនេះមាន **companion notebooks ខ្មែរសម្រាប់
+notebooks ទាំងអស់ ៦៨ របស់ upstream** (កូដដូចដើម ១០០% + comments បកប្រែ គ្មានអត្ថបទសៀវភៅ)
+នៅក្នុងថតរង ``ណូតប៊ុក-ខ្មែរ/បន្ថែម/`` រៀបតាមជំពូក៖
+`មើលថតបន្ថែម <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/ណូតប៊ុក-ខ្មែរ/បន្ថែម>`_។
+
+ឯកសារកូដ និងទិន្នន័យទាំងអស់របស់ upstream (``.py``, ``.txt``, ``.json`` ជាដើម)
+ក៏ត្រូវបានផ្ទុកក្នុងឃ្លាំងនេះដែរ នៅថត
+`កូដ/ <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ>`_
+ដោយរក្សារចនាសម្ព័ន្ធដូចដើម ដើម្បីឱ្យកូដដំណើរការបាន។
 
 អាជ្ញាបណ្ណ និងការដាក់ប្រភព
 ---------------------------

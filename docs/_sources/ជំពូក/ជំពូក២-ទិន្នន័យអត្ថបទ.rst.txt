@@ -7,7 +7,7 @@
 
 .. note::
 
-   ប្រភព៖ ថត `ch02 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02>`_
+   ប្រភព៖ ថត `ch02 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch02>`_
    និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
 
 ជំពូកនេះគ្របដណ្តប់ការរៀបចំទិន្នន័យអត្ថបទសម្រាប់ LLM — ដំណើរការពីអត្ថបទឆៅទៅជា
@@ -18,7 +18,7 @@ token រហូតដល់ការបង្កើត dataloader សម្រ�
 -------
 
 កូដមេស្ថិតក្នុងថត
-`ch02/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02/01_main-chapter-code>`_៖
+`ch02/01_main-chapter-code <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch02/01_main-chapter-code>`_៖
 
 .. list-table::
    :header-rows: 1
@@ -26,11 +26,11 @@ token រហូតដល់ការបង្កើត dataloader សម្រ�
 
    * - ឯកសារ
      - តួនាទី
-   * - `ch02.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/ch02.ipynb>`_
+   * - `ch02.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ទិន្នន័យអត្ថបទ.ipynb>`_
      - notebook មេរបស់ជំពូក
-   * - `dataloader.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/dataloader.ipynb>`_
+   * - `dataloader.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-សង្ខេប-dataloader.ipynb>`_
      - សង្ខេប (summary) នៃ dataloader
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
 Notebooks ខ្មែរសម្រាប់ជំពូកនេះ

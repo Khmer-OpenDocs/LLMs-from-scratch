@@ -8,7 +8,7 @@
 .. note::
 
    ប្រភព៖ `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_
-   និង `LICENSE.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/LICENSE.txt>`_
+   និង `LICENSE.txt <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/LICENSE.txt>`_
    នៃឃ្លាំង upstream។
 
 តំណភ្ជាប់ផ្លូវការ
@@ -85,7 +85,7 @@ BibTeX entry៖
    * - ខ្លឹមសារ
      - អាជ្ញាបណ្ណ
    * - កូដក្នុងឃ្លាំង upstream
-     - Apache License 2.0 (មើល `LICENSE.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/LICENSE.txt>`_)
+     - Apache License 2.0 (មើល `LICENSE.txt <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/LICENSE.txt>`_)
    * - អត្ថបទសៀវភៅ និងរូបភាពពាក់ព័ន្ធ
      - ត្រូវបានដកចេញពីវិសាលភាព Apache — ជាកម្មសិទ្ធិបញ្ញារបស់ Manning/អ្នកនិពន្ធ។ គេហទំព័រនេះមិនចម្លងខ្លឹមសារទាំងនោះទេ
    * - អត្ថបទបកប្រែ/សង្ខេបក្នុងឯកសារសហគមន៍នេះ

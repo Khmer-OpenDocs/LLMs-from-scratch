@@ -8,7 +8,7 @@
 .. note::
 
    ប្រភព៖ `setup/README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/setup/README.md>`_
-   និង `requirements.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/requirements.txt>`_
+   និង `requirements.txt <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/requirements.txt>`_
    នៃឃ្លាំង upstream។
 
 .. figure:: /_static/diagram-environments.svg
@@ -86,7 +86,7 @@
 
 1. ដំឡើង Python — បើមិនទាន់មាន សូមអានការណែនាំក្នុងថត
    `01_optional-python-setup-preferences <https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/01_optional-python-setup-preferences>`_
-   និង `02_installing-python-libraries <https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/02_installing-python-libraries>`_។
+   និង `02_installing-python-libraries <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/setup/02_installing-python-libraries>`_។
 2. clone ឃ្លាំងកូដ (មើលទំព័រ :doc:`ការទាញយកកូដ`)។
 3. ដំឡើង packages ដោយ ``pip install -r requirements.txt``។
 4. បើក notebook របស់ជំពូកដែលអ្នកចង់សិក្សាក្នុង JupyterLab ឬ VSCode។
@@ -100,7 +100,7 @@
 បើអ្នកចង់បានបរិស្ថានអភិវឌ្ឍន៍ដែលញែក dependencies និងការកំណត់រចនាសម្ព័ន្ធរបស់គម្រោង
 ដាច់ដោយឡែក ការប្រើ Docker ជាដំណោះស្រាយដែលមានប្រសិទ្ធភាពខ្ពស់ — មិនចាំបាច់ដំឡើង
 packages ដោយដៃ ហើយបរិស្ថានអភិវឌ្ឍន៍មានភាពស្របគ្នាជានិច្ច។ មើលការណែនាំលម្អិតក្នុងថត
-`03_optional-docker-environment <https://github.com/rasbt/LLMs-from-scratch/tree/main/setup/03_optional-docker-environment>`_។
+`03_optional-docker-environment <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/setup/03_optional-docker-environment>`_។
 
 កម្មវិធីកែសម្រួលកូដ VSCode
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~

@@ -7,7 +7,7 @@
 
 .. note::
 
-   ប្រភព៖ ថត `ch03 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch03>`_
+   ប្រភព៖ ថត `ch03 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch03>`_
    និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
 
 ជំពូកនេះណែនាំការសរសេរកូដយន្តការ Attention — សមាសភាគស្នូលដែលធ្វើឱ្យ LLM
@@ -17,7 +17,7 @@
 -------
 
 កូដមេស្ថិតក្នុងថត
-`ch03/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch03/01_main-chapter-code>`_៖
+`ch03/01_main-chapter-code <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch03/01_main-chapter-code>`_៖
 
 .. list-table::
    :header-rows: 1
@@ -25,11 +25,11 @@
 
    * - ឯកសារ
      - តួនាទី
-   * - `ch03.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/ch03.ipynb>`_
+   * - `ch03.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៣-យន្តការ-attention.ipynb>`_
      - notebook មេរបស់ជំពូក
-   * - `multihead-attention.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/multihead-attention.ipynb>`_
+   * - `multihead-attention.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៣-សង្ខេប-multihead-attention.ipynb>`_
      - សង្ខេប (summary) នៃ multi-head attention
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៣-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
 Notebooks ខ្មែរសម្រាប់ជំពូកនេះ

@@ -7,7 +7,7 @@
 
 .. note::
 
-   ប្រភព៖ ថត `ch04 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04>`_
+   ប្រភព៖ ថត `ch04 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch04>`_
    និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
 
 ជំពូកនេះជាជំហានសំខាន់ — ការផ្គុំបំណែកទាំងអស់ចេញជាម៉ូដែល GPT ពេញលេញ
@@ -18,7 +18,7 @@
 -------
 
 កូដមេស្ថិតក្នុងថត
-`ch04/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04/01_main-chapter-code>`_៖
+`ch04/01_main-chapter-code <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch04/01_main-chapter-code>`_៖
 
 .. list-table::
    :header-rows: 1
@@ -26,11 +26,11 @@
 
    * - ឯកសារ
      - តួនាទី
-   * - `ch04.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/ch04.ipynb>`_
+   * - `ch04.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៤-ម៉ូដែល-GPT.ipynb>`_
      - notebook មេរបស់ជំពូក
-   * - `gpt.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/gpt.py>`_
+   * - `gpt.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/ch04/01_main-chapter-code/gpt.py>`_
      - សង្ខេប (summary) ម៉ូដែល GPT ជាឯកសារ Python
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៤-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
 Notebooks ខ្មែរសម្រាប់ជំពូកនេះ
