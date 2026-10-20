@@ -26,7 +26,7 @@
 
 - ខ្លឹមសារទាំងស្រុងជាភាសាខ្មែរ (រក្សាពាក្យបច្ចេកទេសអង់គ្លេសដដែល) ដោយប្រើពុម្ពអក្សរ Noto Sans Khmer + Noto Serif Khmer (fallback Khmer OS)
 - រូបរាងបែប Read the Docs (Sphinx + sphinx_rtd_theme) ស្អាត សាមញ្ញ គ្មានភាពរញ៉េរញ៉ៃ
-- គាំទ្រទាំងស្បែកងងឹត (default) និងស្បែកភ្លឺ ដោយស្វ័យប្រវត្តិតាមការកំណត់ពណ៌របស់ប្រព័ន្ធ/ប្រៅស៊ឺ (prefers-color-scheme) ដោយគ្មានប៊ូតុងរំខានភ្នែក
+- ~~គាំទ្រទាំងស្បែកងងឹត (default) និងស្បែកភ្លឺ ដោយស្វ័យប្រវត្តិតាមការកំណត់ពណ៌របស់ប្រព័ន្ធ/ប្រៅស៊ឺ (prefers-color-scheme) ដោយគ្មានប៊ូតុងរំខានភ្នែក~~
 - ឈ្មោះថត និងឈ្មោះឯកសារជាភាសាខ្មែរ
 - តំណ Edit on GitHub លើគ្រប់ទំព័រ · sitemap.xml · robots.txt · Open Graph/Twitter/JSON-LD
 - ការ build ឆ្លងកាត់ `sphinx-build -W --keep-going` ដោយគ្មាន warning
