@@ -73,6 +73,13 @@
 ផែនទីជំពូក និងកូដសំខាន់ៗ
 ---------------------------
 
+.. figure:: /_static/diagram-mental-model.svg
+   :alt: Mental model diagram of the LLM pipeline with Khmer labels
+   :width: 100%
+
+   គំរូគំនិតសង្ខេបនៃបំពង់ការងារទាំងមូល — ដ្យាក្រាមដើមជាភាសាខ្មែរ រចនាឡើងសម្រាប់
+   ឯកសារសហគមន៍នេះ ដោយផ្អែកលើរចនាសម្ព័ន្ធជំពូកពិតរបស់ upstream។
+
 .. list-table::
    :header-rows: 1
    :widths: 34 42 24

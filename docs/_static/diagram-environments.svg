@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 330" font-family="'Noto Sans Khmer','Khmer OS','Noto Serif Khmer',sans-serif">
+  <rect width="880" height="330" rx="12" fill="#12151d"/>
+  <text x="440" y="34" text-anchor="middle" font-size="16" fill="#eef2f7" font-weight="600">ជម្រើសបរិស្ថានដំណើរការកូដ</text>
+
+  <!-- Local card -->
+  <rect x="24" y="56" width="404" height="228" rx="10" fill="#1d2c3d" stroke="#3d7ec2"/>
+  <text x="226" y="86" text-anchor="middle" font-size="14" fill="#d8dee9" font-weight="600">មូលដ្ឋាន (Local)</text>
+  <g font-size="12.5" fill="#9aa4b2">
+    <circle cx="52" cy="118" r="4" fill="#4cc38a"/>
+    <text x="68" y="122">Python + pip install -r requirements.txt</text>
+    <circle cx="52" cy="150" r="4" fill="#4cc38a"/>
+    <text x="68" y="154">VSCode (extensions ណែនាំក្នុង .vscode) ឬ JupyterLab</text>
+    <circle cx="52" cy="182" r="4" fill="#4cc38a"/>
+    <text x="68" y="186">Docker DevContainer (ជម្រើស ញែកបរិស្ថានដាច់ដោយឡែក)</text>
+    <circle cx="52" cy="214" r="4" fill="#4cc38a"/>
+    <text x="68" y="218">ដំណើរការលើ laptop ធម្មតាបាន — GPU ប្រើស្វ័យប្រវត្តិបើមាន</text>
+    <circle cx="52" cy="246" r="4" fill="#4cc38a"/>
+    <text x="68" y="250">អ្នកនិពន្ធសាកល្បងជំពូកមេលើ M3 MacBook Air</text>
+  </g>
+
+  <!-- Cloud card -->
+  <rect x="452" y="56" width="404" height="228" rx="10" fill="#1d3a2e" stroke="#3dc283"/>
+  <text x="654" y="86" text-anchor="middle" font-size="14" fill="#d8dee9" font-weight="600">ពពក (Cloud)</text>
+  <g font-size="12.5" fill="#9aa4b2">
+    <circle cx="480" cy="118" r="4" fill="#4cc38a"/>
+    <text x="496" y="122">Lightning Studio — បរិស្ថានអចិន្ត្រៃយ៍ VSCode + Jupyter Lab</text>
+    <circle cx="480" cy="150" r="4" fill="#4cc38a"/>
+    <text x="496" y="154">Google Colab — upload notebook + ឯកសារពាក់ព័ន្ធ ប្តូរ Runtime ទៅ GPU</text>
+    <circle cx="480" cy="182" r="4" fill="#4cc38a"/>
+    <text x="496" y="186">NVIDIA GPU ជួយបង្កើនល្បឿនខ្លាំង ជាពិសេសជំពូក ៥–៧</text>
+    <circle cx="480" cy="214" r="4" fill="#4cc38a"/>
+    <text x="496" y="218">AWS SageMaker notebook (ជម្រើសក្នុងថត setup/04)</text>
+  </g>
+
+  <text x="440" y="314" text-anchor="middle" font-size="11" fill="#5c6773">ដ្យាក្រាមដើមរចនាឡើងសម្រាប់ឯកសារសហគមន៍នេះ — ផ្អែកលើ setup/README.md របស់ឃ្លាំង upstream</text>
+</svg>
