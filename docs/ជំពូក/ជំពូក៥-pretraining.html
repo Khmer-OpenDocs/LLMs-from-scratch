@@ -78,10 +78,11 @@
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ជំពូក ៥៖ Pretraining លើទិន្នន័យគ្មានស្លាក</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">មេរៀនសង្ខេប (សិក្សាងាយ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">កូដមេ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notebooks">Notebooks ខ្មែរសម្រាប់ជំពូកនេះ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id2">សម្ភារៈបន្ថែម</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">លំហាត់</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id3">សម្ភារៈបន្ថែម</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">លំហាត់</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A6-finetuning-classification.html">ជំពូក ៦៖ Finetuning សម្រាប់ចំណាត់ថ្នាក់អត្ថបទ</a></li>
@@ -133,7 +134,28 @@
 ជំនាន់ថ្មីៗពីមូលដ្ឋាន។ បណ្ណាល័យដែល <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> កំណត់សម្រាប់ជំពូកនេះ៖
 <code class="docutils literal notranslate"><span class="pre">tiktoken</span></code> · <code class="docutils literal notranslate"><span class="pre">tensorflow</span></code> · <code class="docutils literal notranslate"><span class="pre">tqdm</span></code>។</p>
 <section id="id1">
-<h2>កូដមេ<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>មេរៀនសង្ខេប (សិក្សាងាយ)<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>ការពន្យល់ខាងក្រោមជាអត្ថបទដើមរបស់សហគមន៍ ដើម្បីជួយឱ្យយល់គំនិតសំខាន់ៗមុនពេលអានកូដ៖</p>
+<ul class="simple">
+<li><p><strong>Next-token training</strong> — បញ្ចូលជាបន្សំ tokens ហើយ target ជាបន្សំនោះរំកិល ១។ ម៉ូដែលរៀនព្យាករណ៍ token បន្ទាប់។</p></li>
+<li><p><strong>Cross-entropy និង perplexity</strong> — loss វាស់គម្លាងរវាងការព្យាករណ៍ និងចម្លើយពិត។ perplexity = exp(loss) ងាយស្រម្ង់ថា &quot;មធ្យមមានជម្រើសប៉ុន្មាន&quot;។</p></li>
+<li><p><strong>Training loop និង validation</strong> — រៀប batch → forward → loss → backward → optimizer.step()។ ការត្រួតពិនិត្យលើ validation ជួយឃើញ overfitting។</p></li>
+<li><p><strong>LR warmup + cosine decay</strong> — learning rate ឡើងបន្តិចម្តង បន្ទាប់មកថយចុះរលូន ធ្វើឱ្យការបណ្តុះបណ្តាលស្ថិរ និងល្អជាង។</p></li>
+<li><p><strong>Temperature និង top-k</strong> — គ្រប់គ្រងភាពចៃដន្យពេលបង្កើតអត្ថបទ។ temperature=0 និងគ្មាន top-k មានន័យថាយក token ដែលមានប្រូបាបខ្ពស់បំផុតជានិច្ច។</p></li>
+<li><p><strong>ការផ្ទុក weights pretrained</strong> — ជំនួសឱ្យការរៀនពីសូន្យ អាចយក weights ផ្លូវការ (GPT-2) មកដាក់ក្នុងម៉ូដែលរបស់យើង។</p></li>
+</ul>
+<p>ដំណើរការកូដក្នុងជំពូកនេះ៖</p>
+<ol class="arabic simple">
+<li><p>វាយតម្លៃប្រូបាបដំបូង និងគណនា loss ដោយដៃ។</p></li>
+<li><p>ផ្ទុកទិន្នន័យ បំបែក train/val និងបង្កើត loaders។</p></li>
+<li><p>សរសេរអនុគមន៍ train (calc_loss_batch, train_model_simple)។</p></li>
+<li><p>គូសក្រាផ loss និងបង្កើតអត្ថបទគំរូ។</p></li>
+<li><p>សិក្សា sampling, temperature, top-k និងអនុគមន៍ generate។</p></li>
+<li><p>រក្សាទុក/ផ្ទុក weights ហើយផ្ទុក weights GPT-2 ចូលម៉ូដែលយើង។</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2>កូដមេ<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>កូដមេស្ថិតក្នុងថត
 <a class="reference external" href="https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch05/01_main-chapter-code">ch05/01_main-chapter-code</a>៖</p>
 <table class="docutils align-default">
@@ -171,8 +193,8 @@
 </ul>
 <p>សូមមើលបញ្ជីពេញលេញ និងរបៀបដំណើរការក្នុងទំព័រ <a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%8E%E1%9E%BC%E1%9E%8F%E1%9E%94%E1%9F%8A%E1%9E%BB%E1%9E%80-%E1%9E%81%E1%9F%92%E1%9E%98%E1%9F%82%E1%9E%9A.html"><span class="doc">Notebooks ភាសាខ្មែរ (Companion Notebooks)</span></a>។</p>
 </section>
-<section id="id2">
-<h2>សម្ភារៈបន្ថែម<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<section id="id3">
+<h2>សម្ភារៈបន្ថែម<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 40.0%" />
@@ -241,8 +263,8 @@
 </tbody>
 </table>
 </section>
-<section id="id3">
-<h2>លំហាត់<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h2>លំហាត់<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <p>ចម្លើយលំហាត់មានក្នុង <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code> ខាងលើ និងក្នុងសង្ខេបនៃភាគបន្ថែម C។</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

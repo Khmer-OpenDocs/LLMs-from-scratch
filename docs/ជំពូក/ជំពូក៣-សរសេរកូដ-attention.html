@@ -76,10 +76,11 @@
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a></li>
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A2-%E1%9E%91%E1%9E%B7%E1%9E%93%E1%9F%92%E1%9E%93%E1%9E%93%E1%9F%90%E1%9E%99%E1%9E%A2%E1%9E%8F%E1%9F%92%E1%9E%90%E1%9E%94%E1%9E%91.html">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">មេរៀនសង្ខេប (សិក្សាងាយ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">កូដមេ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notebooks">Notebooks ខ្មែរសម្រាប់ជំពូកនេះ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id3">រចនាសម្ព័ន្ធថត</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">លំហាត់</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id4">រចនាសម្ព័ន្ធថត</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">លំហាត់</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A4-%E1%9E%98%E1%9F%89%E1%9E%BC%E1%9E%8A%E1%9F%82%E1%9E%9B-GPT.html">ជំពូក ៤៖ ការអនុវត្តម៉ូដែល GPT ពីមូលដ្ឋាន</a></li>
@@ -130,7 +131,27 @@
 <p>ជំពូកនេះណែនាំការសរសេរកូដយន្តការ Attention — សមាសភាគស្នូលដែលធ្វើឱ្យ LLM
 អាចយកចិត្តទុកដាក់លើផ្នែកពាក់ព័ន្ធនៃទិន្នន័យបញ្ចូល រួមទាំងការអនុវត្ត Multi-Head Attention។</p>
 <section id="id1">
-<h2>កូដមេ<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>មេរៀនសង្ខេប (សិក្សាងាយ)<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>ការពន្យល់ខាងក្រោមជាអត្ថបទដើមរបស់សហគមន៍ ដើម្បីជួយឱ្យយល់គំនិតសំខាន់ៗមុនពេលអានកូដ៖</p>
+<ul class="simple">
+<li><p><strong>គំនិត attention</strong> — ជំនួសឱ្យការមើលគ្រប់ទីតាំងស្មើៗគ្ា ម៉ូដែល &quot;ថ្លឹង&quot; ថា token ណាខ្លះសំខាន់សម្រាប់បង្កើតការតំណាងរបស់ token នីមួយៗ។</p></li>
+<li><p><strong>Dot-product score</strong> — រង្វាស់ភាពស្រដៀងគ្នារវាង query និង key។ កាន់តែខ្ពស់ កាន់តែត្រូវយកចិត្តទុកដាក់។</p></li>
+<li><p><strong>Softmax</strong> — បំលែង scores ទៅជាទម្ងន់ដែលបូកសរុបស្មើ ១។</p></li>
+<li><p><strong>Causal mask</strong> — ទប់មិនឱយ token មើលឃើញ tokens នៅខាងមុខវា ដើម្បីឱ្យការបង្កើតអត្ថបទត្រឹមត្រូវ។</p></li>
+<li><p><strong>Q/K/V projections</strong> — ម៉ាទ្រីសទម្ងន់ដែលអាចរៀនបាន សម្រាប់បង្កើត query, key, value របស់ token នីមួយៗ។</p></li>
+<li><p><strong>Multi-head attention</strong> — ដំណើរការ attention ច្រើន &quot;ក្បាល&quot; ជាមួយគ្នា ដើម្បីមើលទិន្នន័យពីទស្សនវិស័យច្រើន។</p></li>
+</ul>
+<p>ដំណើរការកូដក្នុងជំពូកនេះ៖</p>
+<ol class="arabic simple">
+<li><p>គណនា attention scores ដៃ និង context vector ដំបូង។</p></li>
+<li><p>ណែនាំម៉ាទ្រីស Q/K/V ដែលរៀនបាន។</p></li>
+<li><p>បង្កប់ទាំងអស់ចូលក្លាស SelfAttention_v2។</p></li>
+<li><p>បន្ថែម causal mask និង dropout (CausalAttention)។</p></li>
+<li><p>ប្រៀបធៀបការអនុវត្ត multi-head attention ពីរបែប។</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2>កូដមេ<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>កូដមេស្ថិតក្នុងថត
 <a class="reference external" href="https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch03/01_main-chapter-code">ch03/01_main-chapter-code</a>៖</p>
 <table class="docutils align-default">
@@ -166,8 +187,8 @@
 </ul>
 <p>សូមមើលបញ្ជីពេញលេញ និងរបៀបដំណើរការក្នុងទំព័រ <a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%8E%E1%9E%BC%E1%9E%8F%E1%9E%94%E1%9F%8A%E1%9E%BB%E1%9E%80-%E1%9E%81%E1%9F%92%E1%9E%98%E1%9F%82%E1%9E%9A.html"><span class="doc">Notebooks ភាសាខ្មែរ (Companion Notebooks)</span></a>។</p>
 </section>
-<section id="id3">
-<h2>រចនាសម្ព័ន្ធថត<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h2>រចនាសម្ព័ន្ធថត<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 40.0%" />
@@ -191,8 +212,8 @@
 </tbody>
 </table>
 </section>
-<section id="id4">
-<h2>លំហាត់<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id5">
+<h2>លំហាត់<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <p>ចម្លើយលំហាត់មានក្នុង <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code> ខាងលើ និងក្នុងសង្ខេបនៃភាគបន្ថែម C។</p>
 <div class="admonition tip">
 <p class="admonition-title">Tip</p>

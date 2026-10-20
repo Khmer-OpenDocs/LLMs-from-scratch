@@ -75,10 +75,11 @@
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A1-%E1%9E%9F%E1%9F%92%E1%9E%9C%E1%9F%82%E1%9E%84%E1%9E%99%E1%9E%9B%E1%9F%8B%E1%9E%96%E1%9E%B8-LLM.html">ជំពូក ១៖ ស្វែងយល់ពី Large Language Models</a></li>
 <li class="toctree-l1 current"><a class="current reference internal" href="#">ជំពូក ២៖ ការធ្វើការជាមួយទិន្នន័យអត្ថបទ (Working with Text Data)</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="#id1">កូដមេ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id1">មេរៀនសង្ខេប (សិក្សាងាយ)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id2">កូដមេ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#notebooks">Notebooks ខ្មែរសម្រាប់ជំពូកនេះ</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id4">រចនាសម្ព័ន្ធថត</a></li>
-<li class="toctree-l2"><a class="reference internal" href="#id5">លំហាត់</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id5">រចនាសម្ព័ន្ធថត</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#id6">លំហាត់</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="%E1%9E%87%E1%9F%86%E1%9E%96%E1%9E%BC%E1%9E%80%E1%9F%A3-%E1%9E%9F%E1%9E%9A%E1%9E%9F%E1%9F%81%E1%9E%9A%E1%9E%80%E1%9E%BC%E1%9E%8A-attention.html">ជំពូក ៣៖ ការសរសេរកូដ Attention Mechanisms</a></li>
@@ -131,7 +132,26 @@
 token រហូតដល់ការបង្កើត dataloader សម្រាប់ការបណ្តុះបណ្តាល។ បណ្ណាល័យពាក់ព័ន្ធសំខាន់
 ដែល <code class="docutils literal notranslate"><span class="pre">requirements.txt</span></code> កំណត់សម្រាប់ជំពូកនេះគឺ <code class="docutils literal notranslate"><span class="pre">tiktoken</span></code> (&gt;= 0.5.1)។</p>
 <section id="id1">
-<h2>កូដមេ<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<h2>មេរៀនសង្ខេប (សិក្សាងាយ)<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>ការពន្យល់ខាងក្រោមជាអត្ថបទដើមរបស់សហគមន៍ ដើម្បីជួយឱ្យយល់គំនិតសំខាន់ៗមុនពេលអានកូដ៖</p>
+<ul class="simple">
+<li><p><strong>Token</strong> — ឯកតាតូចបំផុតនៃអត្ថបទ (ពាក្យ កំណាត់ពាក្យ ឬអក្សរ) ដែលម៉ូដែលអាចដំណើរការបាន។</p></li>
+<li><p><strong>Vocabulary</strong> — តារាងផ្គូផ្គាប់ token ↔ លេខគត់ (token ID)។ ទំហំរបស់វាកំណត់ទំហំស្រទាប់ embedding។</p></li>
+<li><p><strong>BPE (Byte Pair Encoding)</strong> — វិធីសាងសង់ vocabulary ដោយផ្គុំគូអក្សរ/កំណាត់ដែលកើតឡើងញឹកញាប់ ធ្វើឱ្យពាក្យដែលមិនធ្លាប់ឃើញក៏បំបែកបានដែរ។</p></li>
+<li><p><strong>Embedding</strong> — ការបំលែង token ID ទៅជាវ៉ិចទ័រលេខ ដើម្បីឱ្យបណ្តាញសរសៃប្រសាទអាចគណនាលើ &quot;អត្ថន័យ&quot;។</p></li>
+<li><p><strong>Sliding window + target shift</strong> — អត្ថបទត្រូវបានកាត់ជាបន្សំបញ្ចូលប្រវែងថេរ ហើយ target គឺបន្សំនោះរំកិលទៅមុខ ១ token (ការព្យាករណ៍ token បន្ទាប់)។</p></li>
+</ul>
+<p>ដំណើរការកូដក្នុងជំពូកនេះ៖</p>
+<ol class="arabic simple">
+<li><p>ផ្ទុកអត្ថបទឧទាហរណ៍ និងបំបែកវាជា tokens ដោយកន្សោមធម្មតា។</p></li>
+<li><p>សាងសង់ vocabulary និង tokenizer V1 បន្ទាប់មក V2 (មាន special tokens)។</p></li>
+<li><p>ប្រើ tiktoken (BPE របស់ GPT-2) ជា tokenizer ផលិតការ។</p></li>
+<li><p>បង្កើត DataLoader ដោយ sliding window សម្រាប់ការបណ្តុះបណ្តាល។</p></li>
+<li><p>បំលែង token IDs ទៅជាវ៉ិចទ័រដោយ embedding + positional embedding។</p></li>
+</ol>
+</section>
+<section id="id2">
+<h2>កូដមេ<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
 <p>កូដមេស្ថិតក្នុងថត
 <a class="reference external" href="https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch02/01_main-chapter-code">ch02/01_main-chapter-code</a>៖</p>
 <table class="docutils align-default">
@@ -167,8 +187,8 @@ token រហូតដល់ការបង្កើត dataloader សម្រ�
 </ul>
 <p>សូមមើលបញ្ជីពេញលេញ និងរបៀបដំណើរការក្នុងទំព័រ <a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%8E%E1%9E%BC%E1%9E%8F%E1%9E%94%E1%9F%8A%E1%9E%BB%E1%9E%80-%E1%9E%81%E1%9F%92%E1%9E%98%E1%9F%82%E1%9E%9A.html"><span class="doc">Notebooks ភាសាខ្មែរ (Companion Notebooks)</span></a>។</p>
 </section>
-<section id="id4">
-<h2>រចនាសម្ព័ន្ធថត<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="id5">
+<h2>រចនាសម្ព័ន្ធថត<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
 <table class="docutils align-default">
 <colgroup>
 <col style="width: 40.0%" />
@@ -201,8 +221,8 @@ token រហូតដល់ការបង្កើត dataloader សម្រ�
 </tbody>
 </table>
 </section>
-<section id="id5">
-<h2>លំហាត់<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<section id="id6">
+<h2>លំហាត់<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
 <p>ជំពូកនេះមានលំហាត់ ហើយចម្លើយមានក្នុង <code class="docutils literal notranslate"><span class="pre">exercise-solutions.ipynb</span></code> ខាងលើ
 ព្រមទាំងត្រូវបានសង្ខេបក្នុងភាគបន្ថែម C (មើលទំព័រ <a class="reference internal" href="../%E1%9E%99%E1%9F%84%E1%9E%84/%E1%9E%97%E1%9E%B6%E1%9E%82%E1%9E%94%E1%9E%93%E1%9F%92%E1%9E%90%E1%9F%82%E1%9E%98.html"><span class="doc">ភាគបន្ថែម (Appendices A–E)</span></a>)។</p>
 <div class="admonition tip">
