@@ -11,6 +11,12 @@
    និង `requirements.txt <https://github.com/rasbt/LLMs-from-scratch/blob/main/requirements.txt>`_
    នៃឃ្លាំង upstream។
 
+.. figure:: /_static/diagram-environments.svg
+   :alt: Diagram of local and cloud environment options with Khmer labels
+   :width: 100%
+
+   ជម្រើសបរិស្ថានទាំងអស់ — ដ្យាក្រាមដើមរចនាឡើងសម្រាប់ឯកសារសហគមន៍នេះ។
+
 ចាប់ផ្តើមរហ័ស (Quickstart)
 -----------------------------
 
