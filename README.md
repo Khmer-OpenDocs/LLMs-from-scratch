@@ -8,7 +8,8 @@
 
 ## តំណភ្ជាប់
 
-- គេហទំព័រចម្បង (GitHub Pages): https://seyhalite.github.io/LLMs-from-scratch/
+- ឯកសារចម្បង (Read the Docs): https://llms-from-scratch.readthedocs.io/
+- គេហទំព័រកញ្ចក់ (GitHub Pages): https://seyhalite.github.io/LLMs-from-scratch/
 - ឃ្លាំង upstream: https://github.com/rasbt/LLMs-from-scratch
 - upstream version ដែលតាមដាន: `main` @ `cdbd33e` (2026-10-02)
 
@@ -54,8 +55,8 @@ sphinx-build -W --keep-going source docs
 ## ការដាក់ពង្រាយ (Deploy)
 
 - GitHub Pages: សាខា `main` ថត `/docs` (មាន `.nojekyll`)
-- Read the Docs: import ឃ្លាំងនេះ — `.readthedocs.yaml` កំណត់រួចរាល់
-  (ubuntu-24.04, Python 3.12, `source/conf.py`)
+- Read the Docs: កំពុងដំណើរការនៅ https://llms-from-scratch.readthedocs.io/
+  (`.readthedocs.yaml`: ubuntu-24.04, Python 3.12, `source/conf.py`)
 
 ## អាជ្ញាបណ្ណ
 
