@@ -85,7 +85,10 @@ Notebooks ភាសាខ្មែរ (Companion Notebooks)
 ----------------
 
 1. clone ឃ្លាំង upstream និងឃ្លាំងឯកសារខ្មែរនេះ។
-2. ចម្លង notebook ខ្មែរដែលអ្នកចង់ប្រើ ទៅដាក់ក្នុងថតជំពូកពាក់ព័ន្ធរបស់ upstream
+2. notebook នីមួយៗមាន **connection cell** ដំបូងដែលចង្អុល ``sys.path`` និងថតធ្វើការ
+   ទៅកាន់ថត ``កូដ/`` ក្នុងឃ្លាំងនេះស្វ័យប្រវតតិ — ដូច្នេះវាដំណើរការភ្ជាប់ដូច notebook ដើម
+   (គ្រាន់តែបើកវាពីក្នុងឃ្លាំងដែល clone មក ហើយដំណើរការ cells តាមលំដាប់)។ ជាជម្រើស អ្នកក៏អាច
+   2. ចម្លង notebook ខ្មែរដែលអ្នកចង់ប្រើ ទៅដាក់ក្នុងថតជំពូកពាក់ព័ន្ធរបស់ upstream
    (ឧ. ``ch02/01_main-chapter-code/``) ដើម្បី្យកូដរកឃើញឯកសារជំនួយ
    (``previous_chapters.py``, ``gpt_download.py``, ឯកសារទិន្នន័យ ជាដើម)។
 3. ដំឡើង dependencies៖ ``pip install -r requirements.txt`` ពីថត root របស់ upstream
