@@ -92,22 +92,22 @@
      - —
    * - ជំពូក ២៖ Working with Text Data
      - ``ch02.ipynb`` · ``dataloader.ipynb`` (summary) · ``exercise-solutions.ipynb``
-     - `./ch02 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch02>`_
+     - `./ch02 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch02>`_
    * - ជំពូក ៣៖ Coding Attention Mechanisms
      - ``ch03.ipynb`` · ``multihead-attention.ipynb`` (summary) · ``exercise-solutions.ipynb``
-     - `./ch03 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch03>`_
+     - `./ch03 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch03>`_
    * - ជំពូក ៤៖ Implementing a GPT Model from Scratch
      - ``ch04.ipynb`` · ``gpt.py`` (summary) · ``exercise-solutions.ipynb``
-     - `./ch04 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch04>`_
+     - `./ch04 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch04>`_
    * - ជំពូក ៥៖ Pretraining on Unlabeled Data
      - ``ch05.ipynb`` · ``gpt_train.py`` (summary) · ``gpt_generate.py`` (summary) · ``exercise-solutions.ipynb``
-     - `./ch05 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05>`_
+     - `./ch05 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch05>`_
    * - ជំពូក ៦៖ Finetuning for Text Classification
      - ``ch06.ipynb`` · ``gpt_class_finetune.py`` · ``exercise-solutions.ipynb``
-     - `./ch06 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06>`_
+     - `./ch06 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch06>`_
    * - ជំពូក ៧៖ Finetuning to Follow Instructions
      - ``ch07.ipynb`` · ``gpt_instruction_finetuning.py`` (summary) · ``ollama_evaluate.py`` (summary) · ``exercise-solutions.ipynb``
-     - `./ch07 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07>`_
+     - `./ch07 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch07>`_
 
 កូដមេទាំងអស់ស្ថិតនៅក្នុងថតย่อย ``01_main-chapter-code`` នៃជំពូកនីមួយៗ។
 
@@ -117,7 +117,7 @@
 - ជំពូកនីមួយៗមានលំហាត់ជាច្រើន។ ចម្លើយត្រូវបានសង្ខេបក្នុងភាគបន្ថែម C (Appendix C)
   ហើយ notebook ចម្លើយមានក្នុងថតជំពូកនីមួយៗ ឧទាហរណ៍
   `./ch02/01_main-chapter-code/exercise-solutions.ipynb
-  <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_។
+  <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ចម្លើយលំហាត់.ipynb>`_។
 - មាន PDF ឥតគិតថ្លៃ 170 ទំព័រ `Test Yourself On Build a Large Language Model (From Scratch)
   <https://www.manning.com/books/test-yourself-on-build-a-large-language-model-from-scratch>`_
   ពីគេហទំព័រ Manning ដែលមានសំណួរ quiz ប្រហែល 30 សំណួរ និងចម្លើយក្នុងមួយជំពូក។

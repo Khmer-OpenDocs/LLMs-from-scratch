@@ -7,7 +7,7 @@
 
 .. note::
 
-   ប្រភព៖ ថត `ch05 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05>`_
+   ប្រភព៖ ថត `ch05 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch05>`_
    និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
 
 ជំពូកនេះគ្របដណ្តប់ការបណ្តុះបណ្តាលមុន (pretraining) ម៉ូដែល GPT ដែលបានសាងសង់ក្នុងជំពូក ៤
@@ -20,7 +20,7 @@
 -------
 
 កូដមេស្ថិតក្នុងថត
-`ch05/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch05/01_main-chapter-code>`_៖
+`ch05/01_main-chapter-code <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch05/01_main-chapter-code>`_៖
 
 .. list-table::
    :header-rows: 1
@@ -28,13 +28,13 @@
 
    * - ឯកសារ
      - តួនាទី
-   * - `ch05.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/ch05.ipynb>`_
+   * - `ch05.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៥-pretraining.ipynb>`_
      - notebook មេរបស់ជំពូក
-   * - `gpt_train.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/gpt_train.py>`_
+   * - `gpt_train.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/ch05/01_main-chapter-code/gpt_train.py>`_
      - សង្ខេប (summary) ស្គ្រីបបណ្តុះបណ្តាល
-   * - `gpt_generate.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/gpt_generate.py>`_
+   * - `gpt_generate.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/ch05/01_main-chapter-code/gpt_generate.py>`_
      - សង្ខេប (summary) ស្គ្រីបបង្កើតអត្ថបទ
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៥-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
 Notebooks ខ្មែរសម្រាប់ជំពូកនេះ

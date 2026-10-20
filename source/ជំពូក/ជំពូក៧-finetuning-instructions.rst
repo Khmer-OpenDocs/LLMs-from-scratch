@@ -7,7 +7,7 @@
 
 .. note::
 
-   ប្រភព៖ ថត `ch07 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07>`_
+   ប្រភព៖ ថត `ch07 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch07>`_
    និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
 
 ជំពូកចុងក្រោយនៃជំពូកមេ — ការ finetune ម៉ូដែល GPT ឱ្យធ្វើតាមការណែនាំ
@@ -18,7 +18,7 @@
 -------
 
 កូដមេស្ថិតក្នុងថត
-`ch07/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch07/01_main-chapter-code>`_៖
+`ch07/01_main-chapter-code <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch07/01_main-chapter-code>`_៖
 
 .. list-table::
    :header-rows: 1
@@ -26,13 +26,13 @@
 
    * - ឯកសារ
      - តួនាទី
-   * - `ch07.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ch07.ipynb>`_
+   * - `ch07.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៧-finetuning-instructions.ipynb>`_
      - notebook មេរបស់ជំពូក
-   * - `gpt_instruction_finetuning.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/gpt_instruction_finetuning.py>`_
+   * - `gpt_instruction_finetuning.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/ch07/01_main-chapter-code/gpt_instruction_finetuning.py>`_
      - សង្ខេប (summary) ស្គ្រីប instruction finetuning
-   * - `ollama_evaluate.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/ollama_evaluate.py>`_
+   * - `ollama_evaluate.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/ch07/01_main-chapter-code/ollama_evaluate.py>`_
      - សង្ខេប (summary) ការវាយតម្លៃតាមរយៈ Ollama
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៧-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
 Notebooks ខ្មែរសម្រាប់ជំពូកនេះ

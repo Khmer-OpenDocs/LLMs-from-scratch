@@ -7,7 +7,7 @@
 
 .. note::
 
-   ប្រភព៖ ថត `ch06 <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06>`_
+   ប្រភព៖ ថត `ch06 <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch06>`_
    និងតារាងមាតិកាក្នុង `README.md <https://github.com/rasbt/LLMs-from-scratch/blob/main/README.md>`_ របស់ upstream។
 
 ជំពូកនេះបង្ហាញការកែសម្រួល (finetune) ម៉ូដែល GPT ដែលបាន pretrain ហើយ
@@ -18,7 +18,7 @@
 -------
 
 កូដមេស្ថិតក្នុងថត
-`ch06/01_main-chapter-code <https://github.com/rasbt/LLMs-from-scratch/tree/main/ch06/01_main-chapter-code>`_៖
+`ch06/01_main-chapter-code <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/ch06/01_main-chapter-code>`_៖
 
 .. list-table::
    :header-rows: 1
@@ -26,11 +26,11 @@
 
    * - ឯកសារ
      - តួនាទី
-   * - `ch06.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/ch06.ipynb>`_
+   * - `ch06.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៦-finetuning-classification.ipynb>`_
      - notebook មេរបស់ជំពូក
-   * - `gpt_class_finetune.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/gpt_class_finetune.py>`_
+   * - `gpt_class_finetune.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/ch06/01_main-chapter-code/gpt_class_finetune.py>`_
      - ស្គ្រីប finetuning សម្រាប់ចំណាត់ថ្នាក់
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក៦-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
 Notebooks ខ្មែរសម្រាប់ជំពូកនេះ

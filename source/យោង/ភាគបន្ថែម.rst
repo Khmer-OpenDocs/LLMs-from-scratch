@@ -14,7 +14,7 @@
 ----------------------------------------
 
 ការណែនាំសង្ខេបអំពី PyTorch សម្រាប់អ្នកដែលថ្មីជាមួយ framework នេះ។
-ថត `appendix-A <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-A>`_
+ថត `appendix-A <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/appendix-A>`_
 មាន ``01_main-chapter-code`` និង ``02_setup-recommendations``។
 
 .. list-table::
@@ -23,13 +23,13 @@
 
    * - ឯកសារ
      - តួនាទី
-   * - `code-part1.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part1.ipynb>`_
+   * - `code-part1.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-A-ផ្នែក-PyTorch.ipynb>`_
      - ផ្នែកទី ១ នៃកូដណែនាំ PyTorch
-   * - `code-part2.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/code-part2.ipynb>`_
+   * - `code-part2.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-A-ផ្នែក២-PyTorch.ipynb>`_
      - ផ្នែកទី ២ នៃកូដណែនាំ PyTorch
-   * - `DDP-script.py <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/DDP-script.py>`_
+   * - `DDP-script.py <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/កូដ/appendix-A/01_main-chapter-code/DDP-script.py>`_
      - ស្គ្រីប Distributed Data Parallel (DDP)
-   * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - `exercise-solutions.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-A-ចម្លើយលំហាត់.ipynb>`_
      - ចម្លើយលំហាត់
 
 ភាគបន្ថែម B — References and Further Reading
@@ -50,15 +50,15 @@
 --------------------------------------------------------------
 
 ការបន្ថែមមុខងារបន្ថែមទៅក្នុង training loop។ កូដមេ៖
-`appendix-D.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-D/01_main-chapter-code/appendix-D.ipynb>`_
-ក្នុងថត `appendix-D <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-D>`_។
+`appendix-D.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-D-training-loop.ipynb>`_
+ក្នុងថត `appendix-D <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/appendix-D>`_។
 
 ភាគបន្ថែម E — Parameter-efficient Finetuning with LoRA
 --------------------------------------------------------
 
 ការ finetune ដោយសន្សំសំចៃ parameters ជាមួយវិធីសាស្ត្រ LoRA។ កូដមេ៖
-`appendix-E.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb>`_
-ក្នុងថត `appendix-E <https://github.com/rasbt/LLMs-from-scratch/tree/main/appendix-E>`_។
+`appendix-E.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ភាគបន្ថែម-E-LoRA.ipynb>`_
+ក្នុងថត `appendix-E <https://github.com/SeyhaLite/LLMs-from-scratch/tree/main/កូដ/appendix-E>`_។
 
 Notebooks ខ្មែរសម្រាប់ភាគបន្ថែម
 ----------------------------
