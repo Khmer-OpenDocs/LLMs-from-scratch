@@ -33,6 +33,17 @@ token រហូតដល់ការបង្កើត dataloader សម្រ�
    * - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_
      - ចម្លើយលំហាត់របស់ជំពូក
 
+Notebooks ខ្មែរសម្រាប់ជំពូកនេះ
+-----------------------------
+
+ឃ្លាំងឯកសារនេះមានកំណែ notebook ជាភាសាខ្មែរ (ថត ``ណូតប៊ុក-ខ្មែរ/``)៖
+
+- `ជំពូក២-ទិន្នន័យអត្ថបទ.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ទិន្នន័យអត្ថបទ.ipynb>`_ — notebook មេ ព្រមទាំងការពន្យល់ និង comments ជាខ្មែរ
+- `ជំពូក២-សង្ខេប-dataloader.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-សង្ខេប-dataloader.ipynb>`_ — សង្ខេបបំពង់ផ្ទុកទិន្ននយទាំងមូល
+- `ជំពូក២-ចម្លើយលំហាត់.ipynb <https://github.com/SeyhaLite/LLMs-from-scratch/blob/main/ណូតប៊ុក-ខ្មែរ/ជំពូក២-ចម្លើយលំហាត់.ipynb>`_ — ចម្លើយលំហាត់របស់ជំពូក
+
+សូមមើលបញ្ជីពេញលេញ និងរបៀបដំណើរការក្នុងទំព័រ :doc:`../យោង/ណូតប៊ុក-ខ្មែរ`។
+
 រចនាសម្ព័ន្ធថត
 ----------------
 
