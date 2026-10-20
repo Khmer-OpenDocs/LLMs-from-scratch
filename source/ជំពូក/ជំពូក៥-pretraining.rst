@@ -16,6 +16,27 @@
 ជំនាន់ថ្មីៗពីមូលដ្ឋាន។ បណ្ណាល័យដែល ``requirements.txt`` កំណត់សម្រាប់ជំពូកនេះ៖
 ``tiktoken`` · ``tensorflow`` · ``tqdm``។
 
+មេរៀនសង្ខេប (សិក្សាងាយ)
+--------------------------
+
+ការពន្យល់ខាងក្រោមជាអត្ថបទដើមរបស់សហគមន៍ ដើម្បីជួយឱ្យយល់គំនិតសំខាន់ៗមុនពេលអានកូដ៖
+
+- **Next-token training** — បញ្ចូលជាបន្សំ tokens ហើយ target ជាបន្សំនោះរំកិល ១។ ម៉ូដែលរៀនព្យាករណ៍ token បន្ទាប់។
+- **Cross-entropy និង perplexity** — loss វាស់គម្លាងរវាងការព្យាករណ៍ និងចម្លើយពិត។ perplexity = exp(loss) ងាយស្រម្ង់ថា "មធ្យមមានជម្រើសប៉ុន្មាន"។
+- **Training loop និង validation** — រៀប batch → forward → loss → backward → optimizer.step()។ ការត្រួតពិនិត្យលើ validation ជួយឃើញ overfitting។
+- **LR warmup + cosine decay** — learning rate ឡើងបន្តិចម្តង បន្ទាប់មកថយចុះរលូន ធ្វើឱ្យការបណ្តុះបណ្តាលស្ថិរ និងល្អជាង។
+- **Temperature និង top-k** — គ្រប់គ្រងភាពចៃដន្យពេលបង្កើតអត្ថបទ។ temperature=0 និងគ្មាន top-k មានន័យថាយក token ដែលមានប្រូបាបខ្ពស់បំផុតជានិច្ច។
+- **ការផ្ទុក weights pretrained** — ជំនួសឱ្យការរៀនពីសូន្យ អាចយក weights ផ្លូវការ (GPT-2) មកដាក់ក្នុងម៉ូដែលរបស់យើង។
+
+ដំណើរការកូដក្នុងជំពូកនេះ៖
+
+1. វាយតម្លៃប្រូបាបដំបូង និងគណនា loss ដោយដៃ។
+2. ផ្ទុកទិន្នន័យ បំបែក train/val និងបង្កើត loaders។
+3. សរសេរអនុគមន៍ train (calc_loss_batch, train_model_simple)។
+4. គូសក្រាផ loss និងបង្កើតអត្ថបទគំរូ។
+5. សិក្សា sampling, temperature, top-k និងអនុគមន៍ generate។
+6. រក្សាទុក/ផ្ទុក weights ហើយផ្ទុក weights GPT-2 ចូលម៉ូដែលយើង។
+
 កូដមេ
 -------
 
