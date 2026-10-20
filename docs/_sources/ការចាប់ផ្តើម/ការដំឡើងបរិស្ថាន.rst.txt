@@ -20,8 +20,7 @@
 ចាប់ផ្តើមរហ័ស (Quickstart)
 -----------------------------
 
-បើម៉ាស៊ីនរបស់អ្នកមាន Python រួចហើយ វិធីលឿនបំផុតគឺដំឡើង packages តាមឯកសារ
-``requirements.txt`` ពីថត root នៃឃ្លាំងកូដ៖
+បើម៉ាស៊ីនរបស់អ្នកមាន Python រួចហើយ វិធីលឿនបំផុតគឺដំឡើង packages តាមឯកសារ :file:`requirements.txt` ពីថត root នៃឃ្លាំងកូដ៖
 
 .. code-block:: bash
 
@@ -110,8 +109,8 @@ packages ដោយដៃ ហើយបរិស្ថានអភិវឌ្ឍ�
 
 Extensions ដែលណែនាំមានក្នុងថតរង ``.vscode``។ វិធីដំឡើង៖
 
-1. បើកថត ``setup`` ក្នុង VSCode (File → Open Folder...)។
-2. ចុចប៊ូតុង **Install** ក្នុង menu ដែលលោតមកនៅផ្នែកខាងក្រោមស្តាំ។
+1. បើកថត ``setup`` ក្នុង VSCode (:kbd:`File` → :kbd:`Open Folder...`)។
+2. ចុចប៊ូតុង :guilabel:`Install` ក្នុង menu ដែលលោតមកនៅផ្នែកខាងក្រោមស្តាំ។
 
 ឬផ្លាស់ទីថត extensions ទៅ root នៃឃ្លាំង ដើម្បីឱ្យ VSCode ពិនិត្យស្វ័យប្រវត្តិរាល់ពេល
 បើកថត ``LLMs-from-scratch``៖
