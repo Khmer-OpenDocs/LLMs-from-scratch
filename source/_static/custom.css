@@ -479,45 +479,6 @@ html:not([data-theme="light"]) span.highlighted {
 }
 
 /* ==========================================================================
-   Sidebar header extras (badge + theme toggle) — same in both palettes
-   ========================================================================== */
-
-.km-version-badge {
-  display: block;
-  margin: 6px 12px 4px;
-  padding: 3px 8px;
-  font-size: 11px;
-  letter-spacing: .2px;
-  color: #a8b2c1;
-  background: #12151d;
-  border: 1px solid var(--km-border);
-  border-radius: 999px;
-  text-align: center;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.km-theme-toggle {
-  display: block;
-  width: calc(100% - 24px);
-  margin: 4px 12px 10px;
-  padding: 5px 8px;
-  font-size: 12px;
-  font-family: inherit;
-  color: #d8dee9;
-  background: #232a38;
-  border: 1px solid var(--km-border);
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.km-theme-toggle:hover {
-  background: #2f3850;
-  color: #fff;
-}
-
-/* ==========================================================================
    LIGHT palette — opt-in via data-theme="light"
    ========================================================================== */
 

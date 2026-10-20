@@ -21,7 +21,7 @@
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"WebSite","name":"{{ html_title|striptags|e }}","url":"{{ km_baseurl }}","inLanguage":["km","en"],"potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"{{ km_baseurl }}search.html?q={search_term_string}"},"query-input":"required name=search_term_string"}}
 </script>
-<script>try{var t=localStorage.getItem("km-docs-theme");if(t){document.documentElement.setAttribute("data-theme",t);}}catch(e){}</script>
+<script>try{if(window.matchMedia&&window.matchMedia("(prefers-color-scheme: light)").matches){document.documentElement.setAttribute("data-theme","light");}}catch(e){}</script>
 {% endblock %}
 
 {% block sidebartitle %}
@@ -30,22 +30,5 @@
   <img src="{{ pathto('_static/' + logo, 1) }}" class="logo" alt="Logo"/>
   {%- endif %}
 </a>
-<div class="km-version-badge" title="Upstream version tracked by this site">upstream: main @ cdbd33e (2026-10-02)</div>
-<button id="km-theme-toggle" type="button" class="km-theme-toggle">ងងឹត / ភ្លឺ</button><script>
-(function(){
-  var b = document.getElementById("km-theme-toggle");
-  function label(){
-    var cur = document.documentElement.getAttribute("data-theme");
-    b.textContent = (cur === "light") ? "ស្បែក៖ ភ្លឺ" : "ស្បែក៖ ងងឹត";
-  }
-  label();
-  b.addEventListener("click", function(){
-    var cur = document.documentElement.getAttribute("data-theme") === "light" ? "dark" : "light";
-    document.documentElement.setAttribute("data-theme", cur);
-    try{ localStorage.setItem("km-docs-theme", cur); }catch(e){}
-    label();
-  });
-})();
-</script>
 {% include "searchbox.html" %}
 {% endblock %}
