@@ -53,6 +53,34 @@ Notebooks ភាសាខ្មែរ (Companion Notebooks)
      - ភាគបន្ថែម E
      - `appendix-E.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-E/01_main-chapter-code/appendix-E.ipynb>`_
 
+   * - ``ជំពូក២-សង្ខេប-dataloader.ipynb``
+     - ជំពូក ២ (សង្ខេប)
+     - `dataloader.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/dataloader.ipynb>`_
+   * - ``ជំពូក៣-សង្ខេប-multihead-attention.ipynb``
+     - ជំពូក ៣ (សង្ខេប)
+     - `multihead-attention.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/multihead-attention.ipynb>`_
+   * - ``ជំពូក២-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ជំពូក ២
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch02/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - ``ជំពូក៣-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ជំពូក ៣
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch03/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - ``ជំពូក៤-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ជំពូក ៤
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch04/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - ``ជំពូក៥-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ជំពូក ៥
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch05/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - ``ជំពូក៦-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ជំពូក ៦
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch06/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - ``ជំពូក៧-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ជំពូក ៧
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/ch07/01_main-chapter-code/exercise-solutions.ipynb>`_
+   * - ``ភាគបន្ថែម-A-ចម្លើយលំហាត់.ipynb``
+     - លំហាត់ ភាគបន្ថែម A
+     - `exercise-solutions.ipynb <https://github.com/rasbt/LLMs-from-scratch/blob/main/appendix-A/01_main-chapter-code/exercise-solutions.ipynb>`_
+
 របៀបដំណើរការ
 ----------------
 
